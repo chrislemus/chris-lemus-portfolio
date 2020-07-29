@@ -41,6 +41,10 @@ p {
  Base Layout Styles
 ===================================== */
 
+.box--shadow {
+    box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.2);
+}
+
 .navbar--bg {
     background-color: #f6f7fb;
 }
@@ -71,6 +75,45 @@ p {
 
 .header--thumbnil {
     max-height: 30em;
+}
+
+.contact--container {
+    padding: 2em;
+}
+
+.contact--modal {
+    padding: 3em 1em;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #784cfb;
+    background: linear-gradient(155deg, #784cfb 85%, #5e35d6 15%);
+    border-radius: 5px 5px 78px 5px;
+    color: rgb(255, 255, 255);
+}
+
+.contact--message {
+    color: #e1d7ff;
+    letter-spacing: .4px;
+    font-weight: 600;
+}
+
+.contact--modal--inner {
+    position: relative; 
+}
+
+.contact--dots--deco--bl {
+    width: 9em;
+    position: absolute;
+    left: -40px;
+}
+
+.contact--dots--deco--tr {
+    width: 9em;
+    position: absolute;
+    right: -40px;
+    top: -70px;
+    transform: rotate(180deg);
 }
 
 /* =====================================
