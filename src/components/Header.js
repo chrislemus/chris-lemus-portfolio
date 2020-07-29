@@ -1,20 +1,84 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import {Jumbotron, Container} from 'react-bootstrap';
+import thumbnil from '../imgs/thumbnil.png';
 
 
-export default () => {
-    return (
-        <header className="header">
-            <div className="bounds">
-                <h1 className="header--logo"><Link to="/">Courses</Link></h1>
-                <nav>
-                    <React.Fragment>
-                        <Link className="signup" to="/signup">Sign Up</Link>
-                        <Link className="signin" to="/signin">Sign In</Link>
-                    </React.Fragment>
-                </nav>
-            </div>
-        </header>
-    );
+
+export default class MainHeader extends Component {
+    constructor() {
+        super()
+      
+        this.state = {
+          offset: 0
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.parallaxShift);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.parallaxShift);
+    }
+
+    parallaxShift = () => {
+        this.setState({
+          offset: window.pageYOffset
+        });
+    };
+
+    render() {
+        return (
+            <section className="header--bg">
+                <Jumbotron fluid className="header--overlay"
+                    style={ { backgroundPositionY: this.state.offset} }
+                >
+                    <div className="header content"
+                        style={{ bottom: this.state.offset / 2 }}>
+                        <Container>
+                            <h1>Chris Lemus</h1>
+                            <p>
+                                Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
+                                Accuming ipsum magna dictum interdum.</p>
+                        </Container>
+                        <Container>
+                            <img 
+                                src={thumbnil}
+                                className="header--thumbnil"/>
+                        </Container>
+                    </div>
+                </Jumbotron>
+            </section>
+        );
+    }
+
  }
-  
+
+
+//  export default () => {
+//     return (
+//         <Jumbotron fluid className="main--header--bg">
+//             <div 
+//                 className="main--header--overlay"
+//                 style={}
+//             >
+//                 <div className="main--header content">
+//                     <Container >
+//                         <h1>Chris Lemus</h1>
+//                         <p>
+//                             Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
+//                             Accuming ipsum magna dictum interdum.
+//                         </p>
+//                     </Container>
+//                     <Container>
+//                         <h1>Chris Lemus</h1>
+//                         <p>
+//                             Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
+//                             Accuming ipsum magna dictum interdum.
+//                         </p>
+//                     </Container>
+//                 </div>
+//             </div>
+//         </Jumbotron>
+//     );
+//  }

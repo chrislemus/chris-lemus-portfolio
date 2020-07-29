@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,19 +6,20 @@ import {
   Redirect
 } from 'react-router-dom';
 
+import Navbar from "./components/partials/Navbar";
 import Header from "./components/Header";
-import Courses from "./components/Courses";
 import NotFound from "./components/errors/NotFound";
+import MainPage from './components/MainPage';
 
 
 
 export default () => (
   <Router>
     <div>
-      <Header />
+      <Navbar />
 
       <Switch>
-        <Route exact path="/" component={Courses} />
+        <Route exact path="/" component={MainPage} />
         <Route path="/notfound" component={NotFound} />
         <Redirect from='*' to='/notfound' />
       </Switch>
