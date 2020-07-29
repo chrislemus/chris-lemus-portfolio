@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
-import thumbnil from '../imgs/thumbnil.png';
+import thumbnail from '../../imgs/thumbnil.png';
 
 
 
@@ -35,17 +35,17 @@ export default class MainHeader extends Component {
                 >
                     <div className="header content"
                         style={{ bottom: this.state.offset / 2 }}>
-                        <Container>
+                        <Container className="header--text">
                             <h1>Chris Lemus</h1>
                             <p>
                                 Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
                                 Accuming ipsum magna dictum interdum.</p>
                         </Container>
-                        <Container>
+                        <Container className="header--image">
                             <img 
-                                src={thumbnil}
+                                src={thumbnail}
                                 alt="chris"
-                                className="header--thumbnil"/>
+                                className="header--thumbnail"/>
                         </Container>
                     </div>
                 </Jumbotron>

@@ -8,8 +8,12 @@ import {
 
 import Navbar from "./components/partials/Navbar";
 import NotFound from "./components/errors/NotFound";
-import MainPage from './components/MainPage';
+import Index from './components/pages/Index';
 
+
+//====================
+// do i need context component?
+//====================
 
 
 export default () => (
@@ -18,7 +22,7 @@ export default () => (
       <Navbar />
 
       <Switch>
-        <Route exact path="/" component={MainPage} />
+        <Route exact path="/" component={Index} />
         <Route path="/notfound" component={NotFound} />
         <Redirect from='*' to='/notfound' />
       </Switch>

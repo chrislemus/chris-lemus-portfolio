@@ -35,6 +35,13 @@ p {
     font-family: 'Open Sans';
 }
 
+a,
+a:hover
+{
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+}
+
 
 
 /* =====================================
@@ -51,14 +58,13 @@ p {
 
 .header {
     display: flex;
-    /* padding-top: 57px; */
+    flex-wrap: wrap;
 }
 
 .header--bg {
     background-color: #f6f7fb;
     padding-top: 0;
     padding-bottom: 0;
-    /* margin-top: -57px; */
 }
 
 .header--overlay {
@@ -73,11 +79,52 @@ p {
     margin-bottom: auto;
 }
 
-.header--thumbnil {
+.header--thumbnail {
     max-height: 30em;
 }
 
-.contact--container {
+.portfolio {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    text-align: center;
+}
+
+.portfolio h2 {
+    padding-bottom: 1em;
+}
+
+.portfolio--subhead {
+    padding-bottom: 5em;
+}
+
+.portfolio--subhead p {
+    margin-bottom: 0;
+}
+
+.project--cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project--cards img{
+    height: 18em;
+    border-radius: 15px;
+    box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.137);
+}
+
+.project--cards h6 {
+    text-align: left;
+    padding-left: .5em;
+    padding-top: 1.2em;
+    color: rgb(49, 49, 49);
+}
+
+.project--cards div {  /*individual project*/
+    padding-bottom: 2em;
+}
+
+#contact--container {
     padding: 2em;
 }
 
@@ -98,6 +145,7 @@ p {
     font-weight: 600;
 }
 
+
 .contact--modal--inner {
     position: relative; 
 }
@@ -116,6 +164,43 @@ p {
     transform: rotate(180deg);
 }
 
+.contact--blurb--items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.contact--blurb {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2em;
+    color: white;
+    transition: transform 1s ;
+}
+
+.contact--blurb:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.contact--modal svg {
+    height: 3em;
+    width: 3em;
+    padding-right: .5em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.contact--blurb p {
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Poppins';
+}
+
+
 /* =====================================
  Media Queries
 ===================================== */
@@ -129,6 +214,37 @@ p {
         width: 76%;
         max-width: 1400px;
         margin: 0 auto;
+    }
+
+    #contact--nav--link {
+        background-color: #784cfb;
+        border-radius: 1em;
+        color: #ffff;
+    }
+
+    .header {
+        justify-content: center;
+    }
+
+    .header--text {
+        width: 50%;
+    }
+
+    .header--image {
+        width: 50%;
+    }
+
+    .contact--blurb--items {
+        flex-direction: row;
+    }
+
+    .contact--modal svg {
+        height: 4em;
+        width: 4em;
+    }
+
+    .contact--blurb p {
+        font-size: 1.5em;
     }
 
 }
