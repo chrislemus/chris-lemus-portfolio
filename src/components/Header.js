@@ -44,6 +44,7 @@ export default class MainHeader extends Component {
                         <Container>
                             <img 
                                 src={thumbnil}
+                                alt="chris"
                                 className="header--thumbnil"/>
                         </Container>
                     </div>

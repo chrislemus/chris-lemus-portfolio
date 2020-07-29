@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { 
     Nav,
     Navbar,
@@ -14,7 +13,7 @@ export default () => {
           <Navbar.Brand href="/">
             <img
               src={logo}
-              alt="site logo"
+              alt="site-logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

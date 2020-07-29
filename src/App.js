@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 
 import Navbar from "./components/partials/Navbar";
-import Header from "./components/Header";
 import NotFound from "./components/errors/NotFound";
 import MainPage from './components/MainPage';
 
