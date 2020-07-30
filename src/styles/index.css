@@ -7,6 +7,7 @@
 }
 
 body {
+    width: 95%;
     font-family: 'Poppins', 'Open Sans', Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: rgb(43, 43, 43);
