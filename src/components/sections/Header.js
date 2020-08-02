@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Jumbotron, Container} from 'react-bootstrap';
-import thumbnail from '../../imgs/thumbnil.png';
+import thumbnail from '../../imgs/header-thumbnail.png';
 
 
 

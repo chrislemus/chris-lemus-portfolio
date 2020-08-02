@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import projects from '../../data/projectsData';
 
-export default () => {
+export default class Project extends Component {
 
-    const getThumbnails = projects.map( (project) => {
-      return (  
-          <div key={project.id}>
-              <img 
-                  src={project.thumbnail.default}
-                  alt="project thumbnail"/>
-              <h6>Random Generator</h6>
-          </div>                 
-      )
-    })
+  state ={
+    projectTitle: null,
+    projectDesc:null,
+    screenshots: [],
+  }
 
+  render(){
 
     return (
       <section className="portfolio content">
@@ -24,8 +20,29 @@ export default () => {
           <p>This is why there are certain skills .</p>
         </div>
         <div className="projects">
-            {getThumbnails}
+            <img
+              src="https://1drv.ms/u/s!Ai2_r7JZ5KbBw1g-bylJhHTd_Ce8"
+              alt=""
+            />
+            {this.getThumbnails()}
         </div>
       </section>
     );
+  }
+
+  componentDidMount() {
+    console.log("hie")
+  }
+
+  getThumbnails = () => projects.map( (project) => {
+    return (  
+        <div key={project.id}>
+            <img 
+                src={project.thumbnail.default}
+                alt="project thumbnail"/>
+            <h6>Random Generator</h6>
+        </div>                 
+    )
+  })
+
 }

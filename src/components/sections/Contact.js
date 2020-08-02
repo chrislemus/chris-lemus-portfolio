@@ -11,7 +11,7 @@ export default () => {
             <div className="contact--modal--inner">
 
 
-                <p className="contact--message">Love to talk? Shout me here...</p>
+                <p className="contact--message">Would like to talk? Shout me here...</p>
                     
                 <div className="contact--blurb--items">
                     <a href="callto:9199959906" className="contact--blurb">

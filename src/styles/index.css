@@ -9,6 +9,7 @@
 #root {
     margin-left: 0 auto;
     margin-right: 0 auto;
+    width: 95%;
 }
 
 body {
@@ -86,7 +87,7 @@ a:hover
 
 .header--thumbnail {
     width: 100%;
-    max-height: 30em;
+    height: 100%;
 }
 
 .portfolio {
