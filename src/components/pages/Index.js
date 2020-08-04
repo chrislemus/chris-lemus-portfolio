@@ -7,7 +7,7 @@ import Portfolio from '../sections/Portfolio';
 
 export default () => {
     return (
-      <div >
+      <div>
         <Header/>
         <Portfolio/>
         <Contact/>
