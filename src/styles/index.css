@@ -235,22 +235,24 @@ a:hover
     margin-top: 2em;
     margin-bottom: 1em;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.project-modal-btn-container a{
+.project-modal-btn-container button{
     font-weight: bold;
     color: rgb(4, 212, 160);
     width: 45%;
+    background-color: #ffff;
+    border: none;
 }
 
-.project-modal-btn-container a:hover{
+.project-modal-btn-container button:hover{
     cursor: pointer;
     font-weight: bold;
     color: #7e1cff;
 }
 
-.project-modal-btn-container a:first-child{
+.project-modal-btn-container button:first-child{
     border-right: 2px solid rgb(4, 212, 160);
 }
 

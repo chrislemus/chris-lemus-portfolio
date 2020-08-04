@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Modal, Button} from 'react-bootstrap'
+import {Modal} from 'react-bootstrap'
 import projectsDB from '../../data/projectsData';
-import thumbnail from '../../imgs/portfolio/employee-directory/ed-thumbnail.png';
-import ProjectLightbox from '../partials/ProjectLightbox';
+// import thumbnail from '../../imgs/portfolio/employee-directory/ed-thumbnail.png';
+// import ProjectLightbox from '../partials/ProjectLightbox';
 
 
 export default class Portfolio extends Component{
@@ -41,12 +41,12 @@ export default class Portfolio extends Component{
           </div>
 
           <div className="project-modal-btn-container">
-            <a className="github-link project-modal-links" onClick={this.handleClose}>
+            <button className="github-link project-modal-links" onClick={this.handleClose}>
               GitHub Repo
-            </a>
-            <a className="project-demo-link" onClick={this.handleClose}>
+            </button>
+            <button className="project-demo-link" onClick={this.handleClose}>
               Live Demo
-            </a>
+            </button>
           </div>
           
         </Modal.Body>
@@ -76,9 +76,13 @@ export default class Portfolio extends Component{
   getTechIcons = () => {
     const project = projectsDB.find(x => x.id === 1 );
     let happy = []
-   project.technologies.forEach(icon => {
-      happy.push(<img src={icon} alt=""/>)
-    })
+    // project.technologies.forEach(icon => {
+    //     happy.push(<img key={icon.index} src={icon} alt=""/>)
+    //   })
+    project.technologies.forEach(getImgs)
+    function getImgs(img, index, arr) {
+      happy.push(<img key={arr[index]} src={img} alt="tech-icon"/>)
+    }
       
     return happy
   }

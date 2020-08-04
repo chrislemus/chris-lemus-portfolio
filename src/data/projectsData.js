@@ -1,4 +1,3 @@
-const thumb = require("../imgs/portfolio/thumbnails/project-1-thumbnail.png")
 const cssIcon = require("../imgs/portfolio/tech-icons/icon-css.png")
 const htmlIcon = require("../imgs/portfolio/tech-icons/icon-html.png")
 
