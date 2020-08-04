@@ -76,8 +76,8 @@ export default class Portfolio extends Component{
                   {this.getTechIcons()}
                 </div>
                 <div className="project-card-buttons">
-                  <a href={project.github_repo} target="_blank" projectid={project.id}>Github Repo</a>
-                  <a href={project.live_demo_url} target="_blank" projectid={project.id}>Live Demo</a>
+                  <a href={project.github_repo} target="_blank" rel="noopener noreferrer" projectid={project.id}>Github Repo</a>
+                  <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer" projectid={project.id}>Live Demo</a>
                 </div>
               </div>
         </div>                 
