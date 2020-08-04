@@ -20,8 +20,8 @@ export default class Portfolio extends Component{
       displayLightbox,
       projectName,
       projectDesc,
-      projectGithub,
-      projectDemo
+      // projectGithub,
+      // projectDemo
     } = this.state;
 
     return (
@@ -29,7 +29,7 @@ export default class Portfolio extends Component{
 
         <h2>Portfolio</h2>
 
-      <Modal show={displayLightbox} onHide={this.handleClose}>
+      <Modal show={displayLightbox} animation={false} onHide={this.handleClose}>
         <Modal.Header closeButton>
             <h4>{projectName}</h4>
         </Modal.Header>
