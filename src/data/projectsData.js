@@ -1,5 +1,10 @@
-const cssIcon = require("../imgs/portfolio/tech-icons/icon-css.png")
-const htmlIcon = require("../imgs/portfolio/tech-icons/icon-html.png")
+const htmlIcon = require("../imgs/portfolio/tech-icons/html-5.svg")
+const cssIcon = require("../imgs/portfolio/tech-icons/css-3.svg");
+const javascriptIcon = require("../imgs/portfolio/tech-icons/javascript-icon.svg");
+const nodeJsIcon = require("../imgs/portfolio/tech-icons/nodejs-icon.svg");
+const express = require("../imgs/portfolio/tech-icons/express.svg");
+const react = require("../imgs/portfolio/tech-icons/react.svg");
+const pug = require("../imgs/portfolio/tech-icons/pug.svg");
 
 const projects = [
         {
@@ -9,7 +14,7 @@ const projects = [
             "live_demo_url": "https://webcourses.netlify.app/",
             "github_repo": "https://github.com/chrislemus/online-courses-webapp",
             "thumbnail": require("../imgs/portfolio/thumbnails/p1-thumb.jpg"),
-            "technologies": [htmlIcon, cssIcon]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 2,
@@ -18,7 +23,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/Employee-Directory",
             "github_repo": "https://github.com/chrislemus/Employee-Directory",
             "thumbnail": require("../imgs/portfolio/thumbnails/p2-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 3,
@@ -27,7 +32,7 @@ const projects = [
             "live_demo_url": "https://library-db-sql.herokuapp.com/books",
             "github_repo": "https://github.com/chrislemus/Library-Books-DB",
             "thumbnail": require("../imgs/portfolio/thumbnails/p3-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 4,
@@ -36,7 +41,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/Analytics-Dashboard/",
             "github_repo": "https://github.com/chrislemus/Analytics-Dashboard",
             "thumbnail": require("../imgs/portfolio/thumbnails/p4-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 5,
@@ -45,7 +50,7 @@ const projects = [
             "live_demo_url": "https://gallery-app-react.netlify.app/",
             "github_repo": "https://github.com/chrislemus/React-Gallery-App",
             "thumbnail": require("../imgs/portfolio/thumbnails/p5-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 6,
@@ -54,7 +59,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/OOP-Game-Show-App/",
             "github_repo": "https://github.com/chrislemus/OOP-Game-Show-App",
             "thumbnail": require("../imgs/portfolio/thumbnails/p6-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 7,
@@ -63,7 +68,7 @@ const projects = [
             "live_demo_url": "https://static-node-express-site.herokuapp.com/",
             "github_repo": "https://github.com/chrislemus/static-node-express-site",
             "thumbnail": require("../imgs/portfolio/thumbnails/p7-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 8,
@@ -72,7 +77,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/directory-list-pagination/",
             "github_repo": "https://github.com/chrislemus/directory-list-pagination",
             "thumbnail": require("../imgs/portfolio/thumbnails/p8-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 9,
@@ -81,7 +86,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/Interactive-Form/",
             "github_repo": "https://github.com/chrislemus/Interactive-Form",
             "thumbnail": require("../imgs/portfolio/thumbnails/p9-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 10,
@@ -90,7 +95,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/Random-Quote-Generator",
             "github_repo": "https://github.com/chrislemus/Random-Quote-Generator",
             "thumbnail": require("../imgs/portfolio/thumbnails/p10-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 11,
@@ -99,7 +104,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/web-style-guide-sass/",
             "github_repo": "https://github.com/chrislemus/web-style-guide-sass",
             "thumbnail": require("../imgs/portfolio/thumbnails/p11-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         },
         {
             "id": 12,
@@ -108,7 +113,7 @@ const projects = [
             "live_demo_url": "https://chrislemus.github.io/online-registration-form/",
             "github_repo": "https://github.com/chrislemus/online-registration-form",
             "thumbnail": require("../imgs/portfolio/thumbnails/p12-thumb.jpg"),
-            "technologies": ["HTML", "CSS", "JavaScript"]
+            "technologies": [htmlIcon, cssIcon, javascriptIcon, nodeJsIcon, express, react, pug]
         }
     ]
 

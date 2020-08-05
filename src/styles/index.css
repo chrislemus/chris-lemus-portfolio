@@ -118,40 +118,17 @@ a:hover
 .projects--container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-/* 
-.project--card { 
-    display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    border-radius: 15px ;
-    width: 30%;
-    height: 100%;
-    margin-bottom: 2.2em;
-    box-shadow: 2px 2px 12px 4px rgba(110, 110, 110, 0.137);
-    background-color: #ffff;
-    padding-bottom: 0;
 }
-
-.project--card h6{ 
-    padding-top: .8em;
-    padding-bottom: .8em;
-    color: rgb(87, 87, 87);
-}
-
-.project--card img{
-    height: 12em;
-    width: 100%;
-    border-radius: 15px 15px 0 0;
-    margin-bottom: 1em;
-} */
 
 .project--card { 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.137);
-    width: 30%;
+    /* width: 50%; */
     max-width: 420px;
     margin-bottom: 3em;
     text-align: left;
@@ -171,7 +148,7 @@ a:hover
 
 .project--card img{
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 
 .project-name-text {
@@ -183,14 +160,7 @@ a:hover
 .project-tech-header {
     color: rgb(134, 134, 134);
     font-weight: 500;
-}
-
-.divider--project--card {
-    background-color: rgb(82, 199, 234);
-    width: 30%;
-    margin-left: 0;
-    text-align: left;
-    height: 2px;
+    padding-bottom: .7em;
 }
 
 .project-card-buttons {
@@ -242,8 +212,8 @@ a:hover
 } */
 
 #project-tech-icons {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     transition: ease-in-out .3s;
     filter: grayscale(100%);
 }
@@ -253,78 +223,27 @@ a:hover
     /* transform: scale(1.1); */
 */
 
-/*====== Modal ====*/
 
-.modal {
-    background-color: rgba(255, 255, 255, 0.884);
+/*============ pagination ==========*/
+
+.pagination-container {
+    width: 100%;
 }
 
- .modal-content {
-    border: none;
-    border-radius: 23px 23px 20px 20px;
-    box-shadow: 2px 2px 12px 4px rgba(0, 0, 0, 0.137);
-    text-align: center;
- }
-
- .modal-header {
-    padding-top: 3em;
-    padding-bottom: 3em;
-    border-radius: 20px 20px 0 0;
-    background-color: #7e1cff;
-    background-image: url("../imgs/modal-bg.jpg");
-    color: #FFFF;
-    text-align: center;
- }
-
- .modal-header h4{
-    font-weight: bold;
-    font-size: 2em;
- }
-
- .modal-project-description {
-     padding-top: 1.5em;
-     font-weight: 4em;
- }
-
- .modal-header .close{
-    color: #FFFF;
-    opacity: 1;
-}
-
-.modal-project-tech {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
-.modal-project-tech h6{
-    color: rgb(189, 189, 189);
-    padding-bottom: 1em;
-}
-
-.project-modal-btn-container {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    display: flex;
+.pagination {
     justify-content: center;
+    margin: auto;
 }
 
-.project-modal-btn-container button{
-    font-weight: bold;
-    color: rgb(4, 212, 160);
-    width: 45%;
-    background-color: #ffff;
-    border: none;
-}
-
-.project-modal-btn-container button:hover{
-    cursor: pointer;
-    font-weight: bold;
+.pagination a{
     color: #7e1cff;
 }
 
-.project-modal-btn-container button:first-child{
-    border-right: 2px solid rgb(4, 212, 160);
+#activePageItem{
+    background-color: #a865ff;
+    border-color: #ae70ff;
 }
+
 
 /*====== CONTACT ====*/
 
@@ -436,6 +355,11 @@ a:hover
 
     .header--image {
         width: 50%;
+    }
+
+    .projects--container {
+        flex-direction: row;
+        margin: 0 auto;
     }
 
     .contact--blurb--items {
