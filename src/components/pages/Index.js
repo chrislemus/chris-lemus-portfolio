@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../sections/Header';
 import Contact from '../sections/Contact';
 import Portfolio from '../sections/Portfolio';
+import Skills from '../sections/Skills';
 
 
 
@@ -10,8 +11,8 @@ export default () => {
       <div>
         <Header/>
         <Portfolio/>
+        <Skills/>
         <Contact/>
-        <div className="blank"/>
       </div>
     );
  }

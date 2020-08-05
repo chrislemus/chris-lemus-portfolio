@@ -11,6 +11,7 @@ const projects = [
             "id": 1,
             "project_name": "Online Courses WebApp",
             "description": "School WebApp running on React for Front-End and Express/MySQL on backend. Allows for CRUD operations on client side.",
+            "warnMsg": ["*this project uses MySql Database please allow up to 20 sec. for database server boot"],
             "live_demo_url": "https://webcourses.netlify.app/",
             "github_repo": "https://github.com/chrislemus/online-courses-webapp",
             "thumbnail": require("../imgs/portfolio/thumbnails/p1-thumb.jpg"),

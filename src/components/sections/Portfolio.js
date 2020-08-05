@@ -32,21 +32,19 @@ export default class Portfolio extends Component{
 
       return (
 
-        <section className="portfolio">
+        <section id="portfolio" >
           <h2>Portfolio</h2>
           <div className="pagination-container">
 
           </div>
 
           <div className="portfolio--subhead">
-            <p>Creating a digital product is full of rewards and challenges.</p>
-            <p>This is why there are certain skills .</p>
+            <p>Technology is impacting every aspect of our life more and more each day.</p>
+            <p>So lets create something impactful.</p>
           </div>
-          {/* <Fade in={open}  appear={true} > */}
             <div className="projects--container fade-in" key={projectContainerKey}>
               <ProjectCards activePage={activePage} resultsPerPage={resultsPerPage}/>
             </div>
-          {/* </Fade> */}
 
           <Pagination size="lg">
               {this.getPageItems()}

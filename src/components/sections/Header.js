@@ -36,10 +36,11 @@ export default class MainHeader extends Component {
                     <div className="header content"
                         style={{ bottom: this.state.offset / 2 }}>
                         <Container className="header--text">
+                        <h1>Bolder Hello Title</h1>
                             <h1>Chris Lemus</h1>
                             <p>
-                                Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
-                                Accuming ipsum magna dictum interdum.</p>
+                            Hello, I’m a Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
+                            efficient and innovative experiences that balance user needs and business goals..</p>
                         </Container>
                         <Container className="header--image">
                             <img 
