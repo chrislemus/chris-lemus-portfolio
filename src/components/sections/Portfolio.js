@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import projectsDB from '../../data/projectsData';
 import {Pagination} from 'react-bootstrap'
-import ProjectCard from '../partials/ProjectCard';
+import ProjectCards from '../partials/ProjectCards';
 
 
 export default class Portfolio extends Component{
 
   state = {
     activePage: 1,
-    resultsPerPage: 6,
-    totalPages: null,
+    resultsPerPage: null,
+    totalPages: 1,
     totalProjects: projectsDB.length,
+    screenSizeResults: { //settings to adjust projects shown per page
+      sm: 2,
+      md: 4,
+      lg: 6
+    },
+    projectContainerKey: 8741,
   }
 
 
   render() {
-    
+
+      const {
+        activePage,
+        resultsPerPage,
+        projectContainerKey
+      } = this.state
+
+      
+
       return (
+
         <section className="portfolio">
           <h2>Portfolio</h2>
           <div className="pagination-container">
@@ -27,10 +42,11 @@ export default class Portfolio extends Component{
             <p>Creating a digital product is full of rewards and challenges.</p>
             <p>This is why there are certain skills .</p>
           </div>
-
-          <div className="projects--container">
-              {this.getProjects()}
-          </div>
+          {/* <Fade in={open}  appear={true} > */}
+            <div className="projects--container fade-in" key={projectContainerKey}>
+              <ProjectCards activePage={activePage} resultsPerPage={resultsPerPage}/>
+            </div>
+          {/* </Fade> */}
 
           <Pagination size="lg">
               {this.getPageItems()}
@@ -38,20 +54,6 @@ export default class Portfolio extends Component{
         </section>
       );
   }
-
-  getProjects = () => projectsDB.map( (project, index) => {
-    const {
-      activePage,
-      resultsPerPage,
-    } = this.state;
-
-    const lastPageItem = activePage * resultsPerPage;
-    const firstPageItem = lastPageItem - resultsPerPage ;
-    if (index >= firstPageItem & index < lastPageItem) {
-      return <ProjectCard key={project.id} project={project}/>
-    }
-    return null;
-  })
 
   getPageItems = () => {
     const {
@@ -84,42 +86,62 @@ export default class Portfolio extends Component{
     return items
   }
 
-  selectNavArrow = (x) => {
+  selectNavArrow = (arrowSelected) => {
     const {activePage} = this.state
-    const pageNumber = activePage + x
+    const pageNumber = activePage + arrowSelected
     this.setState({activePage: pageNumber})
+    this.projectContKey()
   }
 
   selectNavPage = (pageNumber) => {
     this.setState({activePage: pageNumber})
+    this.projectContKey()
   }
 
-  updatePageNav = (viewportWidth) => {
-    let resultsPerPage;
-    if (viewportWidth < 1327) {
-      resultsPerPage = 4
-      this.setState({resultsPerPage})
+  projectContKey = () => {
+    const projectContainerKey = this.state.projectContainerKey + 1;
+    this.setState({projectContainerKey})
+  }
 
-      if (viewportWidth < 885) {
-        resultsPerPage = 3
-        this.setState({resultsPerPage})
-      }
-    } else {
-      resultsPerPage =  6
-      this.setState({resultsPerPage})
+  updateResultsPerPage = (viewportWidth) => {
+    const {screenSizeResults} = this.state
+    let resultsPerPage = screenSizeResults.sm;
+
+    if (viewportWidth > 885) {
+      resultsPerPage = screenSizeResults.md
     }
+    if (viewportWidth > 1326) {
+      resultsPerPage = screenSizeResults.lg
+    } 
 
-
-    // const totalPages = Math.ceil(projectsDB.length/this.state.resultsPerPage)
     const totalPages = Math.ceil(projectsDB.length/resultsPerPage)
-    this.setState({totalPages})
+    this.setState({resultsPerPage, totalPages})
   }
   
 
   componentDidMount() {
+    this.updateResultsPerPage(window.innerWidth)
     window.addEventListener("resize", () => {
-      this.updatePageNav(window.innerWidth)
-    });
-  }
+      this.updateResultsPerPage(window.innerWidth)
+    })
 
+  }
  }
+
+   // getProjects = () => {
+  //   return ;
+  // }
+
+  // getProjects = () => projectsDB.map( (project, index) => {
+  //   const {
+  //     activePage,
+  //     resultsPerPage,
+  //   } = this.state;
+
+  //   const lastPageItem = activePage * resultsPerPage;
+  //   const firstPageItem = lastPageItem - resultsPerPage ;
+  //   if (index >= firstPageItem & index < lastPageItem) {
+  //     return <ProjectCard key={project.id} project={project}/>
+  //   }
+  //   return null;
+  // })

@@ -122,6 +122,20 @@ a:hover
     flex-direction: column;
 }
 
+/* The element to apply the animation to */
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+/* The animation code */
+@keyframes fadeIn {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+  
+  
+
 .project--card { 
     margin: 0 auto;
     display: flex;
