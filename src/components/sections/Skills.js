@@ -41,6 +41,7 @@ export default class Skills extends Component{
                         <img
                             src={dots}
                             className="tab-overlay"
+                            alt="dots-overlay"
                         />
                         <div className="skills--header">
                             <p>My</p>
