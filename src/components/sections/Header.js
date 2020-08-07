@@ -28,7 +28,7 @@ export default class MainHeader extends Component {
                             <h1>Chris Lemus</h1>
                             <p>
                             A Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
-                            efficient and innovative experiences that balance user needs and business goals..</p>
+                            efficient and innovative experiences that balance user needs and business goals.</p>
                         </Col>
                         <Col>
                             <img 

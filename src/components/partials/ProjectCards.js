@@ -1,14 +1,16 @@
 import React from 'react';
 import projectsDB from '../../data/projectsData';
-import {CardDeck, Card} from 'react-bootstrap'
+import {Container, Row, Col,} from 'react-bootstrap'
 
 
 export default (props) => {
 
     return (
-      <CardDeck>
-        {getProjects()}
-      </CardDeck>
+      <Container >
+        <Row className="card-deck">
+          {getProjects()}
+        </Row>
+      </Container>
     );
 
     function getProjects ()  {
@@ -18,48 +20,45 @@ export default (props) => {
   
       const lastProject = activePage * resultsPerPage;
       const  firstProject = lastProject - resultsPerPage;
+
+
       for (let projectIndex = firstProject; projectIndex < lastProject; projectIndex++) {
         let project = projectsDB[projectIndex]
         projectCards.push(
-          <Card className="project-card " key={project.id}>
-            <Card.Img variant="top" src={project.thumbnail.default} alt={project.project_name}/>
-            <Card.Body>
-              <div className="project--card--text">
-                  <h6 className="project-name-text">{project.project_name}</h6>
-                  <p>{project.description} </p>
-                  <div className="project-tech-container">
-                    <h6 className="project-tech-header">Technologies</h6>
-                    <div>
-                      {getTechIcons(project)}
-                    </div>
-                  </div>
+          <Col key={project.id}>
+            <div className="project-card">
+              <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
+              <div className="card-body">
+                <h5>{project.project_name}</h5>
+                <p>{project.description}</p>
 
-                  {project.warnMsg ? 
-                    <p id="project-warn-msg" style={{color: "rgb(126, 1, 7)", marginTop: "auto"}}>{project.warnMsg[0]}</p>
-                  :
-                    null
-                  }
+                {getProjectIcons(project)}
+
+                {project.warnMsg ? <p>{project.warnMsg[0]}</p> : null }
+
+                <div className="project-card-buttons">
+                  <a href={project.github_repo} target="_blank" rel="noopener noreferrer">Github Repo</a>
+                  <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer">Another Link</a>
+                </div>
               </div>
-              <div className="project-card-buttons">
-                <Card.Link href={project.github_repo}>Card Link</Card.Link>
-                <Card.Link href={project.github_repo}>Another Link</Card.Link>
-              </div>
-            </Card.Body>
-          </Card>
+            </div>
+          </Col>
         );
       }  
   
       return projectCards
     }
 
-    function getTechIcons(project) {
+
+
+    function getProjectIcons(project) {
       let icons = []
       project.technologies.forEach(getImgs)
       function getImgs(img, index) {
-        icons.push(<img className="project-tech-icons" key={index} src={img} alt="tech-icon"/>)
+        icons.push(<li key={index}><img className="project-icons" src={img} alt="tech-icon"/></li>)
       }
         
-      return icons
+      return (<ul className="project-icons-container">{icons}</ul>)
   }
 
  }

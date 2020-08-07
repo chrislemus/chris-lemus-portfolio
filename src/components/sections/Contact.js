@@ -1,39 +1,32 @@
 import React from 'react';
-import dotsDeco from '../../imgs/dots-deco.png';
-import {ReactComponent as PhoneIcon} from '../../imgs/phone.svg';
-import {ReactComponent as EmailIcon} from '../../imgs/hotmail.svg';
-
+import {Container} from 'react-bootstrap';
+// import dotsDeco from '../../imgs/dots-deco.png';
+import PhoneIcon from '../../imgs/icons/phone-icon3.png';
+import EmailIcon from '../../imgs/icons/email-icon3.png';
 
 export default () => {
     return (
-      <section id="contact--container">
-        <div className="contact--modal content box--shadow">
-            <div className="contact--modal--inner">
-
-
-                <p className="contact--message">Would like to talk? Shout me here...</p>
-                    
-                {/* <div className="contact--blurb--items">
-                    <a href="callto:9199959906" className="contact--blurb">
-                        <PhoneIcon/>
-                        <p>(919) 995-9906</p>
-                    </a>
-                    <a href="mailto:icrislemus@gmail.com" className="contact--blurb">
-                        <EmailIcon/>
-                        <p>icrislemus@gmail.com</p>
-                    </a>
-                </div> */}
-                {/* <img 
-                    src={dotsDeco}
-                    alt="dots"
-                    className="contact--dots--deco--bl"/>
-                <img 
-                    src={dotsDeco}
-                    alt="dots"
-                    className="contact--dots--deco--tr"/> */}
+      <div id="contact-section">
+        <Container >
+            <div className="contact-modal">
+                <h2>Contact</h2>
+                <p>Would love to talk?. Shout me out here...</p>
+                <div>
+                    <div className="contact-info">
+                        <a href="callto:9199959906">
+                            <img src={PhoneIcon} alt="phone-icon"/>
+                            <p>(919) 995-9906</p>
+                        </a>
+                    </div>
+                    <div className="contact-info">
+                        <a href="mailto:icrislemus@gmail.com">
+                            <img src={EmailIcon} alt="email-icon"/>
+                            <p>icrislemus@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-        </div>
-      </section>
+        </Container>
+      </div>
     );
  }

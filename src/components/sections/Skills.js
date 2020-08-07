@@ -1,96 +1,64 @@
 import React, {Component} from 'react';
 import skillsData from '../../data/skillsData';
+import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
 
 export default class Skills extends Component{
 
-    /*======================*/
-    /*===========  do i need state component?  ===========*/
-    /*======================*/
+
+
+    state = {
+        tabSelected: "Code",
+
+    }
+
     render() {
 
+        const {tabSelected} = this.state;
+
+
+
         return (
-            <section className="skills-section">
-            </section>
+            <Container className="skills-section">
+                <Row>
+                    <Col xs="12" sm="6" className="skill-img" >
+                        {this.getImg()}
+                    </Col>
+                    <Col className="tab-container">
+                        <div className="skills-header">
+                            <h1>My Skills</h1>
+                        </div>
+                        <Tabs
+                            id="controlled-tab-example"
+                            defaultActiveKey={tabSelected}
+                            onSelect={this.tabClick.bind(this)}>
+                            
+                            {this.getTabs()}
+                        </Tabs>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 
+    tabClick(e) {
+        const tabName = e;
+        this.setState({tabSelected: tabName})
+    }
+
+    getTabs() {
+        const tabs = []
+        skillsData.map(skill => {   
+            tabs.push(<Tab eventKey={skill.name} title={skill.name} key={skill.id}>
+                        <p>{skill.description}</p>
+                    </Tab>)
+        })
+        return tabs
+    }
+
+    getImg() {
+        const {tabSelected} = this.state;
+        const skill = skillsData.find((skill) => skill.name === tabSelected)
+        return <img src={skill.img} alt={skill.name} />
+    
+    }
 }
-
-
-
-// import React, {Component} from 'react';
-// import skillsData from '../../data/skillsData';
-
-// export default class Skills extends Component{
-
-
-
-//     state = {
-//         prevTabClick: "Code",
-//         // skillSelected: "Code",
-//         activeSkillData: {
-//             id: null,
-//             name: null,
-//             img: null,
-//             description: null,
-//         },
-//     }
-
-//     render() {
-
-//         const {activeSkillData} = this.state;
-
-//         return (
-//             <section className="skills-section">
-//                 <div id="skills" className="content">
-//                     <div >
-//                         <img
-//                             className="skills--svg fade-in"
-//                             src={activeSkillData.img}
-//                             alt={activeSkillData.name}
-//                             ref={Image => {this.skillSvg = Image}}
-//                             key={activeSkillData.name}
-//                         />
-                        
-//                     </div>
-//                     <div className="tab-container">
-//                         <div className="skills--header">
-//                             <p>My</p>
-//                             <h2>Skills</h2>
-//                         </div>
-//                         <div className="tabs-nav" >
-//                             <button id="active-tab-nav" onClick={this.tabNavClick.bind(this)} refname="Code" ref={button => {this.Code = button}}>Code</button>
-//                             <button onClick={this.tabNavClick.bind(this)} refname="Business" ref={button => {this.Business = button}}>Business</button>
-//                             <button onClick={this.tabNavClick.bind(this)} refname="Media"  ref={button => {this.Media = button}}>Media</button>
-//                         </div>
-//                         <div>
-//                             <p>{activeSkillData.description}</p>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         )
-//     }
-
-//     tabNavClick(e) {
-//         const btnClicked = e.target;
-//         const btnRef = btnClicked.innerText   
-//         const {prevTabClick} = this.state   
-
-//         this[prevTabClick].removeAttribute("id")
-
-//         this.updateSkillsData(btnRef)
-//         this.setState({prevTabClick: btnRef})
-//         btnClicked.setAttribute("id", "active-tab-nav"); 
-//     }
-
-//     updateSkillsData = (skillName) => { //responds with index value of chose skill by matching skill name
-//         const activeSkillData = skillsData.find((skill) => skill.name === skillName)
-//         this.setState({activeSkillData: activeSkillData})
-//     }
-
-//     componentDidMount() {
-//         this.updateSkillsData(this.state.prevTabClick)
-//     }
-
-// }

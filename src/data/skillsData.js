@@ -1,6 +1,7 @@
 const businessIcon = require("../imgs/portfolio/skills-svg/business.svg")
 const codeIcon = require("../imgs/portfolio/skills-svg/code.svg")
 const mediaIcon = require("../imgs/portfolio/skills-svg/media.svg")
+const marketingIcon = require("../imgs/portfolio/skills-svg/marketing.svg")
 const skills = [
     {
         "id": 1,
@@ -19,6 +20,12 @@ const skills = [
         "name": "Media",
         "description": "mediaa School WebApp running on React for Front-End and Express/MySQL on backend. Allows for CRUD operations on client side.",
         "img": mediaIcon
+    },
+    {
+        "id": 4,
+        "name": "Marketing",
+        "description": "mediaa School WebApp running on React for Front-End and Express/MySQL on backend. Allows for CRUD operations on client side.",
+        "img": marketingIcon
     }
 ]
 
