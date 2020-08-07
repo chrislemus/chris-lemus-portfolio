@@ -3,29 +3,30 @@ import {
     Nav,
     Navbar,
  } from 'react-bootstrap';
- import logo from '../../imgs/logo.png';
+ import logo from '../../imgs/logo.svg';
 
 
 export default () => {
-    return (
-      <div className="navbar--bg">
-        <Navbar expand="lg" className="content">
-          <Navbar.Brand href="/">
-            <img
-              src={logo}
-              alt="site-logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link href="/">HOME</Nav.Link>
-              <Nav.Link href="/#portfolio">PORTFOLIO</Nav.Link>
-              <Nav.Link href="/#skills">Skills</Nav.Link>
-              <Nav.Link href="#contact--container" id="contact--nav--link">CONTACT</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </div>
-    );
- }
+
+  return (
+    <section id="navbar">
+      <Navbar expand="lg"  >
+        <Navbar.Brand href="/">
+          <img
+            src={logo}
+            alt="site-logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle id="nav-toggler-icon" style={{fill: "red"}}/>
+        <Navbar.Collapse >
+          <Nav className="ml-auto nav-menu-items">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/#portfolio">Portfolio</Nav.Link>
+            <Nav.Link href="/#skills">Skills</Nav.Link>
+            <Nav.Link href="/#contact" >Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </section>
+  )
+}

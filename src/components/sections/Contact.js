@@ -13,7 +13,7 @@ export default () => {
 
                 <p className="contact--message">Would like to talk? Shout me here...</p>
                     
-                <div className="contact--blurb--items">
+                {/* <div className="contact--blurb--items">
                     <a href="callto:9199959906" className="contact--blurb">
                         <PhoneIcon/>
                         <p>(919) 995-9906</p>
@@ -22,15 +22,15 @@ export default () => {
                         <EmailIcon/>
                         <p>icrislemus@gmail.com</p>
                     </a>
-                </div>
-                <img 
+                </div> */}
+                {/* <img 
                     src={dotsDeco}
                     alt="dots"
                     className="contact--dots--deco--bl"/>
                 <img 
                     src={dotsDeco}
                     alt="dots"
-                    className="contact--dots--deco--tr"/>
+                    className="contact--dots--deco--tr"/> */}
             </div>
 
         </div>

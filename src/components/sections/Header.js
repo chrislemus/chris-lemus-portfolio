@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Jumbotron, Container} from 'react-bootstrap';
-import thumbnail from '../../imgs/header-thumbnail.png';
+import {Jumbotron, Container, Col, Row} from 'react-bootstrap';
+import profilePic from '../../imgs/profile.png';
 
 
 
@@ -13,74 +13,94 @@ export default class MainHeader extends Component {
         };
     }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.parallaxShift);
-    }
 
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.parallaxShift);
-    }
-
-    parallaxShift = () => {
-        this.setState({
-          offset: window.pageYOffset
-        });
-    };
-
+    /*======================*/
+    /*===========  do i need state component?  ===========*/
+    /*======================*/
     render() {
         return (
-            <section className="header--bg">
-                <Jumbotron fluid className="header--overlay"
-                    style={ { backgroundPositionY: this.state.offset} }
-                >
-                    <div className="header content"
-                        style={{ bottom: this.state.offset / 2 }}>
-                        <Container className="header--text">
-                        <h1>Bolder Hello Title</h1>
+
+            <Jumbotron id="main-header" fluid>
+                <Container fluid="md">
+                    <Row>
+                        <Col xs={12} sm={7} className="main-header-text">
+                            <h5>Hello I'm</h5>
                             <h1>Chris Lemus</h1>
                             <p>
-                            Hello, I’m a Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
+                            A Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
                             efficient and innovative experiences that balance user needs and business goals..</p>
-                        </Container>
-                        <Container className="header--image">
+                        </Col>
+                        <Col>
                             <img 
-                                src={thumbnail}
+                                src={profilePic}
                                 alt="chris"
-                                className="header--thumbnail"/>
-                        </Container>
-                    </div>
-                </Jumbotron>
-            </section>
+                                className="main-header-img"/>
+                        </Col>
+                    </Row>
+                </Container>
+            </Jumbotron>
+
         );
     }
 
  }
 
 
-//  export default () => {
-//     return (
-//         <Jumbotron fluid className="main--header--bg">
-//             <div 
-//                 className="main--header--overlay"
-//                 style={}
-//             >
-//                 <div className="main--header content">
-//                     <Container >
-//                         <h1>Chris Lemus</h1>
-//                         <p>
-//                             Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
-//                             Accuming ipsum magna dictum interdum.
-//                         </p>
-//                     </Container>
-//                     <Container>
-//                         <h1>Chris Lemus</h1>
-//                         <p>
-//                             Hello, I'm Chris Lemus, ui/ux designer based in Raleigh, NC consectetur adipiscing elit.
-//                             Accuming ipsum magna dictum interdum.
-//                         </p>
-//                     </Container>
-//                 </div>
-//             </div>
-//         </Jumbotron>
-//     );
+//  import React, { Component } from 'react';
+// import {Jumbotron, Container} from 'react-bootstrap';
+// import Navbar from '../partials/Navbar';
+// import profilePic from '../../imgs/profile.png';
+
+
+
+// export default class MainHeader extends Component {
+//     constructor() {
+//         super()
+      
+//         this.state = {
+//           offset: 0
+//         };
+//     }
+
+//     componentDidMount() {
+//         window.addEventListener('scroll', this.parallaxShift);
+//     }
+
+//     componentWillUnmount() {
+//         window.removeEventListener('scroll', this.parallaxShift);
+//     }
+
+//     parallaxShift = () => {
+//         this.setState({
+//           offset: window.pageYOffset
+//         });
+//     };
+
+//     render() {
+//         return (
+//             <section className="header--section">
+//                 <Jumbotron fluid className="header--overlay"
+//                     style={ { backgroundPositionY: this.state.offset} }
+//                 >
+//                     <div className="header content"
+//                         style={{ bottom: this.state.offset / 2 }}>
+//                         <Container className="header--text">
+//                         <h1>Bolder Hello Title</h1>
+//                             <h1>Chris Lemus</h1>
+//                             <p>
+//                             Hello, I’m a Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
+//                             efficient and innovative experiences that balance user needs and business goals..</p>
+//                         </Container>
+//                         <Container className="header--image">
+//                             <img 
+//                                 src={profilePic}
+//                                 alt="chris"
+//                                 className="header--thumbnail"/>
+//                         </Container>
+//                     </div>
+//                 </Jumbotron>
+//             </section>
+//         );
+//     }
+
 //  }

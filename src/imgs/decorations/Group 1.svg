@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148.457" height="152.441" viewBox="0 0 148.457 152.441">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="bgicon" d="M119.33,20.13C83.916-14.851,53.751,1.058,48.5,27.709S-5.509,59.682.514,91.161s71.6,12.788,71.6,41.316,75.819,27.544,75.819-9.837S154.744,55.112,119.33,20.13Z" transform="translate(0 0)" fill="rgba(255,255,255,0.2)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+    <path id="bgicon-2" data-name="bgicon" d="M119.33,20.13C83.916-14.851,53.751,1.058,48.5,27.709S-5.509,59.682.514,91.161s71.6,12.788,71.6,41.316,75.819,27.544,75.819-9.837S154.744,55.112,119.33,20.13Z" transform="translate(0 0)" fill="rgba(255,255,255,0.2)"/>
+    <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <g id="Color_Blue" data-name="Color/Blue" transform="translate(0.001 -0.001)" opacity="0.2">
+        <rect id="Rectangle" width="150" height="154" transform="translate(-0.001 -0.04)" fill="#459eff"/>
+      </g>
+    </g>
+  </g>
+</svg>

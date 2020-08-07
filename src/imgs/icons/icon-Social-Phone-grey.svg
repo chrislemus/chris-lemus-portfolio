@@ -1,0 +1,13 @@
+<svg id="icon_Social_Phone_grey" data-name="icon/Social/Phone/grey" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="55" height="55" viewBox="0 0 55 55">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_2" data-name="Clip 2" d="M0,0H55V55H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icon_home_phone" data-name="icon/home/phone">
+    <path id="Clip_2-2" data-name="Clip 2" d="M0,0H55V55H0Z" fill="none"/>
+    <g id="icon_home_phone-2" data-name="icon/home/phone" clip-path="url(#clip-path)">
+      <path id="Fill_1" data-name="Fill 1" d="M24.812,30.19C15.23,20.608,16.6,19.239,16.6,19.239l4.108-4.106a3.871,3.871,0,0,0,0-5.474L12.189,1.14A3.859,3.859,0,0,0,6.906.958C4.4,3.181,1.01,6.849.173,11.028-1.2,17.871,5.65,27.453,16.6,38.4S37.131,56.2,43.973,54.828c4.179-.836,7.847-4.222,10.07-6.732a3.859,3.859,0,0,0-.182-5.283L45.342,34.3a3.871,3.871,0,0,0-5.474,0L35.762,38.4s-1.369,1.369-10.95-8.213" transform="translate(0 -0.001)" fill="#0063f5"/>
+    </g>
+  </g>
+</svg>
