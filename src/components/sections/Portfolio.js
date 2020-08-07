@@ -44,7 +44,7 @@ export default class Portfolio extends Component{
   componentDidMount() {
     this.updateResultsPerPage()
     window.addEventListener("resize", () => {
-      {this.setState({windowWidth: window.innerWidth})}
+      this.setState({windowWidth: window.innerWidth});
       this.updateResultsPerPage()
     })
   }

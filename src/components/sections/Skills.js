@@ -45,14 +45,12 @@ export default class Skills extends Component{
         this.setState({tabSelected: tabName})
     }
 
-    getTabs() {
-        const tabs = []
-        skillsData.map(skill => {   
-            tabs.push(<Tab eventKey={skill.name} title={skill.name} key={skill.id}>
+    getTabs() {        
+        return skillsData.map(skill => {   
+            return (<Tab eventKey={skill.name} title={skill.name} key={skill.id}>
                         <p>{skill.description}</p>
                     </Tab>)
         })
-        return tabs
     }
 
     getImg() {
