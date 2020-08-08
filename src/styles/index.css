@@ -55,8 +55,13 @@ a:hover {
 
 #main-header{
     background: #0063F5;
+}
+
+#main-header > div{
     padding-top: 6.875em;
     padding-bottom: 8.875em;
+    background: url('../imgs/main-header-decoration.svg');
+    background-size: cover;
     margin-bottom: 0;
 }
 
@@ -67,13 +72,18 @@ a:hover {
 }
 
 #skills-section {
-    margin-bottom: 8em;
-    margin-top: 12em;
+    padding-top: 12em;
+    padding-bottom: 15em;
+    margin-bottom: 3em;
+    position: relative;
 }
 
 #contact-section {
-    padding-top: 12em;
-    padding-bottom: 10em;
+    padding-top: 13em;
+    padding-bottom: 1em;
+    position: relative;    
+    background: url('../imgs/decorations/contact-section-bg.svg');
+    background-size: cover;
 }
 
 /* --------- Page Elements --------- */
@@ -129,6 +139,7 @@ a:hover {
 }
 
 .project-card{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     height: 100%;
@@ -146,6 +157,17 @@ a:hover {
     0 41.8px 33.4px rgba(0, 0, 0, 0.05),
     0 100px 80px rgba(0, 0, 0, 0.07)
     ;
+}
+
+.card-deco-first {
+    position: absolute;
+    top: -4em;
+}
+
+.card-deco-last {
+    position: absolute;
+    bottom: -4em;
+    right: 0;
 }
 
 .card-img{
@@ -228,6 +250,32 @@ a:hover {
 
 /* ------- skills ------- */
 
+.water-deco {
+    position: absolute;
+    right: 0;
+    top: -3em;
+}
+
+.half-circle-deco-skill{  
+    display: none;
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+}
+
+.circle-deco-skill {
+    position: absolute;
+    bottom: 10%;
+    left: 1.5%;
+}
+
+.square-deco-skill {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
+
+
 .skill-img {
     display: flex;
     flex-wrap: wrap;
@@ -236,6 +284,7 @@ a:hover {
 .skill-img img{
     width: 100%;
     margin-top: auto;
+    margin-bottom: auto;
     max-height: 200px;
 }
 
@@ -273,6 +322,8 @@ a:hover {
 }
 
 /* ------- contact ------- */
+
+
 
 .contact-modal {
     display: flex;
@@ -321,6 +372,19 @@ a:hover {
     margin-bottom: 1em;
 }
 
+.page-top-button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15em;
+    background: #7AAFFF;
+    border: none;
+    color: #FFFF;
+    border-radius: 15px;
+    font-size: 1.2em;
+    padding: .3em;
+}
+
 /* --------- Pseudo Elements --------- */
 
 /* =====================================
@@ -359,12 +423,46 @@ a:hover {
         flex-direction: row;
     }
 
+    .card-deco-first {
+        left: -25%;
+    }
+
+    .card-deco-last {
+        right: -25%;
+    }
+
     .skill-img img{
         max-height: 300px;
     }
 
+    .water-deco { /*skill section water decoration*/
+        position: absolute;
+        right: 10%;
+        top: 1em;
+    }
+
+    .half-circle-deco-skill{  
+        display: block;
+        bottom: 50%;
+        left: 5%;
+    }
+    
+    .circle-deco-skill {
+        bottom: 10%;
+        left: 1.5%;
+    }
+    
+    .square-deco-skill {
+        bottom: 0;
+        left: 10%;
+    }
+
     .contact-modal > div{
         justify-content: space-evenly;
+    }
+
+    .contact-info img{
+        height: 70px;
     }
     
 

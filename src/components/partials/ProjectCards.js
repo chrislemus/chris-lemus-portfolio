@@ -1,6 +1,7 @@
 import React from 'react';
 import projectsDB from '../../data/projectsData';
 import {Container, Row, Col,} from 'react-bootstrap'
+import dottedSquare from '../../imgs/decorations/dotted-square-blue.svg'
 
 
 export default (props) => {
@@ -26,7 +27,8 @@ export default (props) => {
         let project = projectsDB[projectIndex]
         projectCards.push(
           <Col key={project.id}>
-            <div className="project-card">
+            {getDecoration(firstProject, lastProject, projectIndex)}
+            <div className="project-card" >
               <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
               <div className="card-body">
                 <h5>{project.project_name}</h5>
@@ -60,6 +62,14 @@ export default (props) => {
       }
         
       return (<ul className="project-icons-container">{icons}</ul>)
-  }
+    }
+
+    function getDecoration(firstProject, lastProject, projectIndex) {
+      if(firstProject === projectIndex) {
+        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-first"/>
+      } else if(lastProject - 1 === projectIndex) {
+        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-last"/>
+      }
+    }
 
  }

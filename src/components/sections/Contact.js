@@ -4,6 +4,7 @@ import {Container} from 'react-bootstrap';
 import PhoneIcon from '../../imgs/icons/phone-icon3.png';
 import EmailIcon from '../../imgs/icons/email-icon3.png';
 
+
 export default () => {
     return (
       <div id="contact-section">
@@ -27,6 +28,12 @@ export default () => {
                 </div>
             </div>
         </Container>
+        <button className="page-top-button" onClick={() => {scrollToTop()}}>BACK TO TOP</button>
       </div>
     );
+    
+    function scrollToTop() { 
+        window.scrollTo(0, 0); 
+    } 
+
  }

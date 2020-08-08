@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import skillsData from '../../data/skillsData';
 import {Container, Row, Col, Tabs, Tab} from 'react-bootstrap';
+import WaterSplash from '../../imgs/decorations/water-splash.svg'
+import Circle from '../../imgs/decorations/sm-circle.svg'
+import HalfCircle from '../../imgs/decorations/sm-half-circle.svg'
+import Square from '../../imgs/decorations/sm-square.svg'
+
 
 export default class Skills extends Component{
 
@@ -19,6 +24,10 @@ export default class Skills extends Component{
 
         return (
             <div id="skills-section">
+                <img src={WaterSplash} alt="water-splash" className="water-deco"/>
+                <img src={Circle} alt="circle" className="circle-deco-skill"/>
+                <img src={HalfCircle} alt="half-circle" className="half-circle-deco-skill"/>
+                <img src={Square} alt="square" className="square-deco-skill"/>
                 <Container>
                     <Row>
                         <Col xs="12" sm="6" className="skill-img" >
