@@ -17,7 +17,7 @@ export default () => {
             alt="site-logo"
           />
         </Navbar.Brand>
-        <Navbar.Toggle id="nav-toggler-icon" style={{fill: "red"}}/>
+        <Navbar.Toggle id="nav-toggler-icon" />
         <Navbar.Collapse >
           <Nav className="ml-auto nav-menu-items">
             <Nav.Link href="/">Home</Nav.Link>

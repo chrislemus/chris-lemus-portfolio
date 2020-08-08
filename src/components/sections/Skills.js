@@ -18,25 +18,27 @@ export default class Skills extends Component{
 
 
         return (
-            <Container className="skills-section">
-                <Row>
-                    <Col xs="12" sm="6" className="skill-img" >
-                        {this.getImg()}
-                    </Col>
-                    <Col className="tab-container">
-                        <div className="skills-header">
-                            <h1>My Skills</h1>
-                        </div>
-                        <Tabs
-                            id="controlled-tab-example"
-                            defaultActiveKey={tabSelected}
-                            onSelect={this.tabClick.bind(this)}>
-                            
-                            {this.getTabs()}
-                        </Tabs>
-                    </Col>
-                </Row>
-            </Container>
+            <div id="skills-section">
+                <Container>
+                    <Row>
+                        <Col xs="12" sm="6" className="skill-img" >
+                            {this.getImg()}
+                        </Col>
+                        <Col className="tab-container">
+                            <div className="skills-header">
+                                <h1>My Skills</h1>
+                            </div>
+                            <Tabs
+                                id="controlled-tab-example"
+                                defaultActiveKey={tabSelected}
+                                onSelect={this.tabClick.bind(this)}>
+                                
+                                {this.getTabs()}
+                            </Tabs>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 
