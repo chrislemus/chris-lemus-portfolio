@@ -38,7 +38,7 @@ export default (props) => {
 
                 <div className="project-card-buttons">
                   <a href={project.github_repo} target="_blank" rel="noopener noreferrer">Github Repo</a>
-                  <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer">Another Link</a>
+                  <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer">Live Demo</a>
                 </div>
               </div>
             </div>
@@ -54,6 +54,7 @@ export default (props) => {
     function getProjectIcons(project) {
       let icons = []
       project.technologies.forEach(getImgs)
+
       function getImgs(img, index) {
         icons.push(<li key={index}><img className="project-icons" src={img} alt="tech-icon"/></li>)
       }

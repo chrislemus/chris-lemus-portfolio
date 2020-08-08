@@ -41,6 +41,13 @@ p {
     color: #808080;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none ;
+}
 
 /* =====================================
  Base Layout Styles
@@ -223,7 +230,7 @@ p {
 .skill-img img{
     width: 100%;
     margin-top: auto;
-
+    max-height: 240px;
 }
 
 .skills-header{
@@ -303,8 +310,8 @@ p {
 }
 
 .contact-info img{
-    /* width: 100px; */
     height: 40px;
+    margin-bottom: 1em;
 }
 
 /* --------- Pseudo Elements --------- */
@@ -343,6 +350,10 @@ p {
 
     .card-deck {
         flex-direction: row;
+    }
+
+    .skill-img img{
+        max-height: none;
     }
 
 }
