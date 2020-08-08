@@ -9,7 +9,7 @@ export default () => {
       <div id="contact-section">
         <Container >
             <div className="contact-modal">
-                <h2>Contact</h2>
+                <h1>Contact</h1>
                 <p>Would love to talk?. Shout me out here...</p>
                 <div>
                     <div className="contact-info">

@@ -63,10 +63,22 @@ a:hover {
 #portfolio {
     background: #F4F5FA;
     padding-top: 6.875em;
-    padding-bottom: 6.875em;
+    padding-bottom: 12em;
 }
+
+#skills-section {
+    margin-bottom: 8em;
+    margin-top: 12em;
+}
+
+#contact-section {
+    padding-top: 12em;
+    padding-bottom: 10em;
+}
+
 /* --------- Page Elements --------- */
 
+/* ------- navbar ------- */
 #navbar a{
     color: #E6EFFE;
 }
@@ -79,6 +91,8 @@ a:hover {
 .navbar-toggler-icon {
     background-image: url("../imgs/utilities/Menu.svg") !important;
 }
+
+/* ------- main header ------- */
 
 .main-header-img {
     width: 100%;
@@ -93,13 +107,16 @@ a:hover {
     color: #7AAFFF;
 }
 
-#portfolio {
-    padding-bottom: 8em;
-}
+
+/* ------- portfolio ------- */
 
 .portfolio-heading {
     text-align: center;
     padding-bottom: 3.5em;
+}
+
+.portfolio-heading h1 {
+    padding-bottom: .8em;
 }
 
 .card-deck {
@@ -119,7 +136,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-width: 420px;
+    max-width: 320px;
     background-color: #ffff;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -163,14 +180,16 @@ a:hover {
 }
 
 .project-card-buttons a:first-child{
-    color: #7AAFFF;
+    color: #0063F5;
 }
 
 .project-card-buttons a:last-child{
     padding: 3px 15px;
     color: #ffff;
-    background-color: #7AAFFF;
+    background: linear-gradient(180deg, rgba(122,175,255,1) 25%, rgb(42, 127, 255) 75%);
     border-radius: 25px;
+    box-shadow: 2px 2px 25px rgba(0, 98, 245, 0.301)
+;
 }
 
 .project-card-buttons a:hover{
@@ -181,12 +200,9 @@ a:hover {
 
 .project-card-buttons a{
     transition: ease-in-out .2s;
-
 }
 
-
-
-
+/* ------- project pagination ------- */
 
 .pagination {
     justify-content: center;
@@ -210,15 +226,7 @@ a:hover {
 }
 
 
-
-
-
-
-
-#skills-section {
-    margin-bottom: 7em;
-    margin-top: 8em;
-}
+/* ------- skills ------- */
 
 .skill-img {
     display: flex;
@@ -264,13 +272,7 @@ a:hover {
     border-bottom: .1em solid #0063F5 !important;
 }
 
-
-
-
-#contact-section {
-    padding-top: 7em;
-    padding-bottom: 10em;
-}
+/* ------- contact ------- */
 
 .contact-modal {
     display: flex;
@@ -279,6 +281,7 @@ a:hover {
     text-align: center;
     padding-top: 4em;
     padding-bottom: 5em;
+    background: linear-gradient(164deg, rgba(255,255,255,1) 74%, rgba(248,252,255,1) 74%);;
     box-shadow:
     0 0px 2.2px rgba(0, 0, 0, 0.02),
     0 0px 5.3px rgba(0, 0, 0, 0.028),
@@ -290,7 +293,7 @@ a:hover {
     
 }
 
-.contact-modal h2, p{
+.contact-modal h1, p{
     display: block;
 }
 
@@ -305,6 +308,12 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    transition: ease-in-out .2s;
+}
+
+.contact-info:hover {
+    transform: scale(1.1);
+    filter: saturate(400%);
 }
 
 .contact-info img{
@@ -352,6 +361,10 @@ a:hover {
 
     .skill-img img{
         max-height: 300px;
+    }
+
+    .contact-modal > div{
+        justify-content: space-evenly;
     }
     
 

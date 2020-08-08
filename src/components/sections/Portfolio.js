@@ -26,7 +26,7 @@ export default class Portfolio extends Component{
       return (
         <section id="portfolio" >
           <div className="portfolio-heading">
-            <h2>Portfolio</h2>
+            <h1>Portfolio</h1>
             <p>Technology is impacting every aspect of our life more and more each day.</p>
             <p>So lets create something impactful.</p>
           </div>

@@ -3,7 +3,7 @@ import {
     Nav,
     Navbar,
  } from 'react-bootstrap';
- import logo from '../../imgs/logo.svg';
+ import logo from '../../imgs/icons/logo.png';
 
 
 export default () => {
