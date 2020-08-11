@@ -5,15 +5,21 @@ const Context = React.createContext();
 export class Provider extends Component {
 
     state = {
-        project: null
+        project: null,
+        activePage: 1,
+        resultsPerPage: 3
     };
 
     render() {
         const { 
             project,
+            activePage,
+            resultsPerPage
         } = this.state;
         const value = {
             project,
+            activePage,
+            resultsPerPage,
             actions: {
                 refreshPage: this.refreshPage
             }

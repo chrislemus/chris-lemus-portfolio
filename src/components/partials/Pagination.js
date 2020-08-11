@@ -49,11 +49,19 @@ export default (props) => {
 
     for (let number = 1; number <= totalPages; number++) {
       let isActiveItem = number === activePage;
+
+      //prevents active button from triggering 'pageSelect' func twice
+      const disable = () => {if (!isActiveItem) { 
+        return (pageSelect(number))
+      } else {
+        return null
+      }}
+
       items.push(
         <Pagination.Item 
           key={number} 
           active={isActiveItem} 
-          onClick={() => pageSelect(number)}>
+          onClick={disable}>
           {number}
         </Pagination.Item>,
       );

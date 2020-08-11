@@ -1,21 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
 import projectsDB from '../../data/projectsData';
 import {Container, Row, Col,} from 'react-bootstrap'
 import dottedSquare from '../../imgs/decorations/dotted-square-blue.svg'
 
+export default class ProjectCards extends Component {
 
-export default (props) => {
+  state = {
+    offset: 0,
+  }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.parallaxShift);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.parallaxShift);
+  }
+
+  parallaxShift = () => {
+      this.setState({
+        offset: window.pageYOffset
+      });
+  };
+
+
+  render() {
     return (
-      <Container >
-        <Row className="card-deck">
-          {getProjects()}
-        </Row>
-      </Container>
+        <Container >
+          <Row className="card-deck" key={this.props.activePage}>
+            {this.getProjects()}
+          </Row>
+        </Container>
     );
+  }
 
-    function getProjects ()  {
-      const {activePage, resultsPerPage} = props;
+    getProjects ()  {
+
+      const {
+        activePage,
+        resultsPerPage,
+      } = this.props
 
       let projectCards = [];
   
@@ -27,14 +51,14 @@ export default (props) => {
         let project = projectsDB[projectIndex]
         projectCards.push(
           <Col key={project.id}>
-            {getDecoration(firstProject, lastProject, projectIndex)}
-            <div className="project-card" >
+            {this.getDecoration(firstProject, lastProject, projectIndex)}
+            <div className="project-card fade-in">
               <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
               <div className="card-body">
                 <h5>{project.project_name}</h5>
                 <p>{project.description}</p>
 
-                {getProjectIcons(project)}
+                {this.getProjectIcons(project)}
 
                 {project.warnMsg ? <p>{project.warnMsg[0]}</p> : null }
 
@@ -53,7 +77,7 @@ export default (props) => {
 
 
 
-    function getProjectIcons(project) {
+    getProjectIcons(project) {
       let icons = []
       project.technologies.forEach(getImgs)
 
@@ -64,11 +88,11 @@ export default (props) => {
       return (<ul className="project-icons-container">{icons}</ul>)
     }
 
-    function getDecoration(firstProject, lastProject, projectIndex) {
+    getDecoration(firstProject, lastProject, projectIndex) {
       if(firstProject === projectIndex) {
-        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-first"/>
+        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-first" style={ { transform: 'translateY('+this.state.offset*.1+'%)'}}/>
       } else if(lastProject - 1 === projectIndex) {
-        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-last"/>
+        return <img src={dottedSquare} alt="dotted-squares" className="card-deco-last" style={ { transform: 'translateY('+this.state.offset*.1+'%)'}}/>
       }
     }
 

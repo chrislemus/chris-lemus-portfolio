@@ -7,20 +7,24 @@ import ProjectCards from '../partials/ProjectCards';
 
 export default class Portfolio extends Component{
 
+  constructor() {
+    super()
+    this.cardDeck = React.createRef();
+  }
   state = {
     activePage: 1,
     screenSize: "sm",
     resultsPerPage: null,
     totalPages: 1,
     totalProjects: projectsDB.length,
-    windowWidth: window.innerWidth
+    windowWidth: window.innerWidth,
   }
 
   render() {
       const {
         activePage,
         totalPages,
-        screenSize
+        screenSize,
       } = this.state
 
       return (
@@ -30,13 +34,16 @@ export default class Portfolio extends Component{
             <p>Technology is impacting every aspect of our life more and more each day.</p>
             <p>So lets create something impactful.</p>
           </div>
-          {this.getProjects()}
-          
+
+          <div ref={div => this.cardDeck = div}>
+            {this.getProjects()}
+          </div>
           <Pagination 
             activePage={activePage} 
             totalPages={totalPages}
             pageSelect={this.pageSelect}
             screenSize={screenSize}/>
+          
         </section>
       );
   }

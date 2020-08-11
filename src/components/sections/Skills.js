@@ -13,21 +13,21 @@ export default class Skills extends Component{
 
     state = {
         tabSelected: "Code",
-
+        offset: 0
     }
 
     render() {
 
-        const {tabSelected} = this.state;
+        const {tabSelected, offset} = this.state;
 
 
 
         return (
             <div id="skills-section">
                 <img src={WaterSplash} alt="water-splash" className="water-deco"/>
-                <img src={Circle} alt="circle" className="circle-deco-skill"/>
-                <img src={HalfCircle} alt="half-circle" className="half-circle-deco-skill"/>
-                <img src={Square} alt="square" className="square-deco-skill"/>
+                <img src={Circle} alt="circle" className="circle-deco-skill" style={ { bottom: (offset/20) }}/>
+                <img src={HalfCircle} alt="half-circle" className="half-circle-deco-skill" style={ { bottom: (offset/5) }}/>
+                <img src={Square} alt="square" className="square-deco-skill" style={ { bottom: offset/60 }}/>
                 <Container>
                     <Row>
                         <Col xs="12" sm="6" className="skill-img" >
@@ -67,7 +67,22 @@ export default class Skills extends Component{
     getImg() {
         const {tabSelected} = this.state;
         const skill = skillsData.find((skill) => skill.name === tabSelected)
-        return <img src={skill.img} alt={skill.name} />
+        return <img src={skill.img} alt={skill.name} className="blow-out"/>
     
     }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.parallaxShift);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.parallaxShift);
+    }
+
+    parallaxShift = () => {
+        this.setState({
+        offset: window.pageYOffset
+        });
+    };
+
 }
