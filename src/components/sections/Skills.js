@@ -50,10 +50,12 @@ export default class Skills extends Component{
                                     <ul className="code-skill-ul">
                                         <li>Express</li>
                                         <li>Node JS</li>
+                                        <li>JQuery</li>
                                         <li>NPM</li>
                                         <li>MySQL</li>
                                         <li>Git</li>
                                         <li>Bootstrap and other front-end frameworks</li>
+                                        <li>SASS</li>
                                         <li>HTML5 stack</li>
                                         <li>CSS3</li>
                                     </ul>
