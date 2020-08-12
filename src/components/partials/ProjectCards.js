@@ -43,7 +43,8 @@ export default class ProjectCards extends Component {
                 <h5>{project.project_name}</h5>
                 <p>{project.description}</p>
 
-                {this.getProjectIcons(project)}
+                {/*will add this soon*/}
+                {/* {this.getProjectIcons(project)} */}
 
                 {project.warnMsg ? <p>{project.warnMsg[0]}</p> : null }
 
