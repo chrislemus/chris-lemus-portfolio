@@ -53,6 +53,7 @@ export default class Skills extends Component{
                                             <li>Node JS</li>
                                             <li>NPM</li>
                                             <li>MySQL</li>
+                                            <li>Git</li>
                                             <li>Bootstrap and other front-end frameworks</li>
                                             <li>HTML5 stack</li>
                                             <li>CSS3</li>
@@ -85,8 +86,8 @@ export default class Skills extends Component{
                                         In depth knowledge of Video/Image formats: Through my freelance work I have developed skills with PhotoShop, Premiere Pro,
                                          After Effects, and other Adobe Suite programs. Video has proven to help with branding and increase site conversion rate. Check out my latest projects below.
                                     </p>
-                                    <iframe src="https://fast.wistia.net/embed/iframe/sizbswz78p" allow="autoplay; fullscreen"  frameBorder="0" allowFullScreen width="45%" height="45%" style={{paddingRight: "8px"}}/>
-                                    <iframe src="https://player.vimeo.com/video/389623594" width="50%" height="50%" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen/>  
+                                    <iframe src="https://fast.wistia.net/embed/iframe/sizbswz78p" title="Maids Next Door Promo" allow="autoplay; fullscreen"  frameBorder="0" allowFullScreen width="45%" height="45%" style={{paddingRight: "8px"}}/>
+                                    <iframe src="https://player.vimeo.com/video/389623594" title="Anchor Auto Outlet Promo" width="50%" height="50%" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen/>  
                                 </Tab>
 
 
