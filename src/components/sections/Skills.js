@@ -65,7 +65,7 @@ export default class Skills extends Component{
                                 <Tab eventKey="Business" title="Business" key="2">
                                     <p>
                                         As someone who started two local service businesses, I will use my experience to deliver a 
-                                        product that is tailored to your project/business needs. *check out businesses below
+                                        product that is tailored to your project/business goals. *check out businesses below
                                     </p>
                                     <ul>
                                         <li>
