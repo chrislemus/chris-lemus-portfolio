@@ -39,10 +39,12 @@ export default class Contact extends Component{
         );
     }
     
+    //function will scroll client window to top of page
     scrollToTop() { 
         window.scrollTo(0, 0); 
     } 
 
+    //we'll listen for scroll and update component state to add parallax effect
     componentDidMount() {
         window.addEventListener('scroll', this.parallaxShift);
     }

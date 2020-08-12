@@ -44,9 +44,8 @@ export default class Skills extends Component{
                                 
                                 <Tab eventKey="Code" title="Code" key="1">
                                     <p>
-                                        Full Stack Javascript Developer. Creating responsive and fast WebApps. More info on this site 
-                                        <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io" target="_blank" rel="noopener noreferrer"> View PageSpeed</a> | 
-                                        <a href="https://github.com/chrislemus/chris-lemus-portfolio" target="_blank" rel="noopener noreferrer"> View Github Repo </a>
+                                        Full Stack Javascript Developer. Creating responsive and fast WebApps.
+                                        <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io" target="_blank" rel="noopener noreferrer"> View this site PageSpeed</a>
                                     </p>
                                     <p>
                                         <ul>
@@ -109,19 +108,16 @@ export default class Skills extends Component{
         )
     }
 
+    /**
+     * 
+     * @param {string} event tab name(event clicked) 
+     */
     tabClick(e) {
         const tabName = e;
         this.setState({tabSelected: tabName})
     }
 
-    getTabs() {        
-        return skillsData.map(skill => {   
-            return (<Tab eventKey={skill.name} title={skill.name} key={skill.id}>
-                        <p>{skill.description}</p>
-                    </Tab>)
-        })
-    }
-
+    //skill section main image will display using state 'tab selected'
     getImg() {
         const {tabSelected} = this.state;
         const skill = skillsData.find((skill) => skill.name === tabSelected)
@@ -129,6 +125,7 @@ export default class Skills extends Component{
     
     }
 
+    //we'll listen for scroll and update component state to add parallax effect
     componentDidMount() {
         window.addEventListener('scroll', this.parallaxShift);
     }

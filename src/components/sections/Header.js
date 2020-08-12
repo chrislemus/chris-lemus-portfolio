@@ -6,18 +6,10 @@ import profilePic from '../../imgs/profile.png';
 
 
 export default class MainHeader extends Component {
-    constructor() {
-        super()
-      
-        this.state = {
+    state = {
           offset: 0
-        };
-    }
+    };
 
-
-    /*======================*/
-    /*===========  do i need state component?  ===========*/
-    /*======================*/
     render() {
         const offset = this.state.offset/2;
         return (
@@ -47,6 +39,7 @@ export default class MainHeader extends Component {
         );
     }
 
+    //we'll listen for scroll and update component state to add parallax effect
     componentDidMount() {
         window.addEventListener('scroll', this.parallaxShift);
     }

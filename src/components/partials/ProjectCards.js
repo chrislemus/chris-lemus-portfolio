@@ -9,21 +9,6 @@ export default class ProjectCards extends Component {
     offset: 0,
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.parallaxShift);
-  }
-
-  componentWillUnmount() {
-      window.removeEventListener('scroll', this.parallaxShift);
-  }
-
-  parallaxShift = () => {
-      this.setState({
-        offset: window.pageYOffset
-      });
-  };
-
-
   render() {
     return (
         <Container >
@@ -76,7 +61,10 @@ export default class ProjectCards extends Component {
     }
 
 
-
+    /**
+     * 
+     * @param {object} project object contains project information
+     */
     getProjectIcons(project) {
       let icons = []
       project.technologies.forEach(getImgs)
@@ -84,10 +72,15 @@ export default class ProjectCards extends Component {
       function getImgs(img, index) {
         icons.push(<li key={index}><img className="project-icons" src={img} alt="tech-icon"/></li>)
       }
-        
       return (<ul className="project-icons-container">{icons}</ul>)
     }
 
+    /**
+     * 
+     * @param {Int} firstProject if project on page active, is first project. We'll add a background decoration
+     * @param {Int} lastProject if project on page active, is last project. We'll add a background decoration
+     * @param {Int} projectIndex current project index(identifier)
+     */
     getDecoration(firstProject, lastProject, projectIndex) {
       if(firstProject === projectIndex) {
         return <img src={dottedSquare} alt="dotted-squares" className="card-deco-first" style={ { transform: 'translateY('+this.state.offset*.1+'%)'}}/>
@@ -95,5 +88,20 @@ export default class ProjectCards extends Component {
         return <img src={dottedSquare} alt="dotted-squares" className="card-deco-last" style={ { transform: 'translateY('+this.state.offset*.1+'%)'}}/>
       }
     }
+
+    //we'll listen for scroll and update component state to add parallax effect
+    componentDidMount() {
+      window.addEventListener('scroll', this.parallaxShift);
+    }
+  
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.parallaxShift);
+    }
+  
+    parallaxShift = () => {
+        this.setState({
+          offset: window.pageYOffset
+        });
+    };
 
  }

@@ -21,6 +21,7 @@ export default (props) => {
     const firstPage = 1;
     const lastPage = totalPages;
 
+    //condition for disabling page item if first or last page is selected
     const disableLast = () => {if(activePage === lastPage) {return true}}
     const disableFirst = () => {if(activePage === firstPage) {return true}}
 
@@ -47,6 +48,7 @@ export default (props) => {
 
     let items = [];
 
+    //this will create page items based on total pages needed. 
     for (let number = 1; number <= totalPages; number++) {
       let isActiveItem = number === activePage;
 
@@ -57,6 +59,7 @@ export default (props) => {
         return null
       }}
 
+      //adds page item to 'items' array
       items.push(
         <Pagination.Item 
           key={number} 

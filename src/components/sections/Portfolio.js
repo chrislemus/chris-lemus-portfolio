@@ -48,6 +48,7 @@ export default class Portfolio extends Component{
       );
   }
 
+  //initially triggers page results function and listens for any window size changes
   componentDidMount() {
     this.updateResultsPerPage()
     window.addEventListener("resize", () => {
@@ -56,10 +57,15 @@ export default class Portfolio extends Component{
     })
   }
 
+  /**
+   * 
+   * @param {Int} pageNum page number being selected
+   */
   pageSelect = (activePage) => {
     this.setState({activePage})
   }
 
+  //updates projects results on each page based on window width
   updateResultsPerPage = () => {
     const {windowWidth} = this.state
     const smScreenResults = 2;
@@ -86,7 +92,7 @@ export default class Portfolio extends Component{
     
   }
   
-
+  //retrieves pagination information and returns project card components
   getProjects () {
     const {
       activePage,

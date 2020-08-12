@@ -3,9 +3,8 @@ import Header from '../sections/Header';
 import Contact from '../sections/Contact';
 import Portfolio from '../sections/Portfolio';
 import Skills from '../sections/Skills';
-// import withContext from '../../Context';
 
-
+//main homepage
 export default () => {
     return (
       <div>
