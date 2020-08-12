@@ -47,18 +47,16 @@ export default class Skills extends Component{
                                         Full Stack Javascript Developer. Creating responsive and fast WebApps.
                                         <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io" target="_blank" rel="noopener noreferrer"> View this site PageSpeed</a>
                                     </p>
-                                    <p>
-                                        <ul>
-                                            <li>Express</li>
-                                            <li>Node JS</li>
-                                            <li>NPM</li>
-                                            <li>MySQL</li>
-                                            <li>Git</li>
-                                            <li>Bootstrap and other front-end frameworks</li>
-                                            <li>HTML5 stack</li>
-                                            <li>CSS3</li>
-                                        </ul>
-                                    </p>
+                                    <ul className="code-skill-ul">
+                                        <li>Express</li>
+                                        <li>Node JS</li>
+                                        <li>NPM</li>
+                                        <li>MySQL</li>
+                                        <li>Git</li>
+                                        <li>Bootstrap and other front-end frameworks</li>
+                                        <li>HTML5 stack</li>
+                                        <li>CSS3</li>
+                                    </ul>
                                 </Tab>
 
 

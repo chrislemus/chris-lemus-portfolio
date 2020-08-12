@@ -96,7 +96,7 @@ a:hover {
 }
 
 #contact {
-    padding-top: 13em;
+    padding-top: 5em;
     padding-bottom: 1em;
     position: relative;    
     background: url('../imgs/decorations/contact-section-bg.svg');
@@ -355,6 +355,10 @@ a:hover {
 .nav-tabs .active {
     border: none !important;
     border-bottom: .1em solid #0063F5 !important;
+}
+
+.code-skill-ul {
+    color: #808080;
 }
 
 /* ------- contact ------- */
