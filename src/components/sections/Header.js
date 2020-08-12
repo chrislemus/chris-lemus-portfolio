@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {Jumbotron, Container, Col, Row} from 'react-bootstrap';
 import profilePic from '../../imgs/profile.png';
 
@@ -30,6 +31,7 @@ export default class MainHeader extends Component {
                                     <p>
                                     A Full Stack JavaScript Developer from Raleigh, North Carolina. I create 
                                     efficient and innovative experiences that balance user needs and business goals.</p>
+                                    <Link to="/files/Cristian_Lemus.vcf" target="_blank" className="header-btn">Download VCard</Link>
                                 </Col>
                                 <Col style={ { bottom: offset}}>
                                     <img 

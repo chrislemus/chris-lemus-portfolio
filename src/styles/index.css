@@ -65,6 +65,21 @@ a:hover {
     margin-bottom: 0;
 }
 
+.header-btn {
+    display: inline-block;
+    color: white;
+    padding: .5em 1em;
+    background: #7AAFFF;
+    border-radius: 30px;
+    transition: ease .3s;
+}
+
+.header-btn:hover {
+    color: white;
+    transform: scale(1.1);
+    filter: brightness(1.05);
+}
+
 #portfolio {
     background: #F4F5FA;
     padding-top: 6.875em;
@@ -73,14 +88,14 @@ a:hover {
     overflow-y: hidden;
 }
 
-#skills-section {
+#skills {
     padding-top: 12em;
     padding-bottom: 15em;
     margin-bottom: 3em;
     position: relative;
 }
 
-#contact-section {
+#contact {
     padding-top: 13em;
     padding-bottom: 1em;
     position: relative;    
@@ -408,44 +423,14 @@ a:hover {
      VFX
 ===================================== */
 
-.fade-out {
-    animation: fade-out ;
-    animation-duration: .5s;
-    animation-direction: alternate;
-}
 
 .fade-in {
-    animation: fade-in .2s;
+    animation: fade-in .8s;
 }
-
-.blow-out {
-    /* -webkit-transform: perspective(300px) rotateX(30deg); */
-    /* transform: perspective(300px) rotateX(30deg);
-    width: 20px; */
-    /* background-color: red; */
-}
-/* The animation code */
-@keyframes fade-out {
-    from {
-        opacity: 100%;
-        transform: translateX(0%);
-    }
-    to {
-        opacity: 0%;
-        transform: translateX(-200%);
-    }
-}
-
 
 @keyframes fade-in {
-    from {
-        opacity: 0;
-;
-    }
-    to {
-        opacity: 100%;
-;
-    }
+    from { opacity: 0; }
+    to { opacity: 100%; }
 }
 
 

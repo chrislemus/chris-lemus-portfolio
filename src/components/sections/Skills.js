@@ -23,7 +23,7 @@ export default class Skills extends Component{
 
 
         return (
-            <div id="skills-section">
+            <div id="skills">
                 <img src={WaterSplash} alt="water-splash" className="water-deco"/>
                 <img src={Circle} alt="circle" className="circle-deco-skill" style={ { bottom: (offset/20) }}/>
                 <img src={HalfCircle} alt="half-circle" className="half-circle-deco-skill" style={ { bottom: (offset/5) }}/>
@@ -67,7 +67,7 @@ export default class Skills extends Component{
     getImg() {
         const {tabSelected} = this.state;
         const skill = skillsData.find((skill) => skill.name === tabSelected)
-        return <img src={skill.img} alt={skill.name} className="blow-out"/>
+        return <img src={skill.img} alt={skill.name} className="fade-in" key={skill.id}/>
     
     }
 

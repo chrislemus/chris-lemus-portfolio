@@ -13,7 +13,7 @@ export default class Contact extends Component{
 
     render() {
         return (
-        <div id="contact-section" style={ { backgroundPositionY: ((this.state.offset*.1) - 200)}}>
+        <div id="contact" style={ { backgroundPositionY: ((this.state.offset*.1) - 200)}}>
             <Container >
                 <div className="contact-modal">
                     <h1>Contact</h1>
