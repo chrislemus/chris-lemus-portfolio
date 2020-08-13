@@ -48,16 +48,17 @@ export default class Skills extends Component{
                                         <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io" target="_blank" rel="noopener noreferrer"> View this site PageSpeed</a>
                                     </p>
                                     <ul className="code-skill-ul">
-                                        <li>Express</li>
-                                        <li>Node JS</li>
-                                        <li>JQuery</li>
-                                        <li>NPM</li>
-                                        <li>MySQL</li>
-                                        <li>Git</li>
-                                        <li>Bootstrap and other front-end frameworks</li>
+                                        <li>JavaScript ES6 / JQuery</li>
+                                        <li>CSS3</li>
                                         <li>SASS</li>
                                         <li>HTML5 stack</li>
-                                        <li>CSS3</li>
+                                        <li>MySQL</li>
+                                        <li>Express</li>
+                                        <li>PaaS(Heroku)</li>
+                                        <li>Node JS</li>
+                                        <li>Git</li>
+                                        <li>React</li>
+                                        <li>Bootstrap and other front-end frameworks</li>       
                                     </ul>
                                 </Tab>
 

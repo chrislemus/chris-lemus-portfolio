@@ -123,13 +123,34 @@ a:hover {
 /* ------- main header ------- */
 
 .main-header-img {
+    padding-top: 6em;
     width: 100%;
+    animation: slide-down 1s ;   
+}
+
+@keyframes slide-down {
+    from { transform: translateY(-50%);
+            opacity: 0;
+        }
+    to {transform: translateY(0%);
+        opacity: 1; 
+        }
 }
 
 .main-header-text {
     color: white;
     margin-top: auto;
     margin-bottom: auto;
+    animation: slide-right 1s;
+}
+
+@keyframes slide-right {
+    from { transform: translateX(-50%);
+            opacity: 0;
+        }
+    to {transform: translateY(0%);
+        opacity: 1; 
+        }
 }
 
 .main-header-text h1{
@@ -476,6 +497,10 @@ a:hover {
     
     p {
         font-size: 1em;
+    }
+
+    .main-header-img {
+        padding-top: 0;
     }
 
     .card-deck {
