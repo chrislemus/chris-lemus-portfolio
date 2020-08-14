@@ -87,8 +87,10 @@ export default class Skills extends Component{
                                         In depth knowledge of Video/Image formats: Through my freelance work I have developed skills with PhotoShop, Premiere Pro,
                                          After Effects, and other Adobe Suite programs. Video has proven to help with branding and increase site conversion rate. Check out my latest projects below.
                                     </p>
-                                    <iframe src="https://fast.wistia.net/embed/iframe/sizbswz78p" title="Maids Next Door Promo" allow="autoplay; fullscreen"  frameBorder="0" allowFullScreen width="45%" height="45%" style={{paddingRight: "8px"}}/>
-                                    <iframe src="https://player.vimeo.com/video/389623594" title="Anchor Auto Outlet Promo" width="50%" height="50%" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen/>  
+                                    <ul>
+                                        <li><a href="https://maidsnextdoor.wistia.com/medias/sizbswz78p" target="_blank" rel="noopener noreferrer">Maids Next Door Promo, Raleigh NC</a></li>
+                                        <li><a href="https://vimeo.com/389623594" target="_blank" rel="noopener noreferrer">   Anchor Auto Outlet Promo, Cary NC</a></li>
+                                    </ul>  
                                 </Tab>
 
 
