@@ -45,7 +45,7 @@ export default class Skills extends Component{
                                 <Tab eventKey="Code" title="Code" key="1">
                                     <p>
                                         Full Stack Javascript Developer. Creating responsive and fast WebApps.
-                                        <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io" target="_blank" rel="noopener noreferrer"> View this site PageSpeed</a>
+                                        <a href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io&tab=desktop" target="_blank" rel="noopener noreferrer"> View this site PageSpeed</a>
                                     </p>
                                     <ul className="code-skill-ul">
                                         <li>JavaScript ES6 / JQuery</li>
