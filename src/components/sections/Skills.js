@@ -125,7 +125,7 @@ export default class Skills extends Component{
     getImg() {
         const {tabSelected} = this.state;
         const skill = skillsData.find((skill) => skill.name === tabSelected)
-        return <img src={skill.img} alt={skill.name} className="fade-in" key={skill.id}/>
+        return <img src={skill.img} alt={skill.name}  key={skill.id}/>
     
     }
 
