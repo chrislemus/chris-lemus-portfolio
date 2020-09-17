@@ -4,7 +4,6 @@ import {Container} from 'react-bootstrap';
 import PhoneIcon from '../../imgs/icons/phone-icon3.png';
 import EmailIcon from '../../imgs/icons/email-icon3.png';
 
-
 export default class Contact extends Component{
       
     state = {
