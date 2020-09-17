@@ -37,7 +37,7 @@ export default class ProjectCards extends Component {
         projectCards.push(
           <Col key={project.id}>
             {this.getDecoration(firstProject, lastProject, projectIndex)}
-            <div className="project-card fade-in">
+            <div className="project-card">
               <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
               <div className="card-body">
                 <h5>{project.project_name}</h5>

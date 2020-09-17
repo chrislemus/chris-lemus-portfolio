@@ -456,7 +456,7 @@ a:hover {
 
 
 .fade-in {
-    animation: fade-in .8s;
+    animation: fade-in .3s;
 }
 
 @keyframes fade-in {
