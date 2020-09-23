@@ -27,35 +27,38 @@ export default class ProjectCards extends Component {
       } = this.props
 
       let projectCards = [];
-  
+      
       const lastProject = activePage * resultsPerPage;
       const  firstProject = lastProject - resultsPerPage;
 
 
       for (let projectIndex = firstProject; projectIndex < lastProject; projectIndex++) {
         let project = projectsDB[projectIndex]
-        projectCards.push(
-          <Col key={project.id}>
-            {this.getDecoration(firstProject, lastProject, projectIndex)}
-            <div className="project-card">
-              <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
-              <div className="card-body">
-                <h5>{project.project_name}</h5>
-                <p>{project.description}</p>
-
-                {/*will add this soon*/}
-                {/* {this.getProjectIcons(project)} */}
-
-                {project.warnMsg ? <p>{project.warnMsg[0]}</p> : null }
-
-                <div className="project-card-buttons">
-                  <a href={project.github_repo} target="_blank" rel="noopener noreferrer">Github Repo</a>
-                  <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer">Live Demo</a>
+        if (project) {
+          projectCards.push(
+            <Col key={project.id}>
+              {this.getDecoration(firstProject, lastProject, projectIndex)}
+              <div className="project-card">
+                <img className="card-img" src={project.thumbnail.default} alt={project.project_name} />
+                <div className="card-body">
+                  <h5>{project.project_name}</h5>
+                  <p>{project.description}</p>
+  
+                  {/*will add this soon*/}
+                  {/* {this.getProjectIcons(project)} */}
+  
+                  {project.warnMsg ? <p>{project.warnMsg[0]}</p> : null }
+  
+                  <div className="project-card-buttons">
+                    <a href={project.github_repo} target="_blank" rel="noopener noreferrer">Github Repo</a>
+                    <a href={project.live_demo_url} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Col>
-        );
+            </Col>
+          );
+        }
+
       }  
   
       return projectCards
