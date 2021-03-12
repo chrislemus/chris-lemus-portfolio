@@ -19,15 +19,15 @@ export default class Contact extends Component{
                     <p>Would love to talk?. Shout me out here...</p>
                     <div>
                         <div className="contact-info">
-                            <a href="callto:9199959906">
+                            <a href="tel:9842126122">
                                 <img src={PhoneIcon} alt="phone-icon"/>
-                                <p>(919) 995-9906</p>
+                                <p>(984) 212-6122</p>
                             </a>
                         </div>
                         <div className="contact-info">
-                            <a href="mailto:icrislemus@gmail.com">
+                            <a href="mailto:dev@chrislemus.io">
                                 <img src={EmailIcon} alt="email-icon"/>
-                                <p>icrislemus@gmail.com</p>
+                                <p>dev@chrislemus.io</p>
                             </a>
                         </div>
                     </div>

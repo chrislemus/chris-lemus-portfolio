@@ -31,8 +31,6 @@ export default class Portfolio extends Component{
         <section id="portfolio" >
           <div className="portfolio-heading">
             <h1>Portfolio</h1>
-            <p>Technology is impacting every aspect of our life more and more each day.</p>
-            <p>So lets create something impactful.</p>
           </div>
 
           <div ref={div => this.cardDeck = div}>
