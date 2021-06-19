@@ -80,13 +80,13 @@ a:hover {
   filter: brightness(1.05);
 }
 
-#portfolio {
+/* #portfolio {
   background: #f4f5fa;
   padding-top: 6.875em;
   padding-bottom: 12em;
   overflow-x: hidden;
   overflow-y: hidden;
-}
+} */
 /* 
 #skills {
   padding-top: 12em;
@@ -159,7 +159,7 @@ a:hover {
 
 /* ------- portfolio ------- */
 
-.portfolio-heading {
+/* .portfolio-heading {
   text-align: center;
   padding-bottom: 3.5em;
   position: relative;
@@ -264,11 +264,11 @@ a:hover {
 
 .project-card-buttons a {
   transition: ease-in-out 0.2s;
-}
+} */
 
 /* ------- project pagination ------- */
 
-.pagination {
+/* .pagination {
   justify-content: center;
   margin-top: 6em;
 }
@@ -294,10 +294,10 @@ a:hover {
   background-color: transparent !important ;
   opacity: 70%;
   border: none;
-}
+} */
 
 /* ------- skills ------- */
-
+/* 
 .water-deco {
   position: absolute;
   right: 0;
@@ -342,7 +342,7 @@ a:hover {
 
 .skills-header p {
   margin-bottom: 0;
-}
+} */
 
 .nav-tabs {
   border: none !important;

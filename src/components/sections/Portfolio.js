@@ -1,107 +1,119 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react';
 import projectsDB from '../../data/projectsData';
-import Pagination from '../partials/Pagination'
-// import {Pagination} from 'react-bootstrap'
-import ProjectCards from '../partials/ProjectCards';
+import Pagination from '@material-ui/lab/Pagination';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
+const useStyles = makeStyles({
+  root: {
+    background: '#f4f5fa',
+    padding: '10rem 0',
+  },
+  CardContainer: {
+    maxWidth: 345,
+    minHeight: 400,
+    marginLeft: '1rem',
+    marginRight: '1rem',
+    paddingBottom: '4rem',
+    position: 'relative',
+  },
+  cardActions: {
+    width: '100%',
+    padding: '1rem',
+    position: 'absolute',
+    bottom: '0',
+    display: 'flex',
+    justifyContent: 'space-around',
+  },
+  media: {
+    height: 140,
+  },
+  cardDeckWrapper: {
+    display: 'flex',
+    justifyContent: 'space-around',
+  },
+});
 
-export default class Portfolio extends Component{
+export default function Portfolio() {
+  const classes = useStyles();
+  const [resultsPerPage, setResultsPerPage] = useState(3);
+  const [activePage, setActivePage] = useState(1);
 
-  constructor() {
-    super()
-    this.cardDeck = React.createRef();
-  }
-  state = {
-    activePage: 1,
-    screenSize: "sm",
-    resultsPerPage: null,
-    totalPages: 1,
-    totalProjects: projectsDB.length,
-    windowWidth: window.innerWidth,
-  }
-
-  render() {
-      const {
-        activePage,
-        totalPages,
-        screenSize,
-      } = this.state
-
-      return (
-        <section id="portfolio" >
-          <div className="portfolio-heading">
-            <h1>Portfolio</h1>
-          </div>
-
-          <div ref={div => this.cardDeck = div}>
-            {this.getProjects()}
-          </div>
-          <Pagination 
-            activePage={activePage} 
-            totalPages={totalPages}
-            pageSelect={this.pageSelect}
-            screenSize={screenSize}/>
-          
-        </section>
-      );
-  }
-
-  //initially triggers page results function and listens for any window size changes
-  componentDidMount() {
-    this.updateResultsPerPage()
-    window.addEventListener("resize", () => {
-      this.setState({windowWidth: window.innerWidth});
-      this.updateResultsPerPage()
-    })
-  }
-
-  /**
-   * 
-   * @param {Int} pageNum page number being selected
-   */
-  pageSelect = (activePage) => {
-    this.setState({activePage})
-  }
-
-  //updates projects results on each page based on window width
-  updateResultsPerPage = () => {
-    const {windowWidth} = this.state
-    const smScreenResults = 2;
-    const lgScreenResults = 3
-
-    let screenSize;
-    let resultsPerPage;
-    if (windowWidth < 460) {
-      resultsPerPage = smScreenResults;
-      screenSize = "sm";
+  useEffect(() => {
+    resizeListenerFunc();
+    window.addEventListener('resize', resizeListenerFunc);
+    return () => window.removeEventListener('resize', resizeListenerFunc);
+  }, []);
+  const resizeListenerFunc = () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 650) {
+      setResultsPerPage(1);
     } else if (windowWidth < 1326) {
-      resultsPerPage = smScreenResults;
-      screenSize = "md";
+      setResultsPerPage(2);
     } else {
-      resultsPerPage = lgScreenResults;
-      screenSize = "lg";
+      setResultsPerPage(3);
     }
+  };
+  const shouldDisplay = (idx) => {
+    const top = activePage * resultsPerPage;
+    const bottom = top - resultsPerPage;
+    const comparison = idx >= bottom && idx < top;
+    return !comparison;
+  };
 
-
-    if (resultsPerPage !== this.state.resultsPerPage) {
-      const totalPages = Math.ceil(projectsDB.length/resultsPerPage)
-      this.setState({resultsPerPage, totalPages, screenSize})
-    }
-    
-  }
-  
-  //retrieves pagination information and returns project card components
-  getProjects () {
-    const {
-      activePage,
-      resultsPerPage,
-    } = this.state;
-
-    return (
-      <ProjectCards 
-        activePage={activePage} 
-        resultsPerPage={resultsPerPage}/>
-    )
-  }
+  const totalPages = Math.ceil(projectsDB.length / resultsPerPage);
+  return (
+    <section id="portfolio" className={classes.root}>
+      <Box textAlign="center" mb="7rem">
+        <h1>Portfolio</h1>
+      </Box>
+      <Box className={classes.cardDeckWrapper}>
+        {projectsDB.map(
+          (
+            { thumbnail, projectName, description, liveDemoUrl, githubRepo },
+            idx
+          ) => (
+            <Card className={classes.CardContainer} hidden={shouldDisplay(idx)}>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={thumbnail}
+                  title={'project ' + projectName}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {projectName}
+                  </Typography>
+                  <Typography
+                    variant="body"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <div className={classes.cardActions}>
+                <Link href={githubRepo}>Github Repo</Link>
+                <Link href={liveDemoUrl}>Live Demo</Link>
+              </div>
+            </Card>
+          )
+        )}
+      </Box>
+      <Box mt="6rem" display="flex" justifyContent="center">
+        <Pagination
+          count={totalPages}
+          color="primary"
+          onChange={(event, page) => setActivePage(page)}
+        />
+      </Box>
+    </section>
+  );
 }
-  
