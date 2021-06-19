@@ -344,7 +344,7 @@ a:hover {
   margin-bottom: 0;
 } */
 
-.nav-tabs {
+/* .nav-tabs {
   border: none !important;
   padding-bottom: 1em;
 }
@@ -370,10 +370,10 @@ a:hover {
 
 .code-skill-ul {
   color: #808080;
-}
+} */
 
 /* ------- contact ------- */
-
+/* 
 .contact-modal {
   display: flex;
   flex-wrap: wrap;
@@ -432,7 +432,7 @@ p {
   border-radius: 15px;
   font-size: 1.2em;
   padding: 0.3em;
-}
+} */
 
 /* --------- Pseudo Elements --------- */
 
