@@ -110,12 +110,12 @@ export default function Skills() {
     const currentHeight = rootElRef.current.offsetHeight;
     largestHeight < currentHeight && setLargestHeight(currentHeight);
   };
+  const parallaxShift = () => setOffset(window.pageYOffset);
   useEffect(() => {
     window.addEventListener('scroll', parallaxShift);
     return () => window.removeEventListener('scroll', parallaxShift);
   }, []);
-  useEffect(() => updateLargetHeight(), []);
-  const parallaxShift = () => setOffset(window.pageYOffset);
+  useEffect(updateLargetHeight, [updateLargetHeight]);
 
   return (
     <div className={classes.root} id="skills" ref={rootElRef}>
