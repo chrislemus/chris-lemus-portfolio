@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   root: {
     background: '#f4f5fa',
     padding: '10rem 0',
+    position: 'relative',
   },
   CardContainer: {
     maxWidth: 345,
@@ -37,6 +38,17 @@ const useStyles = makeStyles({
   cardDeckWrapper: {
     display: 'flex',
     justifyContent: 'space-around',
+    maxWidth: '1300px',
+    margin: '0 auto',
+  },
+  decorationLeft: {
+    position: 'absolute',
+    bottom: '55%',
+  },
+  decorationRight: {
+    position: 'absolute',
+    right: 0,
+    bottom: '15%',
   },
 });
 
@@ -71,15 +83,31 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className={classes.root}>
       <Box textAlign="center" mb="7rem">
-        <h1>Portfolio</h1>
+        <Typography variant="h2" component="h2">
+          Portfolio
+        </Typography>
       </Box>
+      <img
+        src="./images/decorations/dotted-square-blue.svg"
+        alt="dotted-square-decoration"
+        className={classes.decorationLeft}
+      />
+      <img
+        src="./images/decorations/dotted-square-blue.svg"
+        alt="dotted-square-decoration"
+        className={classes.decorationRight}
+      />
       <Box className={classes.cardDeckWrapper}>
         {projectsDB.map(
           (
             { thumbnail, projectName, description, liveDemoUrl, githubRepo },
             idx
           ) => (
-            <Card className={classes.CardContainer} hidden={shouldDisplay(idx)}>
+            <Card
+              className={classes.CardContainer}
+              hidden={shouldDisplay(idx)}
+              key={'project-card-' + idx}
+            >
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
@@ -90,11 +118,7 @@ export default function Portfolio() {
                   <Typography gutterBottom variant="h5" component="h2">
                     {projectName}
                   </Typography>
-                  <Typography
-                    variant="body"
-                    color="textSecondary"
-                    component="p"
-                  >
+                  <Typography color="textSecondary" component="p">
                     {description}
                   </Typography>
                 </CardContent>

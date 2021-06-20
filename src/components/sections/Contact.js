@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: '4rem',
     position: 'relative',
     paddingBottom: '18rem',
-    position: 'relative',
     background: "url('./images/decorations/contact-section-bg.svg')",
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
@@ -59,8 +59,7 @@ export default function Contact() {
   useEffect(() => {
     window.addEventListener('scroll', parallaxShift);
     return () => window.removeEventListener('scroll', parallaxShift);
-  }, []);
-  const scrollToTop = () => window.scrollTo(0, 0);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const parallaxShift = () => setOffset(window.pageYOffset);
 
   return (
@@ -70,13 +69,20 @@ export default function Contact() {
       className={classes.root}
     >
       <Box className={classes.contactBox}>
-        <h1>Contact</h1>
-        <p>Would love to talk?. Shout me out here...</p>
+        <Typography variant="h2" component="h4">
+          Contact
+        </Typography>
+        <Typography variant="subtitle1">
+          Would love to talk?. Shout me out here...
+        </Typography>
+
         <div className={classes.contactButtonGroup}>
           <div className={classes.contactButton}>
             <a href="tel:9842126122">
               <img src="./images/icons/phone-icon3.png" alt="phone-icon" />
-              <p>(984) 212-6122</p>
+              <Typography variant="subtitle1" color="textPrimary">
+                (984) 212-6122
+              </Typography>
             </a>
           </div>
           <div className={classes.contactButton}>
@@ -86,13 +92,19 @@ export default function Contact() {
               rel="noopener noreferrer"
             >
               <img src="./images/icons/email-icon3.png" alt="email-icon" />
-              <p>dev@chrislemus.io</p>
+              <Typography variant="subtitle1" color="textPrimary">
+                dev@chrislemus.io
+              </Typography>
             </a>
           </div>
         </div>
       </Box>
       <div className={classes.backToTopButton}>
-        <Button onClick={scrollToTop} variant="contained" color="primary">
+        <Button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          variant="contained"
+          color="primary"
+        >
           BACK TO TOP
         </Button>
       </div>

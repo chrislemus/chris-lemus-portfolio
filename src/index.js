@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './styles/normalize.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fontsource/roboto';
+import './styles/normalize.css';
 import './styles/index.css';
 import App from './App';
 import { Provider } from './Context';

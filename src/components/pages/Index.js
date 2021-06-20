@@ -4,14 +4,13 @@ import Contact from '../sections/Contact';
 import Portfolio from '../sections/Portfolio';
 import Skills from '../sections/Skills';
 
-//main homepage
-export default () => {
-    return (
-      <div>
-        <Header/>
-        <Portfolio/>
-        <Skills/>
-        <Contact/>
-      </div>
-    );
- }
+export default function Home() {
+  return (
+    <div>
+      <Header />
+      <Portfolio />
+      <Skills />
+      <Contact />
+    </div>
+  );
+}

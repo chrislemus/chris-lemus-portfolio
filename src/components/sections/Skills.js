@@ -3,6 +3,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import { useState, useEffect, useRef } from 'react';
+import Typography from '@material-ui/core/Typography';
 
 const decorationStyles = {
   position: 'absolute',
@@ -15,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     position: 'relative',
-    paddingTop: '5rem',
-    paddingBottom: '10rem',
+    paddingTop: '2rem',
+    paddingBottom: '8rem',
+    minHeight: '940px',
   },
   skillImg: {
     width: '100%',
@@ -39,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '1200px',
     justifyContent: 'center',
     alignItems: 'center',
+    '&[hidden]': {
+      display: 'none',
+    },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -47,9 +52,14 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 auto',
   },
   textContent: {
+    ...theme.typography.body1,
     width: '40%',
     paddingLeft: '3rem ',
+    color: theme.palette.text.secondary,
     background: '#fff',
+    '& a': {
+      color: theme.palette.info.main,
+    },
     [theme.breakpoints.down('sm')]: {
       width: '90%',
       paddingTop: '1rem',
@@ -96,26 +106,23 @@ export default function Skills() {
   const [largestHeight, setLargestHeight] = useState(0);
   const classes = useStyles();
 
+  const updateLargetHeight = () => {
+    const currentHeight = rootElRef.current.offsetHeight;
+    largestHeight < currentHeight && setLargestHeight(currentHeight);
+  };
   useEffect(() => {
     window.addEventListener('scroll', parallaxShift);
     return () => window.removeEventListener('scroll', parallaxShift);
   }, []);
   useEffect(() => updateLargetHeight(), []);
-  const updateLargetHeight = () => {
-    const currentHeight = rootElRef.current.offsetHeight;
-    largestHeight < currentHeight && setLargestHeight(currentHeight);
-  };
   const parallaxShift = () => setOffset(window.pageYOffset);
 
   return (
-    <div
-      className={classes.root}
-      id="skills"
-      ref={rootElRef}
-      style={{ minHeight: largestHeight }}
-    >
+    <div className={classes.root} id="skills" ref={rootElRef}>
       <Box textAlign="center" mt={10} mb={5}>
-        <h1>My Skills</h1>
+        <Typography variant="h2" component="h3">
+          My Skills
+        </Typography>
       </Box>
       <img
         src="./images/decorations/water-splash.svg"
