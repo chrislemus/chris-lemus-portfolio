@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   imageWrapper: {
+    minHeight: '320px',
     width: '40%',
     [theme.breakpoints.down('sm')]: {
       width: '50%',
@@ -169,50 +170,39 @@ export default function Skills() {
       <CustomTab value={value} index={0}>
         <p>
           Full Stack Javascript Developer. Creating responsive and fast WebApps.
-          <a
-            href="https://developers.google.com/speed/pagespeed/insights/?url=chrislemus.io&tab=desktop"
-            {...externalLinkProps}
-          >
-            {' '}
-            View this site PageSpeed
-          </a>
         </p>
         <ul>
           <li>JavaScript ES6 / JQuery</li>
+          <li>Ruby on Rails</li>
+          <li>Redux</li>
+          <li>Docker</li>
           <li>CSS3</li>
           <li>SASS</li>
           <li>HTML5 stack</li>
-          <li>MySQL</li>
+          <li>MySQL,PostgreSQL, and other Structured Query Language</li>
           <li>Express</li>
           <li>PaaS(Heroku)</li>
           <li>Node JS</li>
           <li>Git</li>
           <li>React</li>
-          <li>Bootstrap and other front-end frameworks</li>
+          <li>
+            Bootstrap, Material UI, AntDesign, and other styling frameworks
+          </li>
         </ul>
       </CustomTab>
       <CustomTab value={value} index={1}>
         <p>
           As someone who started two local service businesses, I will use my
           experience to deliver a product that is tailored to your
-          project/business goals. *check out businesses below
+          project/business goals. And provide a great user experience to
+          maintain a reputable online presence.
         </p>
-        <ul>
-          <li>
-            <a href="https://www.maidsnextdoor.com/" {...externalLinkProps}>
-              Maids Next Door
-            </a>
-            : extensive use of data analytics for automatic scheduling,
-            dispatch, and pricing
-          </li>
-          <li>
-            <a href="https://ncpropainters.com/" {...externalLinkProps}>
-              NC Pro Painters
-            </a>
-            : Managing large scale projects/crews, making sure everything is on
-            schedule. And service is delivered to customer as promised.
-          </li>
-        </ul>
+        <Box boxShadow={3}>
+          <img
+            src="/images/skills/maids-next-door-google-rating.jpeg"
+            height="100px"
+          />
+        </Box>
       </CustomTab>
       <CustomTab value={value} index={2}>
         <p>
@@ -245,15 +235,6 @@ export default function Skills() {
           SEO, I will make sure your project follows the search engine
           guidelines. This will give your project a better chance at appearing
           on top of search engine results for your audience to find.
-        </p>
-        <p>
-          <a
-            href="https://www.google.com/search?q=maids+next+door"
-            {...externalLinkProps}
-          >
-            Click here{' '}
-          </a>
-          for example of Maids Next Door
         </p>
       </CustomTab>
     </div>

@@ -26,15 +26,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     padding: '6rem 0 ',
   },
-  contactButton: {
-    '& img': {
-      maxHeight: '60px',
-      marginBottom: '1rem',
-      [theme.breakpoints.down('sm')]: {
-        maxHeight: '40px',
-      },
-    },
-  },
   contactButtonGroup: {
     margin: '3rem auto',
     display: 'flex',
@@ -42,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
     width: '50%',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+    },
+    '& img': {
+      maxHeight: '60px',
+      marginBottom: '1rem',
+      [theme.breakpoints.down('sm')]: {
+        maxHeight: '40px',
+      },
     },
   },
   backToTopButton: {
@@ -77,7 +75,7 @@ export default function Contact() {
         </Typography>
 
         <div className={classes.contactButtonGroup}>
-          <div className={classes.contactButton}>
+          <div>
             <a href="tel:9842126122">
               <img src="./images/icons/phone-icon3.png" alt="phone-icon" />
               <Typography variant="subtitle1" color="textPrimary">
@@ -85,7 +83,7 @@ export default function Contact() {
               </Typography>
             </a>
           </div>
-          <div className={classes.contactButton}>
+          <div>
             <a
               href="mailto:dev@chrislemus.io"
               target="_blank"

@@ -9,6 +9,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import clsx from 'clsx';
+import blue from '@material-ui/core/colors/blue';
+import green from '@material-ui/core/colors/green';
 
 const useStyles = makeStyles({
   root: {
@@ -33,7 +36,24 @@ const useStyles = makeStyles({
     justifyContent: 'space-around',
   },
   media: {
-    height: 140,
+    height: 193,
+  },
+  status: {
+    fontSize: '.8rem',
+    display: 'inline-table',
+    padding: '.3rem .7rem',
+    marginBottom: '1rem',
+    borderRadius: '1rem',
+  },
+  statusFeatured: {
+    background: blue[50],
+    color: blue[800],
+    fontSize: '.8rem',
+  },
+  statusInProgress: {
+    background: green[50],
+    color: green[800],
+    fontSize: '.8rem',
   },
   cardDeckWrapper: {
     display: 'flex',
@@ -80,6 +100,8 @@ export default function Portfolio() {
   };
 
   const totalPages = Math.ceil(projectsDB.length / resultsPerPage);
+  const showCardChip = (status) =>
+    status === 'featured' || status === 'in progress';
   return (
     <section id="portfolio" className={classes.root}>
       <Box textAlign="center" mb="7rem">
@@ -100,7 +122,16 @@ export default function Portfolio() {
       <Box className={classes.cardDeckWrapper}>
         {projectsDB.map(
           (
-            { thumbnail, projectName, description, liveDemoUrl, githubRepo },
+            {
+              id,
+              thumbnail,
+              projectName,
+              description,
+              liveDemoUrl,
+              githubRepo,
+              status,
+              serverWakeUpUrl,
+            },
             idx
           ) => (
             <Card
@@ -118,6 +149,16 @@ export default function Portfolio() {
                   <Typography gutterBottom variant="h5" component="h2">
                     {projectName}
                   </Typography>
+                  {showCardChip(status) && (
+                    <div
+                      className={clsx(classes.status, {
+                        [classes.statusInProgress]: status === 'in progress',
+                        [classes.statusFeatured]: status === 'featured',
+                      })}
+                    >
+                      {status}
+                    </div>
+                  )}
                   <Typography color="textSecondary" component="p">
                     {description}
                   </Typography>
@@ -125,7 +166,11 @@ export default function Portfolio() {
               </CardActionArea>
               <div className={classes.cardActions}>
                 <Link href={githubRepo}>Github Repo</Link>
-                <Link href={liveDemoUrl}>Live Demo</Link>
+                <Link
+                  href={serverWakeUpUrl ? `/project-demo/${id}` : liveDemoUrl}
+                >
+                  Live Demo
+                </Link>
               </div>
             </Card>
           )
