@@ -25,10 +25,8 @@
     "eject": "react-scripts eject",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "next start",
+    "lint": "next lint"
   },
   "browserslist": {
     "production": [
