@@ -1,7 +1,7 @@
-const businessIcon = require('../imgs/skills/business.svg');
-const codeIcon = require('../imgs/skills/code.svg');
-const mediaIcon = require('../imgs/skills/media.svg');
-const marketingIcon = require('../imgs/skills/marketing.svg');
+const businessIcon = require('/images/skills/business.svg');
+const codeIcon = require('/images/skills/code.svg');
+const mediaIcon = require('/images/skills/media.svg');
+const marketingIcon = require('/images/skills/marketing.svg');
 const skills = [
   {
     id: 1,
