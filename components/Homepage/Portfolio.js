@@ -165,9 +165,17 @@ export default function Portfolio() {
                 </CardContent>
               </CardActionArea>
               <div className={classes.cardActions}>
-                <Link href={githubRepo}>Github Repo</Link>
+                <Link
+                  href={githubRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github Repo
+                </Link>
                 <Link
                   href={serverWakeUpUrl ? `/project-demo/${id}` : liveDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Live Demo
                 </Link>
