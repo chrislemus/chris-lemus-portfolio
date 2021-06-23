@@ -65,7 +65,7 @@ export default function projectDemoRedirect() {
   };
 
   const setProgressInterval = () => {
-    const intervalId = setInterval(incrementProgress, 140);
+    const intervalId = setInterval(incrementProgress, 160);
     setProgressIntervalId(intervalId);
     return () => clearInterval(intervalId);
   };
