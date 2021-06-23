@@ -57,7 +57,7 @@ export default function Contact() {
   useEffect(() => {
     window.addEventListener('scroll', parallaxShift);
     return () => window.removeEventListener('scroll', parallaxShift);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
   const parallaxShift = () => setOffset(window.pageYOffset);
 
   return (
