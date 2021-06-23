@@ -11,7 +11,7 @@ const projects = [
     id: 1,
     projectName: 'Maids Next Door',
     description:
-      'Live Home Cleaning Service site with custom booking form. Clients can get a customize quote or book their service using the custom booking form. The form has increased conversion rate by more than 80% compared to initial prototype. And connects to multiple external APIs, ActiveCampaign, Stripe, and Business CRM',
+      'Live Home Cleaning Service site with custom booking form. Clients can get a customized quote or book their service using the custom booking form. The form has increased conversion rate by more than 80% compared to initial prototype. And connects to multiple external APIs, ActiveCampaign, Stripe, and Business CRM',
     liveDemoUrl: 'https://maidsnextdoor.com/cleaning-quote?testmode=true',
     githubRepo: 'https://github.com/chrislemus/MND_Public_Demo',
     thumbnail: '/images/portfolio/thumbnails/maids-next-door.jpg',
