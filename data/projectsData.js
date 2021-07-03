@@ -11,7 +11,7 @@ const projects = [
     id: 1,
     projectName: 'Maids Next Door',
     description:
-      'Live Home Cleaning Service site with custom booking form. Clients can get a customized quote or book their service using the custom booking form. The form has increased conversion rate by more than 80% compared to initial prototype. And connects to multiple external APIs, ActiveCampaign, Stripe, and Business CRM',
+      "Home Cleaning Service site with a custom booking form that provides a  customized quote and instant online booking. The site's conversion rate has increased by more than 80% after migrating from WordPress to ReactJS. External APIs used in this project are ActiveCampaign, Stripe, and the Business CRM Software.",
     liveDemoUrl: 'https://maidsnextdoor.com/cleaning-quote?testmode=true',
     githubRepo: 'https://github.com/chrislemus/MND_Public_Demo',
     thumbnail: '/images/portfolio/thumbnails/maids-next-door.jpg',
@@ -30,7 +30,7 @@ const projects = [
     id: 2,
     projectName: 'Chamba Business CRM',
     description:
-      'Business CRM with Modern/Simple UI. CRM stores customer information and other documents(eg. invoices). Front-end is built using React with NextJs framework. And the API is hosted separately using Ruby on Rails API.',
+      'A Business CRM with Modern/Simple UI. Store customer information and other documents(e.g., invoices) in a user-friendly dashboard.  NextJs framework is used on the Front-end. And the Back-end is built with Ruby on Rails.',
     serverWakeUpUrl: 'https://chamba-api.herokuapp.com/',
     liveDemoUrl: 'https://chamba.vercel.app',
     githubRepo: 'https://github.com/chrislemus/chamba',
