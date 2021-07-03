@@ -50,7 +50,7 @@ const projects = [
     id: 3,
     projectName: 'Bizzy - Business Listings',
     description:
-      'Local business listings WebApp built with Ruby on Rails. App allows users to sign in using third party authentication(eg. Google). Search for businesses, write reviews, or add your business to the sites directory.',
+      "Local business listings WebApp built with Ruby on Rails. The app allows users to sign in using third-party authentication(e.g., Google). Search for businesses, write reviews or add your business to the site's directory.",
     serverWakeUpUrl: 'https://bizzy-listings.herokuapp.com/',
     liveDemoUrl: 'https://bizzy-listings.herokuapp.com/',
     githubRepo: 'https://github.com/chrislemus/bizzy',
@@ -70,7 +70,7 @@ const projects = [
     id: 4,
     projectName: 'Online Courses WebApp',
     description:
-      'School WebApp running on React for Front-End and Express/MySQL on backend. Allows for CRUD operations to MySQL Database.',
+      'Online courses WebApp. Allows users to create and share online courses. The Frontend is built with React, and the Backend uses ExpressJs.',
     serverWakeUpUrl:
       'https://online-courses-rest-api.herokuapp.com/api/courses',
     liveDemoUrl: 'https://webcourses.netlify.app/',
@@ -91,7 +91,7 @@ const projects = [
     id: 5,
     projectName: 'Library Books Database',
     description:
-      'Library application running on Express, retrieves book information from database. Allows for CRUD operations on client side. ',
+      'A library application running on Express retrieves book information from a database. Allows for CRUD operations on client side.',
     serverWakeUpUrl: 'https://library-db-sql.herokuapp.com/books',
     liveDemoUrl: 'https://library-db-sql.herokuapp.com/books',
     githubRepo: 'https://github.com/chrislemus/Library-Books-DB',
@@ -111,7 +111,7 @@ const projects = [
     id: 6,
     projectName: 'OOP Game Show App',
     description:
-      'Word guessing game: "Phrase Hunter" - Javascript and OOP (Object-Oriented Programming)',
+      'Online game show app built with vanilla JS and using the Object-Oriented Programming paradigm.',
     liveDemoUrl: 'https://chrislemus.github.io/OOP-Game-Show-App/',
     githubRepo: 'https://github.com/chrislemus/OOP-Game-Show-App',
     thumbnail: '/images/portfolio/thumbnails/game-show-app.jpg',

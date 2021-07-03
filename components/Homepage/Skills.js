@@ -206,10 +206,10 @@ export default function Skills() {
       </CustomTab>
       <CustomTab value={value} index={2}>
         <p>
-          In depth knowledge of Video/Image formats: Through my freelance work I
-          have developed skills with PhotoShop, Premiere Pro, After Effects, and
-          other Adobe Suite programs. Video has proven to help with branding and
-          increase site conversion rate. Check out my latest projects below.
+          In-depth knowledge of Video/Image formats: Through my freelance work,
+          I have developed skills with PhotoShop, Premiere Pro, After Effects,
+          and other Adobe Suite programs. Video has proven to help with branding
+          and increase site conversion rate. Check out my latest projects below.
         </p>
         <ul>
           <li>
@@ -230,11 +230,11 @@ export default function Skills() {
       </CustomTab>
       <CustomTab value={value} index={3}>
         <p>
-          If content is King and distribution is Queen, why work on a project
-          that people have a hard time finding? With my experience of online
+          If content is king and distribution is Queen, why work on a project
+          that people have a hard time finding? With my experience in online
           SEO, I will make sure your project follows the search engine
-          guidelines. This will give your project a better chance at appearing
-          on top of search engine results for your audience to find.
+          guidelines. And give your project a better chance at appearing on top
+          of search engine results for your audience to find.
         </p>
       </CustomTab>
     </div>
