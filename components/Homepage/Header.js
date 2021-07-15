@@ -81,9 +81,9 @@ export default function MainHeader() {
               Chris Lemus
             </Typography>
             <p>
-              A Full Stack JavaScript Developer from Raleigh, North Carolina. I
-              create efficient and innovative experiences that balance user
-              needs and business goals.
+              A Full Stack JavaScript/Ruby on Rails Developer from Raleigh,
+              North Carolina. I create efficient and innovative experiences that
+              balance user needs and business goals.
             </p>
             <Button variant="contained">
               <a href="/files/Cristian_Lemus.vcf" target="_blank">
