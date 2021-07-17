@@ -30,7 +30,7 @@ const projects = [
     id: 2,
     projectName: 'Chamba Business CRM',
     description:
-      'A Business CRM with Modern/Simple UI. Store customer information and other documents(e.g., invoices) in a user-friendly dashboard.  NextJs framework is used on the Front-end. And the Back-end is built with Ruby on Rails.',
+      'A Business CRM WebApp with Modern/Simple UI. Store customer information and other documents(e.g., invoices) in a user-friendly dashboard.  NextJs framework is used on the Front-end. And the Back-end is built with Ruby on Rails.',
     serverWakeUpUrl: 'https://chamba-api.herokuapp.com/',
     liveDemoUrl: 'https://chamba.vercel.app',
     githubRepo: 'https://github.com/chrislemus/chamba',
