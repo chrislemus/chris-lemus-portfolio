@@ -86,10 +86,15 @@ export default function MainHeader() {
               balance user needs and business goals.
             </p>
             <Button variant="contained">
+              <a href="https://calendly.com/chrislemus" target="_blank">
+                Book a Meeting with me 😃
+              </a>
+            </Button>
+            {/* <Button variant="contained">
               <a href="/files/Cristian_Lemus.vcf" target="_blank">
                 Download VCard
               </a>
-            </Button>
+            </Button> */}
           </Box>
         </Slide>
         <Box className={classes.headerImage}>
