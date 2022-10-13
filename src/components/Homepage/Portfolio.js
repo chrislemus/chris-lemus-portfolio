@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import projectsDB from '../../data/projectsData';
+import projectsDB from '../../../data/projectsData';
 import Pagination from '@material-ui/lab/Pagination';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';

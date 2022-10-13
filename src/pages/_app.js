@@ -1,6 +1,6 @@
-import '../styles/normalize.css';
-import '../styles/index.css';
-import theme from '../src/theme';
+import '../../styles/normalize.css';
+import '../../styles/index.css';
+import theme from '../theme';
 import { ThemeProvider } from '@material-ui/styles';
 
 export default function MyApp({ Component, pageProps }) {
