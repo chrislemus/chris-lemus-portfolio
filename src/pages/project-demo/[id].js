@@ -1,5 +1,5 @@
 import { useEffect, useState, useReducer } from 'react';
-import projectsData from '../../data/projectsData';
+import projectsData from '../../../data/projectsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faServer,
