@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import projectsDB from '../../../data/projectsData';
 import Pagination from '@material-ui/lab/Pagination';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
@@ -9,11 +8,12 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import styles from './Portfolio.module.scss';
+import { portfolio } from '@app/content';
 
 export default function Portfolio() {
   const [resultsPerPage, setResultsPerPage] = useState(3);
   const [activePage, setActivePage] = useState(1);
-  const totalPages = Math.ceil(projectsDB.length / resultsPerPage);
+  const totalPages = Math.ceil(portfolio.length / resultsPerPage);
 
   useEffect(() => {
     resizeListenerFunc();
@@ -33,7 +33,7 @@ export default function Portfolio() {
     if (activePage > totalPages) setActivePage(totalPages);
   };
 
-  const projectsToDisplay = projectsDB.filter((_p, idx) => {
+  const projectsToDisplay = portfolio.filter((_p, idx) => {
     const top = activePage * resultsPerPage;
     const bottom = top - resultsPerPage;
     return idx >= bottom && idx < top;

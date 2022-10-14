@@ -1,0 +1,42 @@
+.menuButton {
+  margin-right: 16px;
+  color: #fff !important;
+  @media screen and (min-width: 600px) {
+    display: none !important;
+  }
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.appBar {
+  box-shadow: none;
+  color: #fff;
+}
+
+.navBar {
+  position: absolute;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.phoneMenu {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.navLinksWrapper {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff !important;
+  padding: 0.5rem 0.8rem;
+}
