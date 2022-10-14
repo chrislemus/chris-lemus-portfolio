@@ -1,7 +1,7 @@
 import { useParallaxShift } from '@root/src/hooks';
 import styles from './BackgroundDecorations.module.scss';
 
-export const BackgroundDecorations = () => {
+export const BackgroundDecorations: React.FC = () => {
   const offset = useParallaxShift();
 
   return (
@@ -15,7 +15,7 @@ export const BackgroundDecorations = () => {
         src="./images/decorations/sm-circle.svg"
         alt="circle"
         className={styles.decorationCircle}
-        style={{ bottom: offset / 20 }}
+        style={{ bottom: offset / 5 }}
       />
       <img
         src="./images/decorations/sm-square.svg"
@@ -27,7 +27,7 @@ export const BackgroundDecorations = () => {
         src="./images/decorations/sm-half-circle.svg"
         alt="half-circle"
         className={styles.decorationHalfCircle}
-        style={{ bottom: offset / 5 }}
+        style={{ bottom: offset / 3 }}
       />
     </>
   );

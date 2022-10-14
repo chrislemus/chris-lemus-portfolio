@@ -13,6 +13,7 @@ import styles from './Portfolio.module.scss';
 export default function Portfolio() {
   const [resultsPerPage, setResultsPerPage] = useState(3);
   const [activePage, setActivePage] = useState(1);
+  const totalPages = Math.ceil(projectsDB.length / resultsPerPage);
 
   useEffect(() => {
     resizeListenerFunc();
@@ -29,9 +30,8 @@ export default function Portfolio() {
     } else {
       setResultsPerPage(3);
     }
+    if (activePage > totalPages) setActivePage(totalPages);
   };
-
-  const totalPages = Math.ceil(projectsDB.length / resultsPerPage);
 
   const projectsToDisplay = projectsDB.filter((_p, idx) => {
     const top = activePage * resultsPerPage;
