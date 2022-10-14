@@ -1,0 +1,69 @@
+$screenXs: 0;
+$screenSm: 600px;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+  min-height: 940px;
+}
+
+.skillImg {
+  width: 100%;
+}
+
+.imageWrapper {
+  min-height: 320px;
+  width: 40%;
+
+  @media screen and (max-width: $screenSm) {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+  @media screen and (max-width: $screenXs) {
+    width: 90%;
+  }
+}
+
+.tabContent {
+  display: flex;
+  padding: 3rem 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  &[hidden] {
+    display: none;
+  }
+  @media screen and (max-width: $screenSm) {
+    flex-direction: column;
+  }
+}
+
+.tabsWrapper {
+  margin: 0 auto;
+}
+
+.textContent {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400px;
+  letter-spacing: 0.00938em;
+  line-height: 1.5;
+  width: 40%;
+  padding-left: 3rem;
+  color: rgba(0, 0, 0, 0.54);
+  background: #fff;
+  & a {
+    color: #2196f3;
+  }
+
+  @media screen and (max-width: $screenSm) {
+    width: 90%;
+    padding-top: 1rem;
+  }
+}
