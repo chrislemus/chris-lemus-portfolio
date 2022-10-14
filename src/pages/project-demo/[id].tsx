@@ -1,16 +1,17 @@
 import { useEffect, useState, useReducer } from 'react';
-import projectsData from '../../../data/projectsData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faServer,
   faSpaceShuttle,
   faUserAstronaut,
   faPeopleCarry,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
+import { portfolio } from '@root/src/content';
 
 const transitionTime = 900;
 
@@ -19,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    width: '100%',
     justifyContent: 'center',
     width: '70%',
     margin: '0 auto',
@@ -44,13 +44,13 @@ function reducer(state, action) {
 export default function projectDemoRedirect() {
   const classes = useStyles();
   const router = useRouter();
-  const projectId = router.query.id;
+  const projectId = router.query.id as string;
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [progressIntervalId, setProgressIntervalId] = useState();
+  const [progressIntervalId, setProgressIntervalId] = useState(null);
   const [labelOpacity, setLabelOpacity] = useState(1);
   const incrementProgress = () => dispatch({ type: 'incrementProgress' });
   const getProject = () =>
-    projectsData.find(({ id }) => id === parseInt(projectId));
+    portfolio.find(({ id }) => id === parseInt(projectId));
   const [progressText, setProgressText] = useState({
     icon: faServer,
     label: 'Booting up server',
@@ -71,13 +71,10 @@ export default function projectDemoRedirect() {
   };
 
   const updateDynamicText = () => {
-    const [icon, newLabel] = getTextContent(state.progress);
-    if (progressText.label !== newLabel) {
+    const [icon, label] = getTextContent(state.progress);
+    if (progressText.label !== label) {
       triggerTransition();
-      setTimeout(
-        () => setProgressText({ icon, label: newLabel }),
-        transitionTime
-      );
+      setTimeout(() => setProgressText({ icon, label }), transitionTime);
     }
   };
   const redirectToLiveDemo = () => {
@@ -113,7 +110,7 @@ export default function projectDemoRedirect() {
     </div>
   );
 }
-function getTextContent(progress) {
+function getTextContent(progress): [IconDefinition, string] {
   switch (true) {
     case progress < 15:
       return [faServer, 'Booting up server'];
