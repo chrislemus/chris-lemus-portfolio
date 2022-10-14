@@ -1,21 +1,16 @@
-import { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import styles from './Contact.module.scss';
+import { useParallaxShift } from '@app/hooks';
 
 export default function Contact() {
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    window.addEventListener('scroll', parallaxShift);
-    return () => window.removeEventListener('scroll', parallaxShift);
-  }, []);
-  const parallaxShift = () => setOffset(window.pageYOffset);
+  const offset = useParallaxShift((val) => val * 0.1 - 200);
 
   return (
     <div
       id="contact"
-      style={{ backgroundPositionY: offset * 0.1 - 200 }}
+      style={{ backgroundPositionY: offset }}
       className={styles.contactSection}
     >
       <Box className={styles.contactBox} boxShadow={3}>

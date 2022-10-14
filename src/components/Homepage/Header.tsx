@@ -2,17 +2,11 @@ import Button from '@material-ui/core/Button';
 import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
+import { useParallaxShift } from '@app/hooks';
 
 export default function MainHeader() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const scrollEffect = () => setOffset(window.pageYOffset / 1.5);
-    window.addEventListener('scroll', scrollEffect);
-    return () => window.removeEventListener('scroll', scrollEffect);
-  }, []);
+  const offset = useParallaxShift((val) => val / 1.5);
 
   return (
     <Box

@@ -1,0 +1,56 @@
+.portfolioContainer {
+  background: #f4f5fa;
+  padding: 10rem 0;
+  position: relative;
+}
+
+.cardContainer {
+  max-width: 345px;
+  min-height: 400px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.cardActions {
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.media {
+  height: 193px;
+}
+
+.status {
+  font-size: 0.8rem;
+  display: inline-table;
+  padding: 0.3rem 0.7rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.cardDeckWrapper {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.decorationLeft {
+  position: absolute;
+  bottom: 55%;
+}
+
+.decorationRight {
+  position: absolute;
+  right: 0;
+  bottom: 15%;
+}
