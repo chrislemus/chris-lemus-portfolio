@@ -32,9 +32,9 @@ export default function MainHeader() {
               North Carolina. I create efficient and innovative experiences that
               balance user needs and business goals.
             </p>
-            <Button variant="contained">
+            <Button variant="contained" color="secondary">
               <a href="https://calendly.com/chrislemus" target="_blank">
-                Let's Meet!
+                Let's Meet
               </a>
             </Button>
             {/* <Button variant="contained">

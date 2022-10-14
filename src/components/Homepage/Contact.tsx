@@ -1,58 +1,10 @@
 import { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    paddingTop: '4rem',
-    position: 'relative',
-    paddingBottom: '18rem',
-    background: "url('./images/decorations/contact-section-bg.svg')",
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-  },
-  contactBox: {
-    boxShadow: theme.shadows[3],
-    background:
-      'linear-gradient( 164deg, rgba(255, 255, 255, 1) 74%, rgba(248, 252, 255, 1) 74% )',
-    width: '90%',
-    maxWidth: 1200,
-    margin: '0 auto',
-    borderRadius: '.5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    textAlign: 'center',
-    padding: '6rem 0 ',
-  },
-  contactButtonGroup: {
-    margin: '3rem auto',
-    display: 'flex',
-    justifyContent: 'space-around',
-    width: '50%',
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-    },
-    '& img': {
-      maxHeight: '60px',
-      marginBottom: '1rem',
-      [theme.breakpoints.down('sm')]: {
-        maxHeight: '40px',
-      },
-    },
-  },
-  backToTopButton: {
-    position: 'absolute',
-    bottom: '2rem',
-    display: 'flex',
-    justifyContent: 'center',
-    width: '100%',
-  },
-}));
+import styles from './Contact.module.scss';
 
 export default function Contact() {
-  const classes = useStyles();
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     window.addEventListener('scroll', parallaxShift);
@@ -64,9 +16,9 @@ export default function Contact() {
     <div
       id="contact"
       style={{ backgroundPositionY: offset * 0.1 - 200 }}
-      className={classes.root}
+      className={styles.contactSection}
     >
-      <Box className={classes.contactBox}>
+      <Box className={styles.contactBox} boxShadow={3}>
         <Typography variant="h2" component="h4">
           Contact
         </Typography>
@@ -74,7 +26,7 @@ export default function Contact() {
           Would love to talk?. Shout me out here...
         </Typography>
 
-        <div className={classes.contactButtonGroup}>
+        <div className={styles.contactButtonGroup}>
           <div>
             <a href="tel:9842126122">
               <img src="./images/icons/phone-icon3.png" alt="phone-icon" />
@@ -97,7 +49,7 @@ export default function Contact() {
           </div>
         </div>
       </Box>
-      <div className={classes.backToTopButton}>
+      <div className={styles.backToTopButton}>
         <Button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           variant="contained"

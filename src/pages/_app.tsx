@@ -1,5 +1,4 @@
-import '@app/styles/normalize.css';
-import '@app/styles/index.scss';
+import '@app/styles/normalize.scss';
 import { theme } from '@app/styles/theme';
 import { ThemeProvider } from '@material-ui/styles';
 
