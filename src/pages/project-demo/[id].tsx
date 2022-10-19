@@ -57,7 +57,7 @@ export default function projectDemoRedirect() {
   });
   const goToLiveDemo = () => {
     const project = getProject();
-    window.location.assign(project.liveDemoUrl);
+    window.location.assign(project.demoUrl);
   };
   const triggerTransition = () => {
     setLabelOpacity(0);
