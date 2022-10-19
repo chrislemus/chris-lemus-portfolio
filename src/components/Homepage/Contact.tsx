@@ -18,7 +18,7 @@ export default function Contact() {
           Contact
         </Typography>
         <Typography variant="subtitle1">
-          Would love to talk?. Shout me out here...
+          Would love to talk? Shout me out here...
         </Typography>
 
         <div className={styles.contactButtonGroup}>

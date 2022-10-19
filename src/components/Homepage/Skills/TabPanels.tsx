@@ -18,22 +18,24 @@ export const TabPanels: React.FC<TabPanelsProps> = (p) => {
         imgAlt={tabsContent[0].label}
       >
         <p>
-          Full Stack Javascript Developer. Creating responsive and fast WebApps.
+          Full Stack Software Engineer, crafting the optimal user experience on
+          the front end and continuously deploying scalable/reliable back-end
+          services.
         </p>
         <ul>
-          <li>JavaScript ES6 / JQuery</li>
+          <li>JavaScript / Typescript</li>
+          <li>React / Angular</li>
           <li>Ruby on Rails</li>
+          <li>Bash Scripting</li>
           <li>Redux</li>
           <li>Docker</li>
-          <li>CSS3</li>
-          <li>SASS</li>
-          <li>HTML5 stack</li>
+          <li>CSS3 / SASS</li>
+          <li>HTML5</li>
           <li>MySQL,PostgreSQL, and other Structured Query Language</li>
-          <li>Express</li>
+          <li>Amazon Cloud Services</li>
           <li>PaaS(Heroku)</li>
           <li>Node JS</li>
           <li>Git</li>
-          <li>React</li>
           <li>
             Bootstrap, Material UI, AntDesign, and other styling frameworks
           </li>

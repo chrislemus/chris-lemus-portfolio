@@ -13,25 +13,26 @@ import { portfolio } from '@app/content';
 export default function Portfolio() {
   const [resultsPerPage, setResultsPerPage] = useState(3);
   const [activePage, setActivePage] = useState(1);
-  const totalPages = Math.ceil(portfolio.length / resultsPerPage);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const pageCount = Math.ceil(portfolio.length / resultsPerPage);
 
   useEffect(() => {
-    resizeListenerFunc();
-    window.addEventListener('resize', resizeListenerFunc);
-    return () => window.removeEventListener('resize', resizeListenerFunc);
-  }, []);
-
-  const resizeListenerFunc = () => {
-    const windowWidth = window.innerWidth;
-    if (windowWidth < 650) {
+    if (screenWidth < 650) {
       setResultsPerPage(1);
-    } else if (windowWidth < 1326) {
+    } else if (screenWidth < 1326) {
       setResultsPerPage(2);
     } else {
       setResultsPerPage(3);
     }
-    if (activePage > totalPages) setActivePage(totalPages);
-  };
+    if (activePage > pageCount) setActivePage(pageCount);
+  }, [screenWidth]);
+
+  useEffect(() => {
+    const resizeListenerFunc = () => setScreenWidth(window.innerWidth);
+    resizeListenerFunc();
+    window.addEventListener('resize', resizeListenerFunc);
+    return () => window.removeEventListener('resize', resizeListenerFunc);
+  }, []);
 
   const projectsToDisplay = portfolio.filter((_p, idx) => {
     const top = activePage * resultsPerPage;
@@ -64,8 +65,8 @@ export default function Portfolio() {
               thumbnail,
               projectName,
               description,
-              liveDemoUrl,
-              githubRepo,
+              demoUrl,
+              repoUrl,
               status,
               serverWakeUpUrl,
             },
@@ -92,19 +93,21 @@ export default function Portfolio() {
                 </CardContent>
               </CardActionArea>
               <div className={styles.cardActions}>
+                {repoUrl && (
+                  <Link
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Repo
+                  </Link>
+                )}
                 <Link
-                  href={githubRepo}
+                  href={serverWakeUpUrl ? `/project-demo/${id}` : demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Github Repo
-                </Link>
-                <Link
-                  href={serverWakeUpUrl ? `/project-demo/${id}` : liveDemoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
+                  Demo
                 </Link>
               </div>
             </Card>
@@ -113,7 +116,8 @@ export default function Portfolio() {
       </Box>
       <Box mt="6rem" display="flex" justifyContent="center">
         <Pagination
-          count={totalPages}
+          page={activePage}
+          count={pageCount}
           color="primary"
           onChange={(_e, page) => setActivePage(page)}
         />
