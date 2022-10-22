@@ -1,0 +1,31 @@
+.root {
+  padding: 6rem 0;
+  background-color: #f6f6ff;
+  text-align: center;
+}
+
+.reviewContainer {
+  padding: 20px;
+  margin: 20px;
+  color: rgba(0, 0, 0, 0.736);
+}
+
+.reviewTextContent {
+}
+
+.reviewPersonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewPersonAvatar {
+  margin-right: 1rem;
+}
+
+.reviewPersonLink {
+  color: rgb(7, 121, 227);
+  &:hover {
+    cursor: pointer;
+  }
+}

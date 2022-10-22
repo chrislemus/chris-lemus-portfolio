@@ -19,11 +19,12 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@mui/system": "^5.10.9",
     "axios": "^1.1.2",
-    "bulma": "^0.9.4",
     "next": "^12.3.1",
     "nodemailer": "^6.8.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^18.8.5",
