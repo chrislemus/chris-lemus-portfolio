@@ -26,7 +26,7 @@ export const TabPanels: React.FC<TabPanelsProps> = (p) => {
           <li>JavaScript / Typescript</li>
           <li>React / Angular</li>
           <li>Ruby on Rails</li>
-          <li>Bash Scripting</li>
+          <li>Shell Scripting</li>
           <li>Redux</li>
           <li>Docker</li>
           <li>CSS3 / SASS</li>
@@ -36,9 +36,7 @@ export const TabPanels: React.FC<TabPanelsProps> = (p) => {
           <li>PaaS(Heroku)</li>
           <li>Node JS</li>
           <li>Git</li>
-          <li>
-            Bootstrap, Material UI, AntDesign, and other styling frameworks
-          </li>
+          <li>Styling Frameworks</li>
         </ul>
       </TabPanel>
       <TabPanel
@@ -56,7 +54,8 @@ export const TabPanels: React.FC<TabPanelsProps> = (p) => {
         <Box boxShadow={3}>
           <img
             src="/images/skills/maids-next-door-google-rating.jpeg"
-            height="100px"
+            // height="100px"
+            width="100%"
           />
         </Box>
       </TabPanel>
