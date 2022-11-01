@@ -1,1 +1,1 @@
-export * from './useParallaxShift';
+export * from './use-window-offset.hook';

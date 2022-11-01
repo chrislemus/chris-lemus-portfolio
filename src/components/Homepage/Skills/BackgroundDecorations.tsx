@@ -1,8 +1,8 @@
-import { useParallaxShift } from '@root/src/hooks';
+import { useWindowOffset } from '@root/src/hooks';
 import styles from './BackgroundDecorations.module.scss';
 
 export const BackgroundDecorations: React.FC = () => {
-  const offset = useParallaxShift();
+  const offset = useWindowOffset();
 
   return (
     <>

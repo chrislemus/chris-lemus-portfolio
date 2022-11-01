@@ -2,10 +2,10 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import styles from './Contact.module.scss';
-import { useParallaxShift } from '@app/hooks';
+import { useWindowOffset } from '@app/hooks';
 
 export default function Contact() {
-  const offset = useParallaxShift((val) => val * 0.1 - 200);
+  const offset = useWindowOffset((val) => val * 0.1 - 200);
 
   return (
     <div

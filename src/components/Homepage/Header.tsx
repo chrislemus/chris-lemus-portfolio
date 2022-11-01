@@ -3,10 +3,10 @@ import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import styles from './Header.module.scss';
-import { useParallaxShift } from '@app/hooks';
+import { useWindowOffset } from '@app/hooks';
 
 export default function MainHeader() {
-  const offset = useParallaxShift((val) => val / 1.5);
+  const offset = useWindowOffset((val) => val / 1.5);
 
   return (
     <Box

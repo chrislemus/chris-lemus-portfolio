@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 
 /**
- * Utility hook for creating parallax shift animations.
  * Listens to the window scroll to retrieve `Y` offset.
  * @param calc optional calculation function to run math operations based on offset value
  * @returns offset value or calculated value
  */
-export function useParallaxShift(calc?: (offset: number) => number): number {
+export function useWindowOffset(calc?: (offset: number) => number): number {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
