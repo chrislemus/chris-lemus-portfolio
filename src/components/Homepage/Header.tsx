@@ -22,9 +22,12 @@ export default function MainHeader() {
               Chris Lemus
             </Typography>
             <p>
-              A Full Stack JavaScript/Ruby on Rails Developer from Raleigh,
-              North Carolina. I create efficient and innovative experiences that
-              balance user needs and business goals.
+              Fullstack Software Engineer delivering reliable and scalable
+              enterprise solutions. Whether strategizing with stakeholders to
+              improve the user experience or working with my team to
+              continuously integrate and deploy cloud services. My
+              entrepreneurial spirit allows me to create efficient and
+              innovative experiences that balance user needs and business goals.
             </p>
             <Button variant="contained" color="secondary">
               <a href="https://calendly.com/chrislemus" target="_blank">
