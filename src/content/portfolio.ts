@@ -6,9 +6,11 @@ const express = '/images/portfolio/tech-icons/express.svg';
 const react = '/images/portfolio/tech-icons/react.svg';
 const pug = '/images/portfolio/tech-icons/pug.svg';
 
-export const portfolio = [
+const _portfolio = [
   {
     id: 1,
+    order: 2,
+    shouldDisplay: true,
     projectName: 'Genesys Knowledge Network',
     description:
       'Genesys Knowledge Network (GKN) an all-in-one access point for Genesys resources. The site integrates with various third-party services to serve dynamic content. And a customizable UI to provide a unique experience for every user. *unable to provide repo for private enterprise project.',
@@ -27,13 +29,15 @@ export const portfolio = [
   },
   {
     id: 2,
+    order: 3,
+    shouldDisplay: true,
     projectName: 'Maids Next Door',
     description:
       "Home Cleaning Service site with a custom booking form that provides a  customized quote and instant online booking. The site's conversion rate has increased by more than 80% after migrating from WordPress to ReactJS.",
     demoUrl: 'https://maidsnextdoor.com/cleaning-quote?testmode=true',
     repoUrl: 'https://github.com/chrislemus/MND_Public_Demo',
     thumbnail: '/images/portfolio/thumbnails/maids-next-door.jpg',
-    status: 'featured',
+    status: 'done',
     technologies: [
       htmlIcon,
       cssIcon,
@@ -46,6 +50,8 @@ export const portfolio = [
   },
   {
     id: 3,
+    order: 4,
+    shouldDisplay: false,
     projectName: 'Chamba Business CRM',
     description:
       'A Business CRM WebApp with Modern/Simple UI. Store customer information and other documents(e.g., invoices) in a user-friendly dashboard.  NextJs framework is used on the Front-end. And the Back-end is built with Ruby on Rails.',
@@ -66,6 +72,8 @@ export const portfolio = [
   },
   {
     id: 4,
+    order: 5,
+    shouldDisplay: true,
     projectName: 'Bizzy - Business Listings',
     description:
       "Local business listings WebApp built with Ruby on Rails. The app allows users to sign in using third-party authentication(e.g., Google). Search for businesses, write reviews or add your business to the site's directory.",
@@ -86,6 +94,8 @@ export const portfolio = [
   },
   {
     id: 5,
+    order: 6,
+    shouldDisplay: false,
     projectName: 'Online Courses WebApp',
     description:
       'Online courses WebApp. Allows users to create and share online courses. The Frontend is built with React, and the Backend uses ExpressJs.',
@@ -107,6 +117,8 @@ export const portfolio = [
   },
   {
     id: 6,
+    order: 7,
+    shouldDisplay: false,
     projectName: 'Library Books Database',
     description:
       'A library application running on Express retrieves book information from a database. Allows for CRUD operations on client side.',
@@ -127,6 +139,8 @@ export const portfolio = [
   },
   {
     id: 7,
+    order: 8,
+    shouldDisplay: true,
     projectName: 'OOP Game Show App',
     description:
       'Online game show app built with vanilla JS and using the Object-Oriented Programming paradigm.',
@@ -144,4 +158,21 @@ export const portfolio = [
       pug,
     ],
   },
+  {
+    id: 7,
+    order: 1,
+    shouldDisplay: true,
+    projectName: 'Job Quest',
+    description:
+      'An intuitive web app to organize your job search. Store information on job postings and keep track of job applications. Frontend is built with NextJS and the backend is built with NestJS.',
+    demoUrl: 'https://job-quest.vercel.app/',
+    repoUrl: 'https://github.com/chrislemus/job-quest',
+    thumbnail: '/images/portfolio/thumbnails/job-quest.png',
+    status: 'featured',
+    technologies: [],
+  },
 ];
+
+export const portfolio = _portfolio
+  .filter((project) => project.shouldDisplay)
+  .sort((a, b) => a.order - b.order);

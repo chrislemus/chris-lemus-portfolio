@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
@@ -20,9 +20,9 @@ export default function Portfolio() {
     if (screenWidth < 650) {
       setResultsPerPage(1);
     } else if (screenWidth < 1326) {
-      setResultsPerPage(2);
+      setResultsPerPage(1);
     } else {
-      setResultsPerPage(3);
+      setResultsPerPage(2);
     }
     if (activePage > pageCount) setActivePage(pageCount);
   }, [screenWidth]);
@@ -73,25 +73,23 @@ export default function Portfolio() {
             idx
           ) => (
             <Card className={styles.cardContainer} key={'project-card-' + idx}>
-              <CardActionArea>
-                <CardMedia
-                  className={styles.media}
-                  image={thumbnail}
-                  title={'project ' + projectName}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {projectName}
-                  </Typography>
+              <CardMedia
+                className={styles.media}
+                image={thumbnail}
+                title={'project ' + projectName}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {projectName}
+                </Typography>
 
-                  {status !== 'done' && (
-                    <div className={styles.status}>{status}</div>
-                  )}
-                  <Typography color="textSecondary" component="p">
-                    {description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+                {status !== 'done' && (
+                  <div className={styles.status}>{status}</div>
+                )}
+                <Typography color="textSecondary" component="p">
+                  {description}
+                </Typography>
+              </CardContent>
               <div className={styles.cardActions}>
                 {repoUrl && (
                   <Link
