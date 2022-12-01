@@ -34,7 +34,7 @@ const _portfolio = [
     projectName: 'Maids Next Door',
     description:
       "Home Cleaning Service site with a custom booking form that provides a  customized quote and instant online booking. The site's conversion rate has increased by more than 80% after migrating from WordPress to ReactJS.",
-    demoUrl: 'https://maidsnextdoor.com/cleaning-quote?testmode=true',
+    demoUrl: 'https://maidsnextdoor.com',
     repoUrl: 'https://github.com/chrislemus/MND_Public_Demo',
     thumbnail: '/images/portfolio/thumbnails/maids-next-door.jpg',
     status: 'done',
