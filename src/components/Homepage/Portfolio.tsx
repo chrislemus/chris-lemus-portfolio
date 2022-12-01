@@ -93,7 +93,7 @@ export default function Portfolio() {
               <div className={styles.cardActions}>
                 {repoUrl && (
                   <Link
-                    href={repoUrl}
+                    href={`/projects/${id}/repo`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -101,7 +101,7 @@ export default function Portfolio() {
                   </Link>
                 )}
                 <Link
-                  href={serverWakeUpUrl ? `/project-demo/${id}` : demoUrl}
+                  href={`/projects/${id}/demo`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

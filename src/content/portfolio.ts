@@ -6,6 +6,9 @@ const express = '/images/portfolio/tech-icons/express.svg';
 const react = '/images/portfolio/tech-icons/react.svg';
 const pug = '/images/portfolio/tech-icons/pug.svg';
 
+/**
+ * @important do not update `id`. Persist project info data to ensure old resume links to demos are not outdated (single source of truth will be this site.)
+ */
 const _portfolio = [
   {
     id: 1,
@@ -159,7 +162,7 @@ const _portfolio = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     order: 1,
     shouldDisplay: true,
     projectName: 'Job Quest',
