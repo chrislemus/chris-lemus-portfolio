@@ -201,6 +201,8 @@ const _portfolio: {
   },
 ];
 
+export const portfolioAll = _portfolio;
+
 export const portfolio = _portfolio
   .filter((project) => project.shouldDisplay)
   .sort((a, b) => a.order - b.order);

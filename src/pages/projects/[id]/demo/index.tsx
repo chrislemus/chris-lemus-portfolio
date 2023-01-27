@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography } from '@material-ui/core';
-import { portfolio } from '@root/src/content';
+import { portfolioAll } from '@root/src/content';
 
 const transitionTime = 900;
 
@@ -50,7 +50,7 @@ export default function projectDemoRedirect() {
   const [labelOpacity, setLabelOpacity] = useState(1);
   const incrementProgress = () => dispatch({ type: 'incrementProgress' });
   const getProject = () =>
-    portfolio.find(({ id }) => id === parseInt(projectId));
+    portfolioAll.find(({ id }) => id === parseInt(projectId));
   const [progressText, setProgressText] = useState({
     icon: faServer,
     label: 'Booting up server',

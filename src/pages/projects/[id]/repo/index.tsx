@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import { Box, Typography } from '@material-ui/core';
-import { portfolio } from '@root/src/content';
+import { portfolioAll } from '@root/src/content';
 import { useEffect } from 'react';
 import Link from 'next/link';
 
 export default function projectRepoRedirect() {
   const router = useRouter();
   const projectId = router.query.id as string;
-  const project = portfolio.find(({ id }) => id === parseInt(projectId));
+  const project = portfolioAll.find(({ id }) => id === parseInt(projectId));
   const repoUrl = project?.repoUrl;
 
   useEffect(() => {
