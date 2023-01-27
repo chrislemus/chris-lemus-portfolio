@@ -9,7 +9,19 @@ const pug = '/images/portfolio/tech-icons/pug.svg';
 /**
  * @important do not update `id`. Persist project info data to ensure old resume links to demos are not outdated (single source of truth will be this site.)
  */
-const _portfolio = [
+const _portfolio: {
+  id: number;
+  order: number;
+  shouldDisplay: boolean;
+  projectName: string;
+  description: string;
+  demoUrl: string;
+  thumbnail: string;
+  status: string;
+  technologies: string[];
+  repoUrl?: string;
+  serverWakeUpUrl?: string;
+}[] = [
   {
     id: 1,
     order: 2,
@@ -172,6 +184,19 @@ const _portfolio = [
     repoUrl: 'https://github.com/chrislemus/job-quest',
     thumbnail: '/images/portfolio/thumbnails/job-quest.png',
     status: 'featured',
+    technologies: [],
+  },
+  {
+    id: 9,
+    order: 9,
+    shouldDisplay: false,
+    projectName: 'Job Quest API',
+    description: 'Job Quest API',
+    demoUrl:
+      'https://hduzytklhp4d6oaf4yv3kig2fy0dcmsf.lambda-url.us-east-1.on.aws/api',
+    repoUrl: 'https://github.com/chrislemus/job-quest-api',
+    thumbnail: '/images/portfolio/thumbnails/job-quest.png',
+    status: 'done',
     technologies: [],
   },
 ];
