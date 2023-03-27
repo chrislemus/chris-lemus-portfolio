@@ -16,9 +16,7 @@ export default function Portfolio() {
   const pageCount = Math.ceil(portfolio.length / resultsPerPage);
 
   useEffect(() => {
-    if (screenWidth < 650) {
-      setResultsPerPage(1);
-    } else if (screenWidth < 1326) {
+    if (screenWidth < 1326) {
       setResultsPerPage(1);
     } else {
       setResultsPerPage(2);

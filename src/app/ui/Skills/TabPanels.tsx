@@ -1,5 +1,5 @@
-import { TabPanel } from '@app/components/Homepage/Skills/TabPanel';
-import { tabsContent } from '@app/components/Homepage/Skills/tabs-content';
+import { TabPanel } from '@root/src/app/ui/Skills/TabPanel';
+import { tabsContent } from '@root/src/app/ui/Skills/tabs-content';
 import { Box } from '@mui/material';
 
 type TabPanelsProps = {
