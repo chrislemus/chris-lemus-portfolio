@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import Box from '@material-ui/core/Box';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Link from '@material-ui/core/Link';
+import Box from '@mui/material/Box';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Link from '@mui/material/Link';
 import styles from './NavBar.module.scss';
 
 const navLinkData = [
@@ -14,7 +14,7 @@ const navLinkData = [
 ];
 
 export default function NavBar() {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>();
   const handleClose = () => setAnchorEl(null);
 
   return (

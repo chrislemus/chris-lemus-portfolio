@@ -1,5 +1,7 @@
 {
-    "cSpell.words": [
-        "callto"
-    ]
+  "cSpell.words": [
+    "callto"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

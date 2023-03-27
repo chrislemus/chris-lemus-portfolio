@@ -1,5 +1,11 @@
+'use client';
 import { useEffect, useState, useReducer } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styles from './page.module.scss';
+import { theme } from '@app/styles/theme';
+import LinearProgress from '@mui/material/LinearProgress';
+import { Box, Typography } from '@mui/material';
+import { portfolioAll } from '@root/src/content';
 import {
   faServer,
   faSpaceShuttle,
@@ -7,30 +13,8 @@ import {
   faPeopleCarry,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/router';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography } from '@material-ui/core';
-import { portfolioAll } from '@root/src/content';
 
 const transitionTime = 900;
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    width: '70%',
-    margin: '0 auto',
-    maxWidth: '500px',
-  },
-  dynamicText: {
-    color: theme.palette.primary.main,
-    fontSize: '3rem',
-    transition: `opacity ${transitionTime}ms`,
-  },
-}));
 
 const initialState = { progress: 0 };
 function reducer(state, action) {
@@ -41,12 +25,10 @@ function reducer(state, action) {
       throw new Error();
   }
 }
-export default function projectDemoRedirect() {
-  const classes = useStyles();
-  const router = useRouter();
-  const projectId = router.query.id as string;
+export default function projectDemoRedirect(p) {
+  const projectId = p.params['project-id'] as string;
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [progressIntervalId, setProgressIntervalId] = useState(null);
+  const [progressIntervalId, setProgressIntervalId] = useState<NodeJS.Timer>();
   const [labelOpacity, setLabelOpacity] = useState(1);
   const incrementProgress = () => dispatch({ type: 'incrementProgress' });
   const getProject = () =>
@@ -57,7 +39,7 @@ export default function projectDemoRedirect() {
   });
   const goToLiveDemo = () => {
     const project = getProject();
-    window.location.assign(project.demoUrl);
+    if (project) window.location.assign(project.demoUrl);
   };
   const triggerTransition = () => {
     setLabelOpacity(0);
@@ -98,10 +80,17 @@ export default function projectDemoRedirect() {
   }, [state.progress]);
 
   return (
-    <div className={classes.root}>
-      <div className={classes.dynamicText} style={{ opacity: labelOpacity }}>
+    <div className={styles.root}>
+      <div
+        style={{
+          color: theme.palette.primary.main,
+          fontSize: '3rem',
+          transition: `opacity ${transitionTime}ms`,
+          opacity: labelOpacity,
+        }}
+      >
         <Typography variant="h4" component="h1" align="center">
-          <FontAwesomeIcon icon={progressText.icon} />
+          <FontAwesomeIcon size="sm" icon={progressText.icon} />
           <br />
           {progressText.label}
         </Typography>
