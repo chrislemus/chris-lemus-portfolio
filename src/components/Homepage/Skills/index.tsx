@@ -1,9 +1,9 @@
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Box from '@material-ui/core/Box';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 import { useState } from 'react';
 import styles from './Skills.module.scss';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 import { BackgroundDecorations } from './BackgroundDecorations';
 import { tabsContent } from './tabs-content';
 import { TabPanels } from './TabPanels';

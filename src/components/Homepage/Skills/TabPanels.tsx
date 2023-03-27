@@ -1,6 +1,6 @@
 import { TabPanel } from '@app/components/Homepage/Skills/TabPanel';
 import { tabsContent } from '@app/components/Homepage/Skills/tabs-content';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 
 type TabPanelsProps = {
   /** value of active tab */

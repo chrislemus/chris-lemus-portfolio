@@ -1,14 +1,13 @@
-import { useState, useEffect, useMemo } from 'react';
-import Pagination from '@material-ui/lab/Pagination';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
+import { useState, useEffect } from 'react';
+import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/system/Box';
 import styles from './Portfolio.module.scss';
 import { portfolio } from '@app/content';
+import Pagination from '@mui/material/Pagination';
 
 export default function Portfolio() {
   const [resultsPerPage, setResultsPerPage] = useState(3);

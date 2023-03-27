@@ -1,7 +1,7 @@
-import Button from '@material-ui/core/Button';
-import Slide from '@material-ui/core/Slide';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import Button from '@mui/material/Button';
+import Slide from '@mui/material/Slide';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import styles from './Header.module.scss';
 import { useWindowOffset } from '@app/hooks';
 

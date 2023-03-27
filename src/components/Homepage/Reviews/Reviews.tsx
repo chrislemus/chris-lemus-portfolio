@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Reviews.module.scss';
-import { Avatar, Box, Container, Typography } from '@material-ui/core';
+import { Avatar, Box, Container, Typography } from '@mui/material';
 import { reviews } from './reviews.content';
 
 export const Reviews = () => {
