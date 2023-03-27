@@ -14,7 +14,7 @@ const navLinkData = [
 ];
 
 export default function NavBar() {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>();
   const handleClose = () => setAnchorEl(null);
 
   return (

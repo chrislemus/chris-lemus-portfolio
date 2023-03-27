@@ -10,7 +10,7 @@ export default function projectRepoRedirect(p) {
   const repoUrl = project?.repoUrl;
 
   useEffect(() => {
-    if (repoUrl) window.location.assign(project.repoUrl);
+    if (repoUrl) window.location.assign(repoUrl);
   }, [repoUrl]);
 
   return (

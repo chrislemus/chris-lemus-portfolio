@@ -2,6 +2,10 @@
 import { useEffect, useState, useReducer } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './page.module.scss';
+import { theme } from '@app/styles/theme';
+import LinearProgress from '@mui/material/LinearProgress';
+import { Box, Typography } from '@mui/material';
+import { portfolioAll } from '@root/src/content';
 import {
   faServer,
   faSpaceShuttle,
@@ -9,10 +13,6 @@ import {
   faPeopleCarry,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-import LinearProgress from '@mui/material/LinearProgress';
-import { Box, Typography } from '@mui/material';
-import { portfolioAll } from '@root/src/content';
-import { theme } from '@root/src/app/layout';
 
 const transitionTime = 900;
 
@@ -28,7 +28,7 @@ function reducer(state, action) {
 export default function projectDemoRedirect(p) {
   const projectId = p.params['project-id'] as string;
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [progressIntervalId, setProgressIntervalId] = useState(null);
+  const [progressIntervalId, setProgressIntervalId] = useState<NodeJS.Timer>();
   const [labelOpacity, setLabelOpacity] = useState(1);
   const incrementProgress = () => dispatch({ type: 'incrementProgress' });
   const getProject = () =>
@@ -39,7 +39,7 @@ export default function projectDemoRedirect(p) {
   });
   const goToLiveDemo = () => {
     const project = getProject();
-    window.location.assign(project.demoUrl);
+    if (project) window.location.assign(project.demoUrl);
   };
   const triggerTransition = () => {
     setLabelOpacity(0);

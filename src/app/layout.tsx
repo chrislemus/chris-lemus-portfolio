@@ -1,9 +1,7 @@
 'use client';
-import createTheme from '@mui/material/styles/createTheme';
+import { theme } from '@app/styles/theme';
 import '@app/styles/normalize.scss';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-
-export const theme = createTheme();
 
 export default function RootLayout(p) {
   return (
