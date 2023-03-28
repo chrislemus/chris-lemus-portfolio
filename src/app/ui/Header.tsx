@@ -29,7 +29,7 @@ export default function MainHeader() {
               entrepreneurial spirit allows me to create efficient and
               innovative experiences that balance user needs and business goals.
             </p>
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="error">
               <a href="https://calendly.com/chrislemus" target="_blank">
                 Let's Meet
               </a>
