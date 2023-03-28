@@ -28,7 +28,7 @@ const _portfolio: {
     shouldDisplay: true,
     projectName: 'Genesys Knowledge Network',
     description:
-      'Genesys Knowledge Network (GKN) an all-in-one access point for Genesys resources. The site integrates with various third-party services to serve dynamic content. And a customizable UI to provide a unique experience for every user. *unable to provide repo for private enterprise project.',
+      'The site integrates with various third-party services to serve dynamic content. And a customizable UI to provide a unique experience for every user.',
     demoUrl: 'https://know.genesys.com/',
     thumbnail: '/images/portfolio/thumbnails/gkn.jpg',
     status: 'featured',
