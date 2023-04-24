@@ -1,6 +1,7 @@
 'use client';
 import { theme } from '@app/styles/theme';
-import '@app/styles/normalize.scss';
+// import '@app/styles/normalize.scss';
+import '@app/styles/styles.css';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
 export default function RootLayout(p) {
