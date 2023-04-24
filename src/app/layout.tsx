@@ -1,5 +1,5 @@
 'use client';
-import { theme } from '@app/styles/theme';
+// import { theme } from '@app/styles/theme';
 // import '@app/styles/normalize.scss';
 import '@app/styles/styles.css';
 import { CssBaseline, ThemeProvider } from '@mui/material';
@@ -13,9 +13,9 @@ export default function RootLayout(p) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body>
-        <ThemeProvider theme={theme}>
-          <CssBaseline>{p.children}</CssBaseline>
-        </ThemeProvider>
+        {/* <ThemeProvider theme={theme}> */}
+        <CssBaseline>{p.children}</CssBaseline>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
