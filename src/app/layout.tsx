@@ -1,4 +1,6 @@
 'use client';
+import '@app/styles/styles.css';
+
 import { theme } from '@app/styles/theme';
 import '@app/styles/normalize.scss';
 import { CssBaseline, ThemeProvider } from '@mui/material';
