@@ -1,52 +1,37 @@
-import Button from '@mui/material/Button';
-import Slide from '@mui/material/Slide';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import styles from './Header.module.scss';
 import { useWindowOffset } from '@app/hooks';
 
 export default function MainHeader() {
-  const offset = useWindowOffset((val) => val / 1.5);
+  const offset = useWindowOffset((val) => val * 1.2);
 
   return (
-    <Box
-      id="main-header"
-      className={styles.header}
-      style={{ backgroundPositionY: offset }}
+    <header
+      className="hero min-h-screen bg-secondary bg-contain bg-no-repeat bg-top bg-[url('/images/main-header-decoration.png')]"
+      style={{
+        backgroundPositionY: offset + 50,
+      }}
     >
-      <Box className={styles.headerContentWrapper}>
-        <Slide direction="right" in mountOnEnter unmountOnExit timeout={700}>
-          <Box className={styles.headerText}>
-            <Typography variant="subtitle1">Hello I'm</Typography>
-            <Typography variant="h2" component="h1">
-              Chris Lemus
-            </Typography>
-            <p>
-              Fullstack Software Engineer delivering reliable and scalable
-              enterprise solutions. Whether strategizing with stakeholders to
-              improve the user experience or working with my team to
-              continuously integrate and deploy cloud services. My
-              entrepreneurial spirit allows me to create efficient and
-              innovative experiences that balance user needs and business goals.
-            </p>
-            <Button variant="contained" color="error">
-              <a href="https://calendly.com/chrislemus" target="_blank">
-                Let's Meet
-              </a>
-            </Button>
-            {/* <Button variant="contained">
-              <a href="/files/Cristian_Lemus.vcf" target="_blank">
-                Download VCard
-              </a>
-            </Button> */}
-          </Box>
-        </Slide>
-        <Box className={styles.headerImage}>
-          <Slide direction="down" in mountOnEnter unmountOnExit timeout={500}>
-            <img src="./images/profile.png" alt="chris" />
-          </Slide>
-        </Box>
-      </Box>
-    </Box>
+      <div className="hero-content flex-col sm:flex-row text-white ">
+        <div>
+          <h1 className="text-8xl font-bold mb-1">Chris Lemus</h1>
+          <p className="pb-9">
+            Fullstack Software Engineer delivering reliable and scalable
+            enterprise solutions. Whether strategizing with stakeholders to
+            improve the user experience or working with my team to continuously
+            integrate and deploy cloud services. My entrepreneurial spirit
+            allows me to create efficient and innovative experiences that
+            balance user needs and business goals.
+          </p>
+          <button className="btn btn-primary">
+            <a href="https://calendly.com/chrislemus" target="_blank">
+              Let's Meet
+            </a>
+          </button>
+        </div>
+        <img
+          src="./images/profile.png"
+          className="max-w-sm sm:max-w-xs md:max-w-md lg:max-w-lg "
+        />
+      </div>
+    </header>
   );
 }
