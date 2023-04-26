@@ -1,31 +1,23 @@
 import { useState, useEffect } from 'react';
-import Link from '@mui/material/Link';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/system/Box';
 import styles from './Portfolio.module.scss';
 import { portfolio } from '@app/content';
-import Pagination from '@mui/material/Pagination';
+import cn from 'classnames';
 
 export default function Portfolio() {
   const [resultsPerPage, setResultsPerPage] = useState(3);
   const [activePage, setActivePage] = useState(1);
-  const [screenWidth, setScreenWidth] = useState(0);
   const pageCount = Math.ceil(portfolio.length / resultsPerPage);
 
   useEffect(() => {
-    if (screenWidth < 1326) {
-      setResultsPerPage(1);
-    } else {
-      setResultsPerPage(2);
-    }
-    if (activePage > pageCount) setActivePage(pageCount);
-  }, [screenWidth]);
-
-  useEffect(() => {
-    const resizeListenerFunc = () => setScreenWidth(window.innerWidth);
+    const resizeListenerFunc = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 1326) {
+        setResultsPerPage(1);
+      } else {
+        setResultsPerPage(2);
+      }
+      if (activePage > pageCount) setActivePage(pageCount);
+    };
     resizeListenerFunc();
     window.addEventListener('resize', resizeListenerFunc);
     return () => window.removeEventListener('resize', resizeListenerFunc);
@@ -38,13 +30,13 @@ export default function Portfolio() {
   });
 
   return (
-    <section id="portfolio" className={styles.portfolioContainer}>
-      <Box textAlign="center" mb="7rem">
-        <Typography variant="h2" component="h2">
-          Portfolio
-        </Typography>
-      </Box>
-      <img
+    <section
+      id="portfolio"
+      className="flex-col bg-sky-50 justify-around min-h-screen py-40"
+    >
+      <h1 className="text-8xl font-bold text-center">Portfolio</h1>
+
+      {/* <img
         src="./images/decorations/dotted-square-blue.svg"
         alt="dotted-square-decoration"
         className={styles.decorationLeft}
@@ -53,70 +45,87 @@ export default function Portfolio() {
         src="./images/decorations/dotted-square-blue.svg"
         alt="dotted-square-decoration"
         className={styles.decorationRight}
-      />
-      <Box className={styles.cardDeckWrapper}>
+      /> */}
+      <div className="flex justify-center">
         {projectsToDisplay.map(
-          (
-            {
-              id,
-              thumbnail,
-              projectName,
-              description,
-              demoUrl,
-              repoUrl,
-              status,
-              serverWakeUpUrl,
-            },
-            idx
-          ) => (
-            <Card className={styles.cardContainer} key={'project-card-' + idx}>
-              <CardMedia
-                className={styles.media}
-                image={thumbnail}
-                title={'project ' + projectName}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+          ({ id, thumbnail, projectName, description, repoUrl, status }) => (
+            <div
+              className="card w-96 bg-base-100 shadow-xl"
+              key={`project-card${id}`}
+            >
+              <figure>
+                <img src={thumbnail} alt={`project thumbnail ${projectName}`} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">
                   {projectName}
-                </Typography>
+                  {status !== 'done' && (
+                    <div className="badge badge-secondary badge-outline">
+                      {status}
+                    </div>
+                  )}
+                </h2>
 
-                {status !== 'done' && (
-                  <div className={styles.status}>{status}</div>
-                )}
-                <Typography color="textSecondary" component="p">
-                  {description}
-                </Typography>
-              </CardContent>
-              <div className={styles.cardActions}>
-                {repoUrl && (
-                  <Link
-                    href={`/projects/${id}/repo`}
+                <p>{description}</p>
+                <div className="card-actions justify-end">
+                  {repoUrl && (
+                    <a
+                      href={`/projects/${id}/repo`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                    >
+                      Repo
+                    </a>
+                  )}
+                  <a
+                    href={`/projects/${id}/demo`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="btn btn-secondary"
                   >
-                    Repo
-                  </Link>
-                )}
-                <Link
-                  href={`/projects/${id}/demo`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Demo
-                </Link>
+                    Demo
+                  </a>
+                </div>
               </div>
-            </Card>
+            </div>
           )
         )}
-      </Box>
-      <Box mt="6rem" display="flex" justifyContent="center">
-        <Pagination
-          page={activePage}
-          count={pageCount}
-          color="primary"
-          onChange={(_e, page) => setActivePage(page)}
-        />
-      </Box>
+      </div>
+      <div className="flex justify-center">
+        <div className="btn-group">
+          <button
+            className="btn btn-ghost btn-secondary"
+            disabled={activePage === 1}
+            onClick={() => setActivePage(activePage - 1)}
+          >
+            «
+          </button>
+
+          {Array.from({ length: pageCount }, (_, i) => {
+            const page = i + 1;
+            const isActive = activePage === page;
+            return (
+              <button
+                className={cn('btn btn-secondary', {
+                  'btn-active': isActive,
+                })}
+                key={`portfolioPage${page}`}
+                onClick={() => setActivePage(page)}
+              >
+                {page}
+              </button>
+            );
+          })}
+          <button
+            className="btn"
+            disabled={activePage === pageCount}
+            onClick={() => setActivePage(activePage + 1)}
+          >
+            »
+          </button>
+        </div>
+      </div>
     </section>
   );
 }
