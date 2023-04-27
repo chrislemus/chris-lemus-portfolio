@@ -5,9 +5,9 @@ export default function MainHeader() {
 
   return (
     <header
-      className="hero min-h-screen bg-secondary bg-contain bg-no-repeat bg-top bg-[url('/images/main-header-decoration.png')]"
+      className="hero min-h-screen bg-primary bg-contain bg-no-repeat bg-top bg-[url('/images/main-header-decoration.png')]"
       style={{
-        backgroundPositionY: offset + 50,
+        backgroundPositionY: offset + 150,
       }}
     >
       <div className="hero-content flex-col sm:flex-row text-white ">
@@ -21,7 +21,7 @@ export default function MainHeader() {
             allows me to create efficient and innovative experiences that
             balance user needs and business goals.
           </p>
-          <button className="btn btn-primary">
+          <button className="btn btn-accent">
             <a href="https://calendly.com/chrislemus" target="_blank">
               Let's Meet
             </a>

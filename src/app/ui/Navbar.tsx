@@ -18,7 +18,7 @@ export default function NavBar() {
   );
 
   return (
-    <nav className="navbar bg-secondary">
+    <nav className="navbar bg-primary">
       <div className="navbar-start">
         <img src="./images/icons/logo.png" alt="site-logo" />
       </div>
