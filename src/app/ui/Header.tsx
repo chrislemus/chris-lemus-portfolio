@@ -1,18 +1,18 @@
-import { useWindowOffset } from '@app/hooks';
+'use client';
+import { useWindowScroll } from 'react-use';
 
 export default function MainHeader() {
-  const offset = useWindowOffset((val) => val * 1.2);
-
+  const { y } = useWindowScroll();
   return (
     <header
-      className="hero min-h-screen bg-primary bg-contain bg-no-repeat bg-top bg-[url('/images/main-header-decoration.png')]"
+      className="hero min-h-screen bg-primary bg-contain bg-top bg-[url('/images/main-header-decoration.png')]"
       style={{
-        backgroundPositionY: offset + 150,
+        backgroundPositionY: y,
       }}
     >
       <div className="hero-content flex-col sm:flex-row text-white ">
         <div>
-          <h1 className="text-8xl font-bold mb-1">Chris Lemus</h1>
+          <h1 className="text-6xl sm:text-8xl font-bold mb-1">Chris Lemus</h1>
           <p className="pb-9">
             Fullstack Software Engineer delivering reliable and scalable
             enterprise solutions. Whether strategizing with stakeholders to
@@ -27,10 +27,7 @@ export default function MainHeader() {
             </a>
           </button>
         </div>
-        <img
-          src="./images/profile.png"
-          className="max-w-sm sm:max-w-xs md:max-w-md lg:max-w-lg "
-        />
+        <img src="./images/profile.png" className="w-10/12 sm:w-1/2" />
       </div>
     </header>
   );

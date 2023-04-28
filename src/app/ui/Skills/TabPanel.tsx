@@ -1,10 +1,6 @@
-import styles from './TabPanel.module.scss';
+import { Tab } from '@headlessui/react';
 
 type TabPanelProps = {
-  /** value of active tab */
-  value: number;
-  /** index of current tab */
-  index: number;
   /** Tab panel image source */
   imgSrc: string;
   /** Tab panel image alt */
@@ -13,18 +9,19 @@ type TabPanelProps = {
 
 /** Tab panel component */
 export const TabPanel: React.FC<TabPanelProps> = (p) => {
+  const { imgSrc, imgAlt } = p;
   return (
-    <div
-      role="tabpanel"
-      hidden={p.value !== p.index}
-      id={`simple-tabpanel-${p.index}`}
-      aria-labelledby={`simple-tab-${p.index}`}
-      className={styles.root}
-    >
-      <div className={styles.tabPanelImgContainer}>
-        <img src={p.imgSrc} alt={p.imgAlt} className={styles.tabPanelImg} />
+    <Tab.Panel className="flex flex-col sm:flex-row bg-base-100 max-w-5xl">
+      <figure className="flex-1">
+        <img
+          src={imgSrc}
+          alt={imgAlt}
+          className=" max-h-64 lg:max-h-72 mx-auto"
+        />
+      </figure>
+      <div className="flex-1 p-3 flex flex-col justify-center z-10 bg-base-100">
+        {p.children}
       </div>
-      <div className={styles.textContent}>{p.children}</div>
-    </div>
+    </Tab.Panel>
   );
 };

@@ -1,9 +1,10 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { portfolio } from '@app/content';
 import cn from 'classnames';
 import React from 'react';
 import { Transition } from '@headlessui/react';
-import { useTimeoutFn, useWindowSize } from 'react-use';
+import { useWindowSize } from 'react-use';
 
 export default function Portfolio() {
   const { width } = useWindowSize();
@@ -35,7 +36,7 @@ export default function Portfolio() {
       id="portfolio"
       className="flex-col bg-base-200 justify-around min-h-screen py-40 relative"
     >
-      <h1 className="text-8xl font-bold text-center">Portfolio</h1>
+      <h1 className="text-6xl sm:text-8xl font-bold text-center">Portfolio</h1>
       <img
         src="./images/decorations/dotted-square-blue.svg"
         alt="dotted-square-decoration"

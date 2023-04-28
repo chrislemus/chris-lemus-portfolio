@@ -1,16 +1,16 @@
 import styles from './Contact.module.scss';
-import { useWindowOffset } from '@app/hooks';
+import { useWindowScroll } from 'react-use';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/system/Box';
 
 export default function Contact() {
-  const offset = useWindowOffset((val) => val * 0.1 - 200);
-
+  const { y } = useWindowScroll();
+  //(val) => val * 0.1 - 200
   return (
     <div
       id="contact"
-      style={{ backgroundPositionY: offset }}
+      style={{ backgroundPositionY: y }}
       className={styles.contactSection}
     >
       <Box className={styles.contactBox} boxShadow={3}>
