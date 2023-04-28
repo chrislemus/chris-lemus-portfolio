@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import { useMemo } from 'react';
 
 const navLinkData = [
-  { label: 'Portfolio', link: '/#portfolio' },
-  { label: 'Skills', link: '/#skills' },
-  { label: 'Contact', link: '/#contact' },
+  { label: 'Portfolio', link: '#portfolio' },
+  { label: 'Skills', link: '#skills' },
+  { label: 'Contact', link: '#contact' },
 ];
 
 export default function NavBar() {

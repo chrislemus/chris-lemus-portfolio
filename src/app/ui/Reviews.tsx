@@ -41,7 +41,7 @@ export const Reviews = () => {
   };
 
   return (
-    <div className="flex flex-col bg-base-200 py-36 gap-10 lg:items-center">
+    <div className="flex flex-col bg-base-200 pt-28 pb-36 gap-10 lg:items-center">
       <h1 className="text-6xl sm:text-8xl font-bold text-center">Reviews</h1>
 
       <div className="flex justify-evenly gap-1 items-center relative max-w-7xl">
@@ -52,7 +52,11 @@ export const Reviews = () => {
           «
         </button>
 
-        <Slider {...settings} ref={sliderRef} className="w-10/12 max-w-5xl">
+        <Slider
+          {...settings}
+          ref={sliderRef}
+          className="w-10/12 sm:w-8/12 max-w-5xl"
+        >
           {reviews.map((r, idx) => {
             return (
               <div
