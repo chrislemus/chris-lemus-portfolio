@@ -1,65 +1,27 @@
 'use client';
-import { useEffect, useState, useReducer } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './page.module.scss';
-import { theme } from '@app/styles/theme';
-import LinearProgress from '@mui/material/LinearProgress';
-import { Box, Typography } from '@mui/material';
+import { useEffect, useState, useMemo } from 'react';
+import { useInterval } from 'react-use';
 import { portfolioAll } from '@root/src/content';
-import {
-  faServer,
-  faSpaceShuttle,
-  faUserAstronaut,
-  faPeopleCarry,
-  IconDefinition,
-} from '@fortawesome/free-solid-svg-icons';
 
-const transitionTime = 900;
-
-const initialState = { progress: 0 };
-function reducer(state, action) {
-  switch (action.type) {
-    case 'incrementProgress':
-      return { ...state, progress: state.progress + 1 };
-    default:
-      throw new Error();
-  }
-}
 export default function projectDemoRedirect(p) {
   const projectId = p.params['project-id'] as string;
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const [progressIntervalId, setProgressIntervalId] = useState<NodeJS.Timer>();
-  const [labelOpacity, setLabelOpacity] = useState(1);
-  const incrementProgress = () => dispatch({ type: 'incrementProgress' });
+  const [progress, setProgress] = useState(0);
+  useInterval(
+    () => {
+      setProgress((p) => p + 1);
+    },
+    progress < 100 ? 160 : null
+  );
+
   const getProject = () =>
     portfolioAll.find(({ id }) => id === parseInt(projectId));
-  const [progressText, setProgressText] = useState({
-    icon: faServer,
-    label: 'Booting up server',
-  });
+
   const goToLiveDemo = () => {
     const project = getProject();
     if (project) window.location.assign(project.demoUrl);
   };
-  const triggerTransition = () => {
-    setLabelOpacity(0);
-    setTimeout(() => setLabelOpacity(1), transitionTime);
-  };
 
-  const setProgressInterval = () => {
-    const intervalId = setInterval(incrementProgress, 160);
-    setProgressIntervalId(intervalId);
-    return () => clearInterval(intervalId);
-  };
-
-  const updateDynamicText = () => {
-    const [icon, label] = getTextContent(state.progress);
-    if (progressText.label !== label) {
-      triggerTransition();
-      setTimeout(() => setProgressText({ icon, label }), transitionTime);
-    }
-  };
-  const redirectToLiveDemo = () => {
+  useEffect(() => {
     if (projectId) {
       const project = getProject();
       if (project?.serverWakeUpUrl) {
@@ -68,61 +30,30 @@ export default function projectDemoRedirect(p) {
         goToLiveDemo();
       }
     }
-  };
-  useEffect(setProgressInterval, []);
-  useEffect(updateDynamicText, [state.progress]);
-  useEffect(redirectToLiveDemo, [projectId]);
+  }, [projectId]);
+
   useEffect(() => {
-    if (state.progress >= 97) {
-      goToLiveDemo();
-      clearInterval(progressIntervalId);
-    }
-  }, [state.progress]);
+    if (progress >= 97) goToLiveDemo();
+  }, [progress]);
+
+  const progressText = useMemo(() => {
+    if (progress < 15) return 'Booting up server';
+    if (progress < 45) return 'Delivering packages';
+    if (progress < 75) return 'Preparing for takeoff';
+    return 'Finalizing';
+  }, [progress]);
 
   return (
-    <div className={styles.root}>
-      <div
-        style={{
-          color: theme.palette.primary.main,
-          fontSize: '3rem',
-          transition: `opacity ${transitionTime}ms`,
-          opacity: labelOpacity,
-        }}
-      >
-        <Typography variant="h4" component="h1" align="center">
-          <FontAwesomeIcon size="sm" icon={progressText.icon} />
-          <br />
-          {progressText.label}
-        </Typography>
-      </div>
-      <LinearProgressWithLabel value={state.progress} />
+    <div className="flex flex-col items-center pt-16 ">
+      <p className="text-4xl font-bold text-center text-primary pb-6 animate-pulse">
+        {progressText}
+      </p>
+      <progress
+        className="progress progress-primary w-56"
+        value={progress}
+        max="100"
+      />
+      <p>{progress}%</p>
     </div>
-  );
-}
-function getTextContent(progress): [IconDefinition, string] {
-  switch (true) {
-    case progress < 15:
-      return [faServer, 'Booting up server'];
-    case progress < 45:
-      return [faPeopleCarry, 'Delivering packages'];
-    case progress < 75:
-      return [faUserAstronaut, 'Preparing for takeoff'];
-    default:
-      return [faSpaceShuttle, 'Finalizing'];
-  }
-}
-
-function LinearProgressWithLabel(props) {
-  return (
-    <Box display="flex" alignItems="center" width="100%">
-      <Box width="100%" mr={1}>
-        <LinearProgress variant="determinate" {...props} />
-      </Box>
-      <Box minWidth={35}>
-        <Typography variant="body2" color="textSecondary">{`${Math.round(
-          props.value
-        )}%`}</Typography>
-      </Box>
-    </Box>
   );
 }
