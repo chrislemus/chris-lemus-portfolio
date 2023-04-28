@@ -1,8 +1,6 @@
 'use client';
-import { Box, Typography } from '@mui/material';
 import { portfolioAll } from '@root/src/content';
 import { useEffect } from 'react';
-import Link from 'next/link';
 
 export default function projectRepoRedirect(p) {
   const projectId = p.params['project-id'] as string;
@@ -14,14 +12,21 @@ export default function projectRepoRedirect(p) {
   }, [repoUrl]);
 
   return (
-    <Box paddingTop={5} textAlign="center">
+    <div className="pt-16 text-center ">
       {repoUrl ? (
-        <Typography variant="h3">Redirecting to repo</Typography>
+        <h1 className="text-6xl font-bold animate-pulse">
+          Redirecting to repo...
+        </h1>
       ) : (
-        <Typography variant="h3">
-          Sorry, project Repo not found. <Link href="/">Return home</Link>.
-        </Typography>
+        <>
+          <h1 className="text-4xl font-bold pb-10">
+            Sorry, project repo not found.
+          </h1>
+          <a href="/" className="btn btn-primary">
+            Return home
+          </a>
+        </>
       )}
-    </Box>
+    </div>
   );
 }
