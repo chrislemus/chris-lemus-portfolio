@@ -60,6 +60,7 @@ export const Reviews = () => {
                 className="flex flex-col justify-between py-5"
               >
                 <p className="text-center">{r.review}</p>
+
                 <div className="flex justify-center pt-12">
                   <div className="avatar">
                     <div className="w-10 h-10 rounded-full">

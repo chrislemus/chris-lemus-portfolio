@@ -1,58 +1,46 @@
-import styles from './Contact.module.scss';
 import { useWindowScroll } from 'react-use';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/system/Box';
 
 export default function Contact() {
   const { y } = useWindowScroll();
-  //(val) => val * 0.1 - 200
+
   return (
-    <div
+    <section
       id="contact"
       style={{ backgroundPositionY: y }}
-      className={styles.contactSection}
+      className="flex flex-col justify-between items-center gap-40 py-28 bg-cover bg-top bg-[url('/images/decorations/contact-section-bg.svg')]"
     >
-      <Box className={styles.contactBox} boxShadow={3}>
-        <Typography variant="h2" component="h4">
-          Contact
-        </Typography>
-        <Typography variant="subtitle1">
-          Would love to talk? Shout me out here...
-        </Typography>
-
-        <div className={styles.contactButtonGroup}>
-          <div>
-            <a href="tel:9842126122">
-              <img src="./images/icons/phone-icon3.png" alt="phone-icon" />
-              <Typography variant="subtitle1" color="textPrimary">
-                (984) 212-6122
-              </Typography>
-            </a>
-          </div>
-          <div>
-            <a
-              href="mailto:dev@chrislemus.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="./images/icons/email-icon3.png" alt="email-icon" />
-              <Typography variant="subtitle1" color="textPrimary">
-                dev@chrislemus.io
-              </Typography>
-            </a>
+      <div className="card shadow-xl w-10/12 max-w-4xl bg-base-100 py-14">
+        <div className="card-body text-center">
+          <h1 className="text-6xl sm:text-8xl font-bold mb-1">Contact</h1>
+          <p>Would love to talk? Shout me out here...</p>
+          <div className="card-actions justify-evenly pt-12 gap-16">
+            <p className="flex flex-col justify-center items-center gap-5 select-text">
+              <img
+                className="h-14"
+                src="./images/icons/phone-icon3.png"
+                alt="phone-icon"
+              />
+              (984) 212-6122
+            </p>
+            <p className="flex flex-col justify-center items-center gap-5 select-text">
+              <img
+                className="h-14"
+                src="./images/icons/email-icon3.png"
+                alt="email-icon"
+              />
+              dev@chrislemus.io
+            </p>
           </div>
         </div>
-      </Box>
-      <div className={styles.backToTopButton}>
-        <Button
+      </div>
+      <div>
+        <button
+          className="btn btn-primary"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          variant="contained"
-          color="primary"
         >
           BACK TO TOP
-        </Button>
+        </button>
       </div>
-    </div>
+    </section>
   );
 }
