@@ -9,13 +9,10 @@
     "export": "next export"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.14",
-    "@mui/icons-material": "^5.11.11",
     "axios": "^1.1.2",
     "classnames": "^2.3.2",
     "daisyui": "^2.51.6",

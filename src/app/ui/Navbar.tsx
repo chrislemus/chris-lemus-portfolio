@@ -1,5 +1,13 @@
+'use client';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
+import {
+  useIntersection,
+  useInterval,
+  useScrolling,
+  useEffectOnce,
+  useCounter,
+} from 'react-use';
 
 const navLinkData = [
   { label: 'Portfolio', link: '#portfolio' },
@@ -8,11 +16,52 @@ const navLinkData = [
 ];
 
 export default function NavBar() {
+  const scrollRef = useRef<HTMLElement>();
+  const [scrollTries, { inc, reset }] = useCounter(0, 5);
+
+  useEffectOnce(() => {
+    scrollRef.current = document as any;
+  });
+  const scrolling = useScrolling(scrollRef as any);
+  const observingElementRef = useRef<HTMLElement>();
+  const intersection = useIntersection(observingElementRef as any, {});
+
+  useEffect(() => {
+    console.log(scrollTries);
+    if (intersection?.isIntersecting || scrollTries > 4) {
+      observingElementRef.current = undefined;
+      reset();
+    }
+  }, [intersection, scrollTries]);
+
+  useInterval(
+    () => {
+      const element = observingElementRef.current;
+      if (element) {
+        inc();
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+          inline: 'nearest',
+        });
+      }
+    },
+    !scrolling && observingElementRef.current ? 300 : null
+  );
+
   const navLinks = useMemo(
     () =>
       navLinkData.map((d) => (
-        <li key={d.link}>
-          <a href={d.link}>{d.label}</a>
+        <li
+          key={d.link}
+          onClick={() => {
+            const element = document.querySelector<HTMLElement>(d.link);
+            if (element) observingElementRef.current = element;
+          }}
+        >
+          <Link href={d.link} prefetch={false} scroll={false}>
+            {d.label}
+          </Link>
         </li>
       )),
     []
