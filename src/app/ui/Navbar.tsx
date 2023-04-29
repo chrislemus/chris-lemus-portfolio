@@ -27,12 +27,14 @@ export default function NavBar() {
   const intersection = useIntersection(observingElementRef as any, {});
 
   useEffect(() => {
-    console.log(scrollTries);
-    if (intersection?.isIntersecting || scrollTries > 4) {
+    if (
+      (intersection && intersection.intersectionRatio >= 0.1) ||
+      scrollTries >= 5
+    ) {
       observingElementRef.current = undefined;
       reset();
     }
-  }, [intersection, scrollTries]);
+  }, [intersection?.intersectionRatio, scrollTries]);
 
   useInterval(
     () => {
@@ -41,7 +43,7 @@ export default function NavBar() {
         inc();
         element.scrollIntoView({
           behavior: 'smooth',
-          block: 'center',
+          block: 'start',
           inline: 'nearest',
         });
       }
