@@ -28,9 +28,8 @@ export const reviews = [
 
 export const Reviews = () => {
   const sliderRef = useRef<Slider>(null);
-  const { current: slider } = sliderRef;
-  const sliderNext = () => slider?.slickNext();
-  const sliderPrev = () => slider?.slickPrev();
+  const sliderNext = () => sliderRef?.current?.slickNext();
+  const sliderPrev = () => sliderRef?.current?.slickPrev();
   const settings: Settings = {
     dots: true,
     infinite: true,
