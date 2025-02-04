@@ -1,11 +1,12 @@
 import { Tab } from '@headlessui/react';
+import { PropsWithChildren } from 'react';
 
-type TabPanelProps = {
+type TabPanelProps = PropsWithChildren<{
   /** Tab panel image source */
   imgSrc: string;
   /** Tab panel image alt */
   imgAlt: string;
-};
+}>;
 
 /** Tab panel component */
 export const TabPanel: React.FC<TabPanelProps> = (p) => {

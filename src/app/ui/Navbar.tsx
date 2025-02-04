@@ -16,14 +16,14 @@ const navLinkData = [
 ];
 
 export default function NavBar() {
-  const scrollRef = useRef<HTMLElement>();
+  const scrollRef = useRef<HTMLElement>(null);
   const [scrollTries, { inc, reset }] = useCounter(0, 5);
 
   useEffectOnce(() => {
     scrollRef.current = document as any;
   });
   const scrolling = useScrolling(scrollRef as any);
-  const observingElementRef = useRef<HTMLElement>();
+  const observingElementRef = useRef<HTMLElement>(null);
   const intersection = useIntersection(observingElementRef as any, {});
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function NavBar() {
       (intersection && intersection.intersectionRatio >= 0.1) ||
       scrollTries >= 5
     ) {
-      observingElementRef.current = undefined;
+      observingElementRef.current = null;
       reset();
     }
   }, [intersection?.intersectionRatio, scrollTries]);
