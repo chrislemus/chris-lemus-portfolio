@@ -1,7 +1,12 @@
+import { useEffect, useState } from 'react';
 import { useWindowScroll } from 'react-use';
 
 export default function Contact() {
-  const { y } = useWindowScroll();
+  const { y: _y } = useWindowScroll();
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    setY(_y);
+  }, [_y]);
 
   return (
     <section

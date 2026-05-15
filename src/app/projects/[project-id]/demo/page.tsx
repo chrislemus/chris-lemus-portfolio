@@ -1,16 +1,18 @@
 'use client';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, use } from 'react';
 import { useInterval } from 'react-use';
 import { portfolioAll } from '@root/src/content';
 
-export default function projectDemoRedirect(p) {
-  const projectId = p.params['project-id'] as string;
+export default function projectDemoRedirect(p: {
+  params: Promise<{ 'project-id': string }>;
+}) {
+  const projectId = use(p.params)['project-id'];
   const [progress, setProgress] = useState(0);
   useInterval(
     () => {
       setProgress((p) => p + 1);
     },
-    progress < 100 ? 160 : null
+    progress < 100 ? 160 : null,
   );
 
   const getProject = () =>

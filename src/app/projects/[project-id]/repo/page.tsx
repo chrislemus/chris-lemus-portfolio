@@ -1,9 +1,11 @@
 'use client';
 import { portfolioAll } from '@root/src/content';
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 
-export default function projectRepoRedirect(p) {
-  const projectId = p.params['project-id'] as string;
+export default function projectRepoRedirect(p: {
+  params: Promise<{ 'project-id': string }>;
+}) {
+  const projectId = use(p.params)['project-id'];
   const project = portfolioAll.find(({ id }) => id === parseInt(projectId));
   const repoUrl = project?.repoUrl;
 

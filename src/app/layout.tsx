@@ -1,7 +1,7 @@
 'use client';
 import '@app/styles/styles.css';
 
-export default function RootLayout(p) {
+export default function RootLayout(p: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="emerald">
       <head>

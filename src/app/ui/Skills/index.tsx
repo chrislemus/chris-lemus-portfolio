@@ -1,5 +1,5 @@
 'use client';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { tabsContent } from './tabs-content';
 import { Tab, Transition } from '@headlessui/react';
 import cn from 'classnames';
@@ -17,7 +17,11 @@ export default function Skills() {
       setCardDisplayed(true);
     }, 100);
   };
-  const { y } = useWindowScroll();
+  const { y: _y } = useWindowScroll();
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    setY(_y);
+  }, [_y]);
 
   return (
     <section
@@ -67,7 +71,7 @@ export default function Skills() {
                     'tab tab-lg tab-bordered border-x-0 border-t-0',
                     {
                       'tab-active': selected,
-                    }
+                    },
                   )}
                 >
                   {label}

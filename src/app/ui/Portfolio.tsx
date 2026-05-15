@@ -2,13 +2,16 @@
 import { useState, useEffect } from 'react';
 import { portfolio } from '@app/content';
 import cn from 'classnames';
-import React from 'react';
-import { Transition } from '@headlessui/react';
+import { Transition, TransitionChild } from '@headlessui/react';
 import { useWindowSize } from 'react-use';
 
 export default function Portfolio() {
   const { width } = useWindowSize();
-  const resultsPerPage = width < 1326 ? 1 : 2;
+  const [resultsPerPage, setResultsPerPage] = useState(1);
+  useEffect(() => {
+    setResultsPerPage(width < 1326 ? 1 : 2);
+  }, [width]);
+
   const pageCount = Math.ceil(portfolio.length / resultsPerPage);
   const [cardDisplayed, setCardDisplayed] = useState(true);
 
@@ -50,7 +53,7 @@ export default function Portfolio() {
       <div className="flex justify-center pt-24">
         <div className="flex">
           <button
-            className="btn btn-ghost disabled:bg-transparent"
+            // className="btn btn-ghost disabled:bg-transparent"
             disabled={activePage === 1}
             onClick={() => changePage(activePage - 1)}
           >
@@ -86,56 +89,57 @@ export default function Portfolio() {
         <div className="flex justify-center pt-28 gap-5">
           {projectsToDisplay.map(
             ({ id, thumbnail, projectName, description, repoUrl, status }) => (
-              <Transition.Child
+              <TransitionChild
                 enter="transition-opacity ease-linear duration-50"
                 enterFrom="opacity-0"
                 enterTo="opacity-100"
                 leave="transition-opacity ease-linear duration-50"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
-                className="card w-96 bg-base-100 shadow-xl "
                 key={`project-card${id}`}
               >
-                <figure>
-                  <img
-                    src={thumbnail}
-                    alt={`project thumbnail ${projectName}`}
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">
-                    {projectName}
-                    {status !== 'done' && (
-                      <div className="badge badge-primary badge-outline">
-                        {status}
-                      </div>
-                    )}
-                  </h2>
+                <div className="card w-96 bg-base-100 shadow-xl ">
+                  <figure>
+                    <img
+                      src={thumbnail}
+                      alt={`project thumbnail ${projectName}`}
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title">
+                      {projectName}
+                      {status !== 'done' && (
+                        <div className="badge badge-primary badge-outline">
+                          {status}
+                        </div>
+                      )}
+                    </h2>
 
-                  <p>{description}</p>
-                  <div className="card-actions justify-end">
-                    {repoUrl && (
+                    <p>{description}</p>
+                    <div className="card-actions justify-end">
+                      {repoUrl && (
+                        <a
+                          href={`/projects/${id}/repo`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary"
+                        >
+                          Repo
+                        </a>
+                      )}
                       <a
-                        href={`/projects/${id}/repo`}
+                        href={`/projects/${id}/demo`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-primary"
+                        className="btn btn-secondary"
                       >
-                        Repo
+                        Demo
                       </a>
-                    )}
-                    <a
-                      href={`/projects/${id}/demo`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary"
-                    >
-                      Demo
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </Transition.Child>
-            )
+              </TransitionChild>
+            ),
           )}
         </div>
       </Transition>

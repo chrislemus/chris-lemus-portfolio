@@ -1,14 +1,18 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { useWindowScroll } from 'react-use';
 
 export default function MainHeader() {
   const { y } = useWindowScroll();
+  const [backgroundPositionY, setBackgroundPositionY] = useState(0);
+  useEffect(() => {
+    setBackgroundPositionY(y);
+  }, [y]);
+
   return (
     <header
       className="hero min-h-screen bg-primary bg-contain bg-top bg-[url('/images/main-header-decoration.png')]"
-      style={{
-        backgroundPositionY: y,
-      }}
+      style={{ backgroundPositionY }}
     >
       <div className="hero-content flex-col sm:flex-row text-white ">
         <div>
