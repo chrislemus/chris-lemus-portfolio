@@ -1,10 +1,10 @@
 'use client';
-import NavBar from './ui/Navbar';
-import Header from './ui/Header';
-import Contact from './ui/Contact';
-import Portfolio from './ui/Portfolio';
-import Skills from './ui/Skills';
-import { Reviews } from './ui/Reviews';
+import NavBar from '@/components/Navbar';
+import Header from '@/components/Header';
+import Contact from '@/components/Contact';
+import Portfolio from '@/components/Portfolio';
+import Skills from '@/components/Skills';
+import { Reviews } from '@/components/Reviews';
 
 export default function Home() {
   return (
