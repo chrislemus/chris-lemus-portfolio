@@ -1,5 +1,5 @@
 'use client';
-import { portfolioAll } from '@root/content';
+import { portfolioAll } from '@/content';
 import { use, useEffect } from 'react';
 
 export default function projectRepoRedirect(p: {

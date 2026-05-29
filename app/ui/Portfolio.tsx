@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { portfolio } from '@root/content';
+import { portfolio } from '@/content';
 import cn from 'classnames';
 import { Transition, TransitionChild } from '@headlessui/react';
 import { useWindowSize } from 'react-use';

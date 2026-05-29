@@ -14,10 +14,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "paths": {
-      "@root/*": ["./*"],
-      "@app/*": ["./src/*"],
-      "@components/*": ["./src/app/components/*"],
-      "@pages/*": ["./src/old-pages/*"]
+      "@/*": ["./*"]
     },
     "incremental": true,
     "plugins": [

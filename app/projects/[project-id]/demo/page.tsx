@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo, use } from 'react';
 import { useInterval } from 'react-use';
-import { portfolioAll } from '@root/content';
+import { portfolioAll } from '@/content';
 
 export default function projectDemoRedirect(p: {
   params: Promise<{ 'project-id': string }>;

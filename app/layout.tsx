@@ -1,5 +1,5 @@
 'use client';
-import '@app/styles/styles.css';
+import '@/styles/styles.css';
 
 export default function RootLayout(p: { children: React.ReactNode }) {
   return (
