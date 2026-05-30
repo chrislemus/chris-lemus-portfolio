@@ -67,7 +67,7 @@ export const Reviews = () => {
                 <div className="flex justify-center pt-12">
                   <div className="avatar">
                     <div className="w-10 h-10 rounded-full">
-                      <img src={r.avatar} />
+                      <img src={r.avatar} alt="avatar" />
                     </div>
                   </div>
 

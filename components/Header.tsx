@@ -26,7 +26,11 @@ export default function MainHeader() {
             </a>
           </button>
         </div>
-        <img src="./images/profile.png" className="w-10/12 sm:w-1/2" />
+        <img
+          src="./images/profile.png"
+          className="w-10/12 sm:w-1/2"
+          alt="Chris Lemus profile photo"
+        />
       </div>
     </header>
   );

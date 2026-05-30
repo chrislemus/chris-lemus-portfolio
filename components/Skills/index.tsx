@@ -124,6 +124,7 @@ export default function Skills() {
               </p>
               <img
                 src="/images/skills/maids-next-door-google-rating.jpeg"
+                alt="Maids Next Door Google rating"
                 className="shadow-md w-10/12 mx-auto cursor-none"
                 width="100%"
               />
