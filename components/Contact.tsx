@@ -1,12 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useWindowScroll } from 'react-use';
+import { useScrollPosition } from '@/lib/hooks';
 
 export default function Contact() {
-  const { y: _y } = useWindowScroll();
-  const [y, setY] = useState(0);
-  useEffect(() => {
-    setY(_y);
-  }, [_y]);
+  const y = useScrollPosition();
 
   return (
     <section

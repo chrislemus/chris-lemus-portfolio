@@ -1,13 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { useEffect, useMemo, useRef } from 'react';
-import {
-  useIntersection,
-  useInterval,
-  useScrolling,
-  useEffectOnce,
-  useCounter,
-} from 'react-use';
 
 const navLinkData = [
   { label: 'Portfolio', link: '#portfolio' },
@@ -16,58 +8,30 @@ const navLinkData = [
 ];
 
 export default function NavBar() {
-  const scrollRef = useRef<HTMLElement>(null);
-  const [scrollTries, { inc, reset }] = useCounter(0, 5);
-
-  useEffectOnce(() => {
-    scrollRef.current = document as any;
-  });
-  const scrolling = useScrolling(scrollRef as any);
-  const observingElementRef = useRef<HTMLElement>(null);
-  const intersection = useIntersection(observingElementRef as any, {});
-
-  useEffect(() => {
-    if (
-      (intersection && intersection.intersectionRatio >= 0.1) ||
-      scrollTries >= 5
-    ) {
-      observingElementRef.current = null;
-      reset();
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    link: string,
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector<HTMLElement>(link);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.history.replaceState(null, '', link);
     }
-  }, [intersection?.intersectionRatio, scrollTries]);
+  };
 
-  useInterval(
-    () => {
-      const element = observingElementRef.current;
-      if (element) {
-        inc();
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
-      }
-    },
-    !scrolling && observingElementRef.current ? 300 : null
-  );
-
-  const navLinks = useMemo(
-    () =>
-      navLinkData.map((d) => (
-        <li
-          key={d.link}
-          onClick={() => {
-            const element = document.querySelector<HTMLElement>(d.link);
-            if (element) observingElementRef.current = element;
-          }}
-        >
-          <Link href={d.link} prefetch={false} scroll={false}>
-            {d.label}
-          </Link>
-        </li>
-      )),
-    []
-  );
+  const navLinks = navLinkData.map((d) => (
+    <li key={d.link}>
+      <Link
+        href={d.link}
+        prefetch={false}
+        scroll={false}
+        onClick={(e) => handleNavClick(e, d.link)}
+      >
+        {d.label}
+      </Link>
+    </li>
+  ));
 
   return (
     <nav className="navbar bg-primary">

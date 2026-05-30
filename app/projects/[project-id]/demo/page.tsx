@@ -3,7 +3,7 @@ import { useEffect, useState, useMemo, use } from 'react';
 import { useInterval } from 'react-use';
 import { portfolioAll } from '@/content';
 
-export default function projectDemoRedirect(p: {
+export default function ProjectDemoRedirect(p: {
   params: Promise<{ 'project-id': string }>;
 }) {
   const projectId = use(p.params)['project-id'];

@@ -2,7 +2,7 @@
 import { portfolioAll } from '@/content';
 import { use, useEffect } from 'react';
 
-export default function projectRepoRedirect(p: {
+export default function ProjectRepoRedirect(p: {
   params: Promise<{ 'project-id': string }>;
 }) {
   const projectId = use(p.params)['project-id'];

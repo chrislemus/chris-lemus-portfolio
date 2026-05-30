@@ -1,13 +1,8 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { useWindowScroll } from 'react-use';
+import { useScrollPosition } from '@/lib/hooks';
 
 export default function MainHeader() {
-  const { y } = useWindowScroll();
-  const [backgroundPositionY, setBackgroundPositionY] = useState(0);
-  useEffect(() => {
-    setBackgroundPositionY(y);
-  }, [y]);
+  const backgroundPositionY = useScrollPosition();
 
   return (
     <header
@@ -27,7 +22,7 @@ export default function MainHeader() {
           </p>
           <button className="btn btn-accent">
             <a href="https://calendly.com/chrislemus" target="_blank">
-              Let's Meet
+              {"Let's Meet"}
             </a>
           </button>
         </div>

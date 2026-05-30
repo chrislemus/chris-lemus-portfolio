@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { portfolio } from '@/content';
 import cn from 'classnames';
 import { Transition, TransitionChild } from '@headlessui/react';
@@ -7,15 +7,14 @@ import { useWindowSize } from 'react-use';
 
 export default function Portfolio() {
   const { width } = useWindowSize();
-  const [resultsPerPage, setResultsPerPage] = useState(1);
-  useEffect(() => {
-    setResultsPerPage(width < 1326 ? 1 : 2);
-  }, [width]);
+  const resultsPerPage = width < 1326 ? 1 : 2;
 
   const pageCount = Math.ceil(portfolio.length / resultsPerPage);
   const [cardDisplayed, setCardDisplayed] = useState(true);
 
   const [activePage, _setActivePage] = useState(1);
+  const safeActivePage = Math.max(1, Math.min(activePage, pageCount));
+
   const changePage = (page: number) => {
     setCardDisplayed(false);
     setTimeout(() => {
@@ -24,12 +23,8 @@ export default function Portfolio() {
     }, 100);
   };
 
-  useEffect(() => {
-    if (activePage > pageCount) changePage(pageCount);
-  }, [width]);
-
   const projectsToDisplay = portfolio.filter((_p, idx) => {
-    const top = activePage * resultsPerPage;
+    const top = safeActivePage * resultsPerPage;
     const bottom = top - resultsPerPage;
     return idx >= bottom && idx < top;
   });
@@ -54,15 +49,15 @@ export default function Portfolio() {
         <div className="flex">
           <button
             // className="btn btn-ghost disabled:bg-transparent"
-            disabled={activePage === 1}
-            onClick={() => changePage(activePage - 1)}
+            disabled={safeActivePage === 1}
+            onClick={() => changePage(safeActivePage - 1)}
           >
             «
           </button>
 
           {Array.from({ length: pageCount }, (_, i) => {
             const page = i + 1;
-            const isActive = activePage === page;
+            const isActive = safeActivePage === page;
             return (
               <button
                 key={`portfolioPage${page}`}
@@ -78,8 +73,8 @@ export default function Portfolio() {
           })}
           <button
             className="btn btn-ghost disabled:bg-transparent"
-            disabled={activePage === pageCount}
-            onClick={() => changePage(activePage + 1)}
+            disabled={safeActivePage === pageCount}
+            onClick={() => changePage(safeActivePage + 1)}
           >
             »
           </button>

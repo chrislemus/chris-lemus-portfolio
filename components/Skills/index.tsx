@@ -1,14 +1,15 @@
 'use client';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { tabsContent } from './tabs-content';
 import { Tab, Transition } from '@headlessui/react';
 import cn from 'classnames';
 import { TabPanel } from './TabPanel';
-import { useWindowScroll } from 'react-use';
+import { useScrollPosition } from '@/lib/hooks';
 
 export default function Skills() {
   const [selectedIndex, _setSelectedIndex] = useState(0);
   const [cardDisplayed, setCardDisplayed] = useState(true);
+  const y = useScrollPosition();
 
   const setSelectedIndex = (idx: number) => {
     setCardDisplayed(false);
@@ -17,12 +18,6 @@ export default function Skills() {
       setCardDisplayed(true);
     }, 100);
   };
-  const { y: _y } = useWindowScroll();
-  const [y, setY] = useState(0);
-  useEffect(() => {
-    setY(_y);
-  }, [_y]);
-
   return (
     <section
       className="flex flex-col bg-base-100 py-40 relative min-h-screen "
